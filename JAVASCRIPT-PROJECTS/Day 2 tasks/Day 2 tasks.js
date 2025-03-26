@@ -10,17 +10,18 @@ let num=12;
 (num%2==0)? (console.log("Even")):(console.log("odd"));
 
 // JS16. Write a program that increments a number from 1 to 10 using ++. 
-let numb=1;
+let numb;
 function increment(numb){
 if( numb<=10){
     console.log(numb);
     numb++;
+    increment(numb);
     
 }
 else{
     return 0;
 }};
-increment();
+increment(1);
 
 
 // JS17. Check if a user is eligible to vote using comparison operators.
