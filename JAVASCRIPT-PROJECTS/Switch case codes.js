@@ -1,4 +1,5 @@
  // Task 2: Determine the Season Based on the Month
+ let month;
 function Season(month) {
    
     switch (month) {
@@ -35,6 +36,7 @@ function Season(month) {
 Season(3);
 
 // Task 3: Determine Type of Vehicle Based on Number of Wheels
+let wheels;
 function Vehicle(wheels) {
     
     switch (wheels) {
@@ -64,6 +66,7 @@ function Vehicle(wheels) {
 Vehicle(4);
 
 // Task 4: Menu Selection in a Restaurant
+let menuOption;
 function menuSelection(menuOption) {
    
     switch (menuOption) {
