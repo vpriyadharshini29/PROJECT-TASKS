@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* JS113: Border on hover */
+    #hoverImg:hover {
+      border: 2px solid red;
+    }
+    </style>
+</head>
+<body>
+    <!-- // JS106. Change the background color of the page using a button click. -->
+    <button  id="background" onclick="background()">Change background color</button><br>
+
+<!-- // JS107. Change the text of a paragraph using a button. -->
+<div class="para" id="para">I'm a changing text</div>
+<button onclick="changeText()">CHANGE THE TEXT</button><br>
+
+<!-- // JS108. Hide and show an element using a toggle button. -->
+ <div class="toggleDiv" id="toggleDiv"><p>HIDE ME</p></div>
+ <button onclick="hideElement()">Click here to hide</button><br>
+
+<!-- // JS109. Create a new list item dynamically. -->
+ <div class="list" id="list">
+    <ul>
+        <li>Item1</li>
+    </ul>
+ </div>
+ <button onclick="addNewList()">Click to add new list</button><br>
+
+
+<!-- // JS110. Remove a specific item from a list. -->
+<div class="list1" id="list1">
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+ </div>
+<button onclick="removeList()">Click to remove list</button><br>
+
+
+<!-- // JS111. Change the font size of a paragraph when a button is clicked. -->
+<div class="fontChange" id="fontChange"><p>Can change my font</p></div>
+<button onclick="changeTheFont()">Click to change the font</button><br>
+
+
+
+<!-- // JS112. Change the text color of all paragraphs using querySelectorAll().  -->
+ <button onclick="changeParas()">Change the colours of Paras</button><br>
+
+
+<!-- // JS113. Add a border to an image when hovered. -->
+<img id="hoverImg" src="./image/greece.jfif" alt="placeholder image"></img>
+<br>
+
+
+<!-- // JS114. Display an alert message when a button is clicked. -->
+<button onclick="alertMessage()">Alert</button><br><br>
+
+
+<!-- // JS115. Toggle between two different text contents. -->
+<div class="toggleText" id="toggleText">Toggle this Text</div>
+<button onclick="toggleText()">Toggle the text here</button><br>
+
+<!-- // JS116. Add a new heading to the page dynamically. -->
+ <div class="newP" id="newP"></div>
+ <button onclick="addNewHeading()">Click to add new Heading</button><br>
+<!-- // JS117. Remove all elements inside a div. -->
+ <div class="removeAll" id="removeAll"><p>Can also remove me</p></div>
+ <button onclick="removeContent()">Remove the Content</button><br>
+ <!-- // JS118. Change the text input value dynamically. -->
+  <input type="text" class="ChangeValue" id="ChangeValue" value="Original">
+<button onclick="changeValue()">Click to Change Value</button><br>
+
+
+    <script src="./Day 9 tasks.js"></script>
+</body>
+</html>

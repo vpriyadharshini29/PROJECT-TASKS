@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- JS119. Change the text of a button when clicked. -->
+     
+     <button onclick="changeText(this)">CHANGE THE TEXT</button>
+<!-- JS120. Show an alert when the mouse enters a specific area. -->
+ <div class="mouse" id="mouse" onmouseenter="showAlert()">Move the mouse here</div>
+ 
+<br> <!-- JS121. Detect when the user presses the "Enter" key. -->
+  <div class="Enter" id="Enter"tabindex="0" onkeydown="detectEnter(event)">click the Enter key here</div>
+<br> <!-- JS122.Change the background color of a page when a button is clicked. -->
+ <button  id="background" onclick="background()">Change background color</button><br>
+ <br> <!-- JS123. Toggle a password field between text and password. -->
+ <input type="password" id="pass">
+ <button onclick="togglePass()">ToggleHere</button>
+<br> <!-- JS124. Display the coordinates of the mouse pointer when moved. -->
+  <div class="mouse2" id="mouse2" onmousemove="coords(event)">Show coordinates</div>
+ 
+ <br> <!-- JS125. Prevent the default behavior of a form submission. -->
+   <div class="form" id="form">
+    <form onsubmit="preventSubmit(event)">
+        <input type="text">
+        <button type="submit">SUBMIT</button>
+
+    </form>
+   </div>
+<br> <!-- JS126. Count the number of times a button is clicked.  -->
+  <div class="displaycount" id="displaycount"></div>
+  <button onclick="countClicks(this)">clickHere</button>
+<br> <!-- JS127. Create a button that disappears when clicked. -->
+  <button onclick="disappear(this)">Click for the button to disappear</button>
+<br> <!-- JS128. Toggle an element's visibility when another element is clicked.  -->
+ <div class="toggleDiv" id="toggleDiv"><p>HIDE ME</p></div>
+ <button onclick="hideElement()">Click here to hide</button><br>
+<br> <!-- JS129. Play a sound when a button is clicked. -->
+ <audio id="beep" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+ <button onclick="playSound()">Play Sound</button>
+<br> <!-- JS130. Display a loading animation when the page is loading. -->
+<div id="loader">loading.....</div>
+ <br> <!-- JS131. Change an image when a button is clicked. -->
+  <h3>JS131. Change an image when a button is clicked</h3>
+  <img id="imageToChange" src="./Image/alp.jfif" />
+  <button onclick="changeImage()">Change Image</button>
+ <script src="./Day 10 tasks.js"></script>
+</body>
+</html>
