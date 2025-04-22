@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Storage Tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    input, button { margin: 0.5rem; }
+    body.dark {
+  background-color: #222;
+  color: white;
+}
+  </style>
+</head>
+<body>
+
+  <h2>JS132: Username (LocalStorage)</h2>
+  <input id="usernameInput" placeholder="Enter username">
+  <button onclick="saveUsername()">Save</button>
+  <p id="savedUsername"></p>
+
+  <h2>JS133: Dark/Light Mode (LocalStorage)</h2>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+
+  <h2>JS134: Shopping Cart (LocalStorage)</h2>
+  <button onclick="addToCart('Soap')">Add Soap</button>
+  <button onclick="addToCart('Shampoo')">Add Shampoo</button>
+  <p id="cartDisplay"></p>
+
+  <h2>JS135: Login Status (SessionStorage)</h2>
+  <button onclick="login()">Login</button>
+  <p id="loginStatus"></p>
+
+  <h2>JS136: Form Save (SessionStorage)</h2>
+  <input id="formInput" placeholder="Type something...">
+
+  <h2>JS137: Last Visited Page (LocalStorage)</h2>
+  <p id="lastPage"></p>
+
+  <h2>JS138: Click Counter (LocalStorage)</h2>
+  <button id="clickBtn">Click Me</button>
+  <p>Count: <span id="clickCount"></span></p>
+
+  <h2>JS139: To-Do List (LocalStorage)</h2>
+  <input id="todoInput" placeholder="Add task">
+  <button onclick="addTodo()">Add</button>
+  <ul id="todoList"></ul>
+
+  <h2>JS140–141: Object to JSON & Back</h2>
+  <button onclick="storeObject()">Store Object</button>
+  <button onclick="retrieveObject()">Retrieve Object</button>
+  <p id="userObjectDisplay"></p>
+
+  <h2>JS142: Survey Form (SessionStorage)</h2>
+  <label><input type="radio" name="q1" value="Yes">Yes</label>
+  <label><input type="radio" name="q1" value="No">No</label>
+  <button onclick="saveSurvey()">Save Response</button>
+
+  <h2>JS143: Page Visits (LocalStorage)</h2>
+  <p id="visitCount"></p>
+
+  <h2>JS144: Quiz Answers (SessionStorage)</h2>
+  <label><input type="radio" name="quiz" value="A">A</label>
+  <label><input type="radio" name="quiz" value="B">B</label>
+
+ <script src="./Day 11 tasks.js"></script>
+</body>
+</html>
