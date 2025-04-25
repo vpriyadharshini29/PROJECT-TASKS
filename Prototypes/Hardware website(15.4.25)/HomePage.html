@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PK Hardware</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .top-bar {
+      background-color: #FFAE42;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      height: 160px;
+    }
+
+    .nav-link {
+      color: black !important;
+      font-weight: 500;
+    }
+
+    .search-bar input {
+      border-radius: 7px 0 0 7px;
+      border: none;
+      padding: 8px;
+     width: 95%;
+    }
+
+    .search-bar button {
+      border-radius: 0 7px 7px 0;
+      border: none;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .carousel-img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      border: 2px solid #FFAE42;
+      border-radius: 10px;
+      position: relative;
+    }
+    .carousel-item p{
+      position: absolute;
+      left :20px;
+      bottom: 320px;
+      font-size: 20px;
+      font-weight: 900;
+      font-style: italic;
+      color: white;
+
+    }
+    .carousel-indicators button {
+      width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc; 
+  border: none;
+  margin: 0 6px;
+ 
+}
+
+.carousel-indicators .active {
+  background-color: #FFAE42;
+}
+
+
+    .product-card {
+      border: 2px solid #FFAE42;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: white;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: contain;
+    }
+
+    .btn-custom {
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 10px;
+      width: 130px;
+    }
+
+    .cart-btn {
+      border: 1px solid black;
+      border-radius: 10px;
+      padding: 6px 15px;
+      background-color: white;
+      width: 130px;
+    }
+    .product-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        .product-card p {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+        .product-card .stars {
+            color: #FFAE42;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            text-align: center;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #343a40; 
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .category-card {
+          
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+         background-color: #fff; 
+        }
+       
+        .category-card img {
+            width: 100%; 
+            height: auto; 
+            border-radius: 4px;
+            margin-bottom: 10px; 
+        }
+        .category-card h3 {
+            font-size: 16px; 
+            color: #2c3e50; 
+            margin-bottom: 0;
+        }
+        .brand-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px; 
+            margin-bottom: 15px;
+        }
+
+        .brand-logo img{
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .brands-section {
+            background-color: #f8f9fa;
+            padding-top: 30px; 
+            padding-bottom: 30px;
+            margin-top: 30px;
+        }
+        .categories-section{
+            padding-top: 30px; 
+            padding-bottom: 30px;
+        }
+        .footer {
+      background-color: #FFAE42;
+      color: #000;
+      padding: 40px 20px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer .footer-logo img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .footer .footer-logo span {
+      font-weight: bold;
+      display: block;
+      font-size: 14px;
+    }
+
+    .footer h6 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+   
+
+    .footer .email {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .footer .copyright {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .footer .section-title {
+      font-weight: bold;
+    }
+    .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.25rem;
+        }
+        .social-icons a {
+          
+            font-size: 1.75rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+        .social-icons .fa-instagram { color: #e4405f; }
+        .social-icons .fa-facebook-f { color: #3b5998; }
+        .social-icons .fa-twitter { color: #1da1f2; }
+        .social-icons .fa-youtube { color: #ff0000; }
+
+    @media (max-width: 768px) {
+  .top-bar, .search-bar input, .btn-custom, .cart-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-container img {
+    width: 120px;
+    height: auto;
+  }
+
+  .d-flex.flex-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar {
+    flex: 1 1 100% !important;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .carousel-img {
+    height: 250px;
+  }
+
+  .carousel-item p {
+    font-size: 14px;
+    bottom: 160px;
+  }
+
+  .row.g-4 > div {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .category-card {
+    max-width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .d-flex.justify-content-between.flex-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .brand-logo {
+    justify-content: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer .footer-logo {
+    margin-bottom: 15px;
+  }
+
+  .footer .email, .footer .copyright {
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  
+ <!-- Header Layout -->
+<div class="bg-warning px-4 pt-3 pb-1">
+  <div class="container d-flex flex-wrap">
+    <!-- Logo (left column) -->
+    <div class="logo-container me-4">
+      <img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" width="160px">
+    </div>
+
+    <!-- Search bar and login (right column) -->
+    <div class="flex-grow-1">
+      <!-- Search and Login Row -->
+      <div class="d-flex justify-content-start align-items-center mb-2">
+        <div class="search-bar "style="flex: 0 0 60%; margin-right: 10px;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Looking For">
+            <button class="btn btn-dark" type="button">
+              <img src="./Assets/icons used/Vector.png" alt="Search" style="width: 16px;">
+            </button>
+          </div>
+        </div>
+        <button class="btn btn-custom">Login / Sign Up</button>
+      </div>
+
+      <!-- Navbar Row -->
+      <nav class="navbar navbar-expand-lg pt-0 pb-2">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sanitaryware
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Washbasins</a></li>
+              <li><a class="dropdown-item" href="#">Water Closets</a></li>
+              <li><a class="dropdown-item" href="#">Urinals</a></li>
+              <li><a class="dropdown-item" href="#">Bathroom Accessories</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Modular Kitchen</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li><button class="btn cart-btn"><img src="./Assets/icons used/Vector.svg"> Cart</button></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Carousel Banner with Indicators -->
+<div class="container mt-4 position-relative">
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <!-- Carousel Indicators (Dots) -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        
+      </div>
+  
+      <!-- Carousel Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./Assets/hardware website images/carou1.png" class="d-block w-100 carousel-img" alt="Banner 1">
+        </div>
+        <div class="carousel-item">
+          <img src="./Assets/hardware website images/carou 2.png" class="d-block w-100 carousel-img" alt="Banner 2">
+          <p>"Pure elegance on every drop"</p>
+        </div>
+        <div class="carousel-item">
+          <img src="./Assets/hardware website images/carou 3.png" class="d-block w-100 carousel-img" alt="Banner 3">
+        </div>
+       
+      </div>
+  
+      <!-- Optional Navigation Buttons (Prev/Next) -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+  
+
+  
+
+
+
+
+    <!-- Best Selling -->
+<div class="container py-5">
+    <h2 class="section-title">Best Selling</h2>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/BS1.png" alt="Roset Handle">
+          <h3>Roset Handle Altas Antique Forme</h3>
+          <p class="stars">✩✩✩✩<span style="color: grey;">✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/BS2.png" alt="Brass Hinge">
+          <h3>Brass Railway Hinge 4x1-1/8x1/8 SS-Rajbadri</h3>
+          <p class="stars">✩✩✩✩<span style="color: grey;">✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/BS3.png" alt="Bosseti Puller">
+          <h3>Bosseti 03850.06400.09 64mm Antique Puller</h3>
+          <p class="stars">✩✩✩✩<span style="color: grey;">✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/BS4.png" alt="Angle Cock">
+          <h3>Agate Two Way Angle Cock - Parryware</h3>
+          <p class="stars">✩✩✩✩<span style="color: grey;">✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Featured Products -->
+  <div class="container pb-5">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/FP1.png" alt="Roset Handle">
+          <h3>Roset Handle Altas Antique Forme</h3>
+          <p class="stars"><span style="color: grey;">✩✩✩✩✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/FP2.png" alt="Brass Hinge">
+          <h3>Brass Railway Hinge 4x1-1/8x1/8 SS-Rajbadri</h3>
+          <p class="stars"><span style="color: grey;">✩✩✩✩✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/FP3.png" alt="Bosseti Puller">
+          <h3>Bosseti 03850.06400.09 64mm Antique Puller</h3>
+          <p class="stars"><span style="color: grey;">✩✩✩✩✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+          <img src="./Assets/hardware website images/FP4.png" alt="Bosseti Puller 2">
+          <h3>Bosseti 12235.03700.09 37mm Antique Puller</h3>
+          <p class="stars"><span style="color: grey;">✩✩✩✩✩</span> </p>
+          <p class="stars">contact for price</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <section class="categories-section">
+        <h2 class="section-title">Top Categories</h2>
+        <div class="d-flex justify-content-between flex-wrap gap-3">
+            <div class="category-card flex-fill" style="max-width: 18%;">
+              <img src="./Assets/hardware website images/TC1.png" alt="Digital Lock">
+              <h3>Digital Lock</h3>
+            </div>
+            <div class="category-card flex-fill" style="max-width: 18%;">
+              <img src="./Assets/hardware website images/TC2.png" alt="Tabletop Washbasin">
+              <h3>Tabletop Washbasin</h3>
+            </div>
+            <div class="category-card flex-fill" style="max-width: 18%;">
+              <img src="./Assets/hardware website images/TC3.png" alt="Water Closet">
+              <h3>Water Closet</h3>
+            </div>
+            <div class="category-card flex-fill" style="max-width: 18%;">
+              <img src="./Assets/hardware website images/TC4.png" alt="Vanity Cabinets">
+              <h3>Vanity Cabinets</h3>
+            </div>
+            <div class="category-card flex-fill" style="max-width: 18%;">
+              <img src="./Assets/hardware website images/TC5.png" alt="Mirrors">
+              <h3>Mirrors</h3>
+            </div>
+          </div>
+          
+    </section>
+
+    <section class="brands-section">
+        <h2 class="section-title">Top Brands</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                    <img src="./Assets/hardware website images/god.png" alt="Godrej">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/hw.png" alt="Hardwyn">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/many.png" alt="Somany">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/glen.png" alt="Glen">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                    <img src="./Assets/hardware website images/pw.png" alt="Parryware">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/jaq.png" alt="Jaquar">
+                </div>
+            </div>
+             <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/fab.png" alt="Faber">
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="brand-logo">
+                     <img src="./Assets/hardware website images/eli.png" alt="Elica">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+   
+  
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start align-items-start">
+      <div class="col-md-2 footer-logo text-center text-md-start mb-4">
+        <img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" />
+        <span>PK Hardwares<br>JEWELLERY SHOP</span>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6>Contact Address 1</h6>
+        <p>No: 32, Ohm sakthi nagar<br>Guduvancherry<br>Chennai 603202</p>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6>Contact Address 2</h6>
+        <p>No 82, check post<br>Velacherry<br>Chennai 606002</p>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6>Information</h6>
+        <p><a href="#">Terms & Conditions</a></p>
+        <p><a href="#">Return Policy</a></p>
+        <p><a href="#">Cancellation Policy</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Shipping & Delivery</a></p>
+        <p><a href="#">Exchange Policy</a></p>
+        <p><a href="#">Disclaimer</a></p>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6>My Account</h6>
+        <p><a href="#">Login</a></p>
+        <p><a href="#">Order History</a></p>
+        <p><a href="#">My Wishlist</a></p>
+        <h6 class="mt-3">Follow Us on</h6>
+        <div class="social-icons">
+          <a href="#" target="_blank"><img src="./Assets/icons used/skill-icons_instagram.svg" height="30px"width="30px"></a>
+          <a href="#" target="_blank"><img src="./Assets/icons used/logos_facebook.svg" height="30px"width="30px"></a>
+          <a href="#" target="_blank"><img src="./Assets/icons used/logos_youtube-icon.svg" height="30px"width="30px"></a>
+          <a href="#" target="_blank"><img src="./Assets/icons used/skill-icons_twitter.svg" height="30px"width="30px"></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="email">info@PKhardwares.com</div>
+    <div class="copyright">© 2025 PK Hardwares - V.1.0 - All rights reserved</div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

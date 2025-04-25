@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, select, button {
+      margin: 5px;
+      padding: 5px;
+    }
+    .output {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Library Management System</h1>
+
+  <h2>1. Search Books</h2>
+  <input type="text" id="searchKeyword" placeholder="Enter keyword">
+  <select id="searchField">
+    <option value="title">Title</option>
+    <option value="author">Author</option>
+    <option value="genre">Genre</option>
+  </select>
+  <button onclick="handleSearchBooks()">Search</button>
+
+  <h2>2. Borrow a Book</h2>
+  <input type="number" id="borrowId" placeholder="Book ID">
+  <input type="text" id="borrowerName" placeholder="Borrower Name">
+  <button onclick="handleBorrowBook()">Borrow</button>
+
+  <h2>3. Return a Book</h2>
+  <input type="number" id="returnId" placeholder="Book ID">
+  <button onclick="handleReturnBook()">Return</button>
+
+  <h2>4. List Available Books</h2>
+  <button onclick="listAvailableBooks()">List Available Books</button>
+
+  <div class="output" id="output"></div>
+
+  <script src="./Miniproject2.js"></script>
+   
+  
+
+</body>
+</html>
