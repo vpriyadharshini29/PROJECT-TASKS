@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+       }
+       a{
+        text-decoration: none;
+        color: #000;
+       }
         .top-bar {
       background-color: #FFAE42;
       padding: 15px 30px;
@@ -97,7 +107,7 @@
         .social-icons .fa-youtube { color: #ff0000; }
 
         .footer {
-      background-color: #f4a42d;
+      background-color: #FFAE42;
       color: #000;
       padding: 40px 20px 20px;
       font-family: Arial, sans-serif;
@@ -180,55 +190,53 @@
     </style>
 </head>
 <body>
-    <div class="top-bar d-flex flex-wrap justify-content-between align-items-start px-4 py-3 bg-warning">
-        <!-- Logo -->
-        <div class="d-flex align-items-center gap-3">
-          <img src="logo.png" alt="Logo" class="logo">
-        </div>
-      
-        <!-- Search Bar - Centered -->
-        <div class="search-bar d-flex mx-auto flex-grow-1 justify-content-center">
-      <div class="input-group w-75">
-        <input type="text" class="form-control" placeholder="Looking For">
-        <button class="btn btn-dark" type="button">
-          <img src="./Assets/icons used/Vector.png" alt="Search" style="width: 16px;">
-        </button>
-      </div>
+     <!-- Header Layout -->
+<div class="bpx-4 pt-3 pb-1" style="background-color: #FFAE42;">
+  <div class="container d-flex flex-wrap">
+    <!-- Logo (left column) -->
+    <div class="logo-container me-4">
+      <a href="HomePage.html"><img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" width="160px"></a>
     </div>
-    
-      
-        <!-- Login and Cart -->
-        <div class="d-flex flex-column gap-2 mt-2 mt-lg-0">
-          <button class="btn btn-custom">Login / Sign Up</button>
-         
+
+    <!-- Search bar and login (right column) -->
+    <div class="flex-grow-1">
+      <!-- Search and Login Row -->
+      <div class="d-flex justify-content-start align-items-center mb-2">
+        <div class="search-bar "style="flex: 0 0 60%; margin-right: 10px;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Looking For">
+            <button class="btn btn-dark" type="button">
+              <img src="./Assets/icons used/Vector.png" alt="Search" style="width: 16px;">
+            </button>
+          </div>
         </div>
+        <a href="#loginModal" class="btn btn-custom" style="background-color: white;">Login / Sign Up</a>
       </div>
-      
-    
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg bg-warning">
-        <div class="container justify-content-center">
-          <ul class="navbar-nav gap-4">
-            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Sanitaryware
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Washbasins</a></li>
-                <li><a class="dropdown-item" href="#">Water Closets</a></li>
-                <li><a class="dropdown-item" href="#">Urinals</a></li>
-                <li><a class="dropdown-item" href="#">Bathroom Accessories</a></li>
-              </ul>
-            </li>
-            
-            <li class="nav-item"><a class="nav-link" href="#">Modular Kitchen</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Hardware</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-            <button class="btn cart-btn">🛒 Cart</button>
-          </ul>
-        </div>
+
+      <!-- Navbar Row -->
+      <nav class="navbar navbar-expand-lg pt-0 pb-2">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link" href="About Us page.html">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sanitaryware
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="waterbasins.html">Washbasins</a></li>
+              <li><a class="dropdown-item" href="faucet.html">Water Closets</a></li>
+              <li><a class="dropdown-item" href="showers.html">Showers</a></li>
+              <li><a class="dropdown-item" href="bathtub.html">Bathtubs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="modular kitchen.html">Modular Kitchen</a></li>
+          <li class="nav-item"><a class="nav-link" href="HardwareProducts.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact Us</a></li>
+          <li><button class="btn cart-btn"style="background-color: white;"><a href="Cartpage.html"><img src="./Assets/icons used/Vector.svg"> Cart</a></button></li>
+        </ul>
       </nav>
+    </div>
+  </div>
+</div>
     
     <section class="contact-section">
         <div class="container">
@@ -293,7 +301,7 @@
         <div class="container">
           <div class="row text-start align-items-start">
             <div class="col-md-2 footer-logo text-center text-md-start mb-4">
-              <img src="https://i.imgur.com/z5QnhKs.png" alt="Logo" />
+              <img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" />
               <span>PK Hardwares<br>JEWELLERY SHOP</span>
             </div>
       
@@ -314,7 +322,7 @@
               <p><a href="#">Cancellation Policy</a></p>
               <p><a href="#">Privacy Policy</a></p>
               <p><a href="#">Shipping & Delivery</a></p>
-              <p><a href="#">Exchange Policy</a></p>
+              <p><a href="Exchangepolicy.html">Exchange Policy</a></p>
               <p><a href="#">Disclaimer</a></p>
             </div>
       

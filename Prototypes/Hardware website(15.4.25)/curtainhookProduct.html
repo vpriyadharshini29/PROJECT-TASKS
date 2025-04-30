@@ -1,37 +1,94 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+         *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .top-bar {
+      background-color: #FFAE42;
+      padding: 15px 30px;
+    }
+
+    .logo {
+      height: 160px;
+    }
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav-link {
+      color: black !important;
+      font-weight: 500;
+    }
+
+    .search-bar input {
+      border-radius: 7px 0 0 7px;
+      border: none;
+      padding: 8px;
+     width: 95%;
+    }
+
+    .search-bar button {
+      border-radius: 0 7px 7px 0;
+      border: none;
+    }
+    .container{
+        width: 100%;
+    }
+    .product-box {
+      display: flex;
+      gap: 20px;
       background-color: #fff;
-      font-family: Arial, sans-serif;
+      border-radius: 10px;
+    }
+
+    .product-img {
+      width: 40%;  /* Adjust width to 50% */
+      height: 450px;  /* Set height to a fixed value */
+      object-fit: cover;  /* Ensures the image maintains aspect ratio while filling the space */
+      border-radius: 8px;
+    }
+
+    .flex-grow-1 {
+      width: 50%;  /* Right column takes 50% of the space */
     }
 
     .product-title {
-      font-weight: bold;
       font-size: 18px;
+      font-weight: 600;
     }
 
     .price {
       font-size: 24px;
-      font-weight: bold;
-      margin-right: 20px;
+      font-weight: 700;
     }
 
-    .tax-text {
-      color: #555;
+    .price-info {
       font-size: 14px;
+      margin-left: 5px;
+      font-weight: 500;
     }
 
     .delivery-box {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 5px;
+      border: 1px solid #FFAE42 ;
+      padding: 25px;
+      border-radius: 15px;
     }
 
     .action-buttons .btn {
@@ -40,7 +97,7 @@
     }
 
     .buy-btn {
-      background-color: #f0a428;
+      background-color: #FFAE42;
       color: white;
     }
 
@@ -53,31 +110,18 @@
       height: 40px;
       margin-bottom: 5px;
     }
-
-    .thumbnail img {
-      border: 2px solid #f0a428;
-      border-radius: 8px;
-      cursor: pointer;
+    .image-row img {
+      height: 120px;
+      width: 120px;
+      border: 1px solid #FFAE42;
+      padding: 4px;
+      border-radius: 10px;
     }
 
-    .thumbnails {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .input-group .form-control {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    .input-group .btn {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      width: 90px;
-    }
     .about-item-section {
-            padding: 20px;
+            padding: 120px;
+            padding-bottom: 20px;
+            padding-top: 20px;
         }
         .about-item-title {
             font-size: 1.25rem;
@@ -99,7 +143,9 @@
             color: #212529;
         }
         .top-reviews-section {
-        padding: 20px;
+        padding: 120px;
+        padding-bottom: 20px;
+        padding-top: 20px;
         margin-bottom: 20px;
       }
       .top-reviews-title {
@@ -136,7 +182,7 @@
 }
 
       .review-stars {
-        color: #ffc107;
+        color: #FFAE42;
         margin-bottom: 5px;
         display: inline-flex; 
       }
@@ -158,149 +204,470 @@
       .star {
         margin-right: 2px; /* reduced space between stars */
       }
+     
+      html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-    @media (max-width: 768px) {
-      .product-info {
-        margin-top: 20px;
-      }
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.product-box {
+  flex-wrap: wrap;
+}
+
+     
+
+    .footer {
+      background-color: #FFAE42;
+      color: #000;
+      padding: 40px 20px 20px;
+      font-family: Arial, sans-serif;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      right: 0;
+      left: 0;
     }
-  </style>
+
+    .footer .footer-logo img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .footer .footer-logo span {
+      font-weight: bold;
+      display: block;
+      font-size: 14px;
+    }
+
+    .footer h6 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+   
+
+    .footer .email {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    .footer .copyright {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .footer .section-title {
+      font-weight: bold;
+    }
+    .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.25rem;
+        }
+        .social-icons a {
+          
+            font-size: 1.75rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+       
+  @media (max-width: 768px) {
+    .top-bar,
+    .container {
+      padding: 0 15px;
+    }
+
+    .logo {
+      height: 100px;
+    }
+
+    .d-flex.flex-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .search-bar {
+      flex: 1 1 100% !important;
+      margin-bottom: 10px !important;
+    }
+
+    .search-bar input {
+      width: 100%;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .navbar-nav .nav-item,
+    .navbar-nav .btn {
+      width: 100%;
+    }
+
+    .product-box {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .flex-grow-1 {
+      width: 100% !important;
+    }
+
+    .action-buttons .btn {
+      width: 100% !important;
+    }
+
+    .image-row {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .image-row img {
+      width: 45%;
+      height: auto;
+    }
+
+    .about-item-section {
+      padding: 30px 15px;
+    }
+
+    .top-reviews-section {
+      padding: 30px 15px;
+    }
+
+    .feature-icons {
+      width: 45% !important;
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar-nav {
+      gap: 6px;
+    }
+
+    .feature-icons {
+      width: 100% !important;
+    }
+
+    .image-row img {
+      width: 100%;
+    }
+
+    .about-item-section,
+    .top-reviews-section {
+      padding: 20px 10px;
+    }
+
+    .review-stars {
+      font-size: 14px;
+    }
+
+    .search-bar input {
+      padding: 6px;
+    }
+
+    .search-bar button {
+      padding: 6px 10px;
+    }
+
+    .btn {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+</style>
+
+    </style>
 </head>
-
 <body>
-  <div class="container py-5">
-    <div class="row">
-      <!-- Product Images -->
-      <div class="col-md-6 text-center">
-        <img src="./Assets/hardware website images/BS1.png" height="500px" width="450px" class="img-fluid mb-3" alt="Main Product Image">
-        
+    <!-- Header Layout -->
+<div class="bpx-4 pt-3 pb-1" style="background-color: #FFAE42;">
+  <div class="container d-flex flex-wrap">
+    <!-- Logo (left column) -->
+    <div class="logo-container me-4">
+      <a href="HomePage.html"><img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" width="160px"></a>
+    </div>
+
+    <!-- Search bar and login (right column) -->
+    <div class="flex-grow-1">
+      <!-- Search and Login Row -->
+      <div class="d-flex justify-content-start align-items-center mb-2">
+        <div class="search-bar "style="flex: 0 0 60%; margin-right: 10px;">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Looking For">
+            <button class="btn btn-dark" type="button">
+              <img src="./Assets/icons used/Vector.png" alt="Search" style="width: 16px;">
+            </button>
+          </div>
+        </div>
+        <a href="#loginModal" class="btn btn-custom" style="background-color: white;">Login / Sign Up</a>
       </div>
 
-      <!-- Product Info -->
-      <div class="col-md-6 product-info">
-        <div class="product-title mb-2">
-          DecorDepo Stylish Curtain Hooks/Curtain Knobs/ Rod Rail Bracket for Home Antique Gold Finish (4P, Antique)
-        </div>
-
-        <div class="d-flex align-items-center mb-4">
-          <span class="price">₹ 476</span>
-          <span class="tax-text">(Incl of all taxes)</span>
-          <select class="form-select w-auto ms-4">
-            <option selected>QTY:1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </div>
-
-        <div class="delivery-box mb-3">
-          <div class="input-group mb-2">
-            <input type="text" class="form-control" placeholder="Enter your location">
-            <button class="btn btn-warning text-white">Check</button>
-          </div>
-          <p class="mb-1">Delivery by Mar 25, Tue by 9.00 A.M</p>
-          <div class="action-buttons d-flex gap-2 mt-2">
-            <button class="btn btn-outline-dark">Add to Cart</button>
-            <button class="btn buy-btn">Buy Now</button>
-          </div>
-        </div>
-
-        <!-- Features Row -->
-        <div class="d-flex justify-content-between text-center mt-3">
-          <div class="feature-icons">
-            <img src="https://via.placeholder.com/40">
-            <div>Pay on delivery</div>
-          </div>
-          <div class="feature-icons">
-            <img src="https://via.placeholder.com/40">
-            <div>10 days Replacement</div>
-          </div>
-          <div class="feature-icons">
-            <img src="https://via.placeholder.com/40">
-            <div>10 year warranty</div>
-          </div>
-          <div class="feature-icons">
-            <img src="https://via.placeholder.com/40">
-            <div>Top Brand</div>
-          </div>
-          <div class="feature-icons">
-            <img src="https://via.placeholder.com/40">
-            <div>Secure Transaction</div>
-          </div>
-        </div>
-      </div>
+      <!-- Navbar Row -->
+      <nav class="navbar navbar-expand-lg pt-0 pb-2">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link" href="About Us page.html">About Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sanitaryware
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="waterbasins.html">Washbasins</a></li>
+              <li><a class="dropdown-item" href="faucet.html">Water Closets</a></li>
+              <li><a class="dropdown-item" href="showers.html">Showers</a></li>
+              <li><a class="dropdown-item" href="bathtub.html">Bathtubs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="modular kitchen.html">Modular Kitchen</a></li>
+          <li class="nav-item"><a class="nav-link" href="HardwareProducts.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact Us</a></li>
+          <li><button class="btn cart-btn"style="background-color: white;"><a href="Cartpage.html"><img src="./Assets/icons used/Vector.svg"> Cart</a></button></li>
+        </ul>
+      </nav>
     </div>
   </div>
-  <div class="about-item-section">
-    <h2 class="about-item-title">About this item</h2>
-    <p class="about-item-description">
-        Happy Homes Brings, Dent-resistant High Grade stainless steel 1.2 mm thick for superior
-        strength and durability. Rear-Set Drain: Standard drain opening provides more usable space in
-        the sink.
-    </p>
-    <p class="about-item-feature">
-        <strong>COMMERCIAL GRADE SATIN FINISH:</strong> Resilient and easy to clean, corrosion and rust-resistant;
-        matches most kitchen appliances.
-    </p>
-    <p class="about-item-feature">
-        <strong>COLLAR Thickness:</strong> 2 mm || <strong>BOWL Thickness:</strong> 1.2 mm, Finish: SATIN
-    </p>
-    <p class="about-item-feature">
-        <strong>BOX Includes:</strong> KITCHEN SINK || SQUARE WASTE COUPLING || PVC WASTE PIPE || METAL FRUIT
-        BASKET
-    </p>
-    <p class="about-item-feature">
-        <strong>QUIETEST SINK:</strong> Noise Defend soundproofing technology with non-toxic SoundGuard
-        undercoating and extra-thick pads covering over 80% of the sink.
-    </p>
-    <p class="about-item-description">
-        Engineered for complete drainage, with a gently sloped bottom that prevents standing water
-        inside the bowl. Optimized angle keeps glassware from falling when placed in the sink.
-    </p>
 </div>
-<div class="top-reviews-section">
-    <h2 class="top-reviews-title">Top reviews from India</h2>
-    <div class="review-card">
-      <div class="reviewer-name">Abhik chattopadhyay</div>
-      <div class="review-stars">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-      </div>
-      <div class="review-date">Reviewed in India on 1 February 2025</div>
-      <div class="review-style">Style Name: Hydra</div>
-      <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
-    </div>
-    <div class="review-card">
-      <div class="reviewer-name">Sandeep</div>
-      <div class="review-stars">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-      </div>
-      <div class="review-date">Reviewed in India on 1 February 2025</div>
-      <div class="review-style">Style Name: Hydra</div>
-      <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
-    </div>
-    <div class="review-card">
-      <div class="reviewer-name">Adil Ansari</div>
-      <div class="review-stars">
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-        <span class="star">★</span>
-      </div>
-      <div class="review-date">Reviewed in India on 1 February 2025</div>
-      <div class="review-style">Style Name: Hydra</div>
-      <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
-    </div>
-  </div>
- 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+  <div class="container my-5 w-100">
+    <!-- Product Box -->
+    <div class="product-box p-3">
+      <img src="./Assets/hardware website images/BS1.png" alt="Product Image" class="product-img" />
+      <div class="flex-grow-1">
+        <div class="mx-auto" style="max-width: 450px;">
+
+          <!-- Product Title -->
+          <div class="product-title mb-3">
+            DecorDepo Stylish curtain hooks/Curtain knobs/Rod Rail Bracket for Home Antique Gold Finish(4P,Antique)
+          </div>
+
+          <!-- Price + Quantity -->
+          <div class="d-flex align-items-center mb-3">
+            <span class="price me-3">₹ 476</span>
+            <span class="price-info me-4">(Incl of all taxes)</span>
+            <select class="form-select" style="width: 100px; background-color: #818080; margin-left: auto;">
+              <option selected>QTY:1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+
+          <!-- Delivery Box -->
+          <div class="delivery-box mb-3">
+            <p><b>Delivery</b></p>
+            <div class="input-group mb-2">
+              <input type="text" class="form-control" placeholder="Enter your location" style="max-width: 200px;">
+              <button class="btn btn-warning text-white">Check</button>
+            </div>
+            <p class="mb-1">Delivery by Mar 25, Tue by 9.00 A.M</p>
+            <div class="action-buttons d-flex gap-2 mt-2">
+              <button class="btn btn-outline-dark"style="background-color: #818080;"><img src="./Assets/icons used/Vector.svg">Add to Cart</button>
+              <button class="btn buy-btn"><img src="./Assets/icons used/icon-park-solid_buy.svg">Buy Now</button>
+            </div>
+          </div>
+
+          <!-- Feature Icons -->
+          <div class="d-flex justify-content-between text-center mt-3 flex-wrap">
+            <div class="feature-icons" style="width: 85px;">
+              <img src="./Assets/hardware website images/1.png" alt="icon">
+              <div class="mt-1">Pay on delivery</div>
+            </div>
+            <div class="feature-icons" style="width: 85px;">
+              <img src="./Assets/hardware website images/2.png" alt="icon">
+              <div class="mt-1">10 days Replacement</div>
+            </div>
+            <div class="feature-icons" style="width: 85px;">
+              <img src="./Assets/hardware website images/3.png" alt="icon">
+              <div class="mt-1">10 year warranty</div>
+            </div>
+            <div class="feature-icons" style="width: 85px;">
+              <img src="./Assets/hardware website images/4.png" alt="icon">
+              <div class="mt-1">Top Brand</div>
+            </div>
+            <div class="feature-icons" style="width: 85px;">
+              <img src="./Assets/hardware website images/5.png" alt="icon">
+              <div class="mt-1">Secure Transaction</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+     <!-- Image Row + Description BELOW Product Box -->
+     <div class="mt-5">
+        <!-- Image Row -->
+        <div class="image-row d-flex justify-content-center mb-3">
+          <img src="./Assets/hardware website images/BS1.png" alt="Size Info" />
+          <img src="./Assets/hardware website images/ch2.png" alt="Drainage Design 1" />
+          <img src="./Assets/hardware website images/ch2.png" alt="Drainage Design 2" />
+          <img src="./Assets/hardware website images/ch4.png" alt="Sink Full Set" />
+        </div>
+  
+        <div class="about-item-section">
+          <h2 class="about-item-title">About this item</h2>
+          <p class="about-item-description">
+              Happy Homes Brings, Dent-resistant High Grade stainless steel 1.2 mm thick for superior
+              strength and durability. Rear-Set Drain: Standard drain opening provides more usable space in
+              the sink.
+          </p>
+          <p class="about-item-feature">
+              <strong>COMMERCIAL GRADE SATIN FINISH:</strong> Resilient and easy to clean, corrosion and rust-resistant;
+              matches most kitchen appliances.
+          </p>
+          <p class="about-item-feature">
+              <strong>COLLAR Thickness:</strong> 2 mm || <strong>BOWL Thickness:</strong> 1.2 mm, Finish: SATIN
+          </p>
+          <p class="about-item-feature">
+              <strong>BOX Includes:</strong> KITCHEN SINK || SQUARE WASTE COUPLING || PVC WASTE PIPE || METAL FRUIT
+              BASKET
+          </p>
+          <p class="about-item-feature">
+              <strong>QUIETEST SINK:</strong> Noise Defend soundproofing technology with non-toxic SoundGuard
+              undercoating and extra-thick pads covering over 80% of the sink.
+          </p>
+          <p class="about-item-description">
+              Engineered for complete drainage, with a gently sloped bottom that prevents standing water
+              inside the bowl. Optimized angle keeps glassware from falling when placed in the sink.
+          </p>
+      </div>
+      <div class="top-reviews-section">
+          <h2 class="top-reviews-title">Top reviews from India</h2>
+          <div class="review-card">
+            <div class="reviewer-name">Abhik chattopadhyay</div>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <div class="review-date">Reviewed in India on 1 February 2025</div>
+            <div class="review-style">Style Name: Hydra</div>
+            <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-name">Sandeep</div>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <div class="review-date">Reviewed in India on 1 February 2025</div>
+            <div class="review-style">Style Name: Hydra</div>
+            <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
+          </div>
+          <div class="review-card">
+            <div class="reviewer-name">Adil Ansari</div>
+            <div class="review-stars">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <div class="review-date">Reviewed in India on 1 February 2025</div>
+            <div class="review-style">Style Name: Hydra</div>
+            <div class="review-content">A very cute little basin is it. And it perfectly fits my space. In th image that I've attached the product is just the basin and nothing else. Everything else was bought separately.</div>
+          </div>
+        </div>
+        
+  <footer class="footer w-100">
+    
+      <div class="row text-start align-items-start">
+        <div class="col-md-2 footer-logo text-center text-md-start mb-4">
+          <img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" />
+          <span>PK Hardwares<br>JEWELLERY SHOP</span>
+        </div>
+  
+        <div class="col-md-3 mb-3">
+          <h6>Contact Address 1</h6>
+          <p>No: 32, Ohm sakthi nagar<br>Guduvancherry<br>Chennai 603202</p>
+        </div>
+  
+        <div class="col-md-3 mb-3">
+          <h6>Contact Address 2</h6>
+          <p>No 82, check post<br>Velacherry<br>Chennai 606002</p>
+        </div>
+  
+        <div class="col-md-2 mb-3">
+          <h6>Information</h6>
+          <p><a href="#">Terms & Conditions</a></p>
+          <p><a href="#">Return Policy</a></p>
+          <p><a href="#">Cancellation Policy</a></p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Shipping & Delivery</a></p>
+          <p><a href="Exchangepolicy.html">Exchange Policy</a></p>
+          <p><a href="#">Disclaimer</a></p>
+        </div>
+  
+        <div class="col-md-2 mb-3">
+          <h6>My Account</h6>
+          <p><a href="#">Login</a></p>
+          <p><a href="#">Order History</a></p>
+          <p><a href="#">My Wishlist</a></p>
+          <h6 class="mt-3">Follow Us on</h6>
+          <div class="social-icons">
+            <a href="#" target="_blank"><img src="./Assets/icons used/skill-icons_instagram.svg" height="30px"width="30px"></a>
+            <a href="#" target="_blank"><img src="./Assets/icons used/logos_facebook.svg" height="30px"width="30px"></a>
+            <a href="#" target="_blank"><img src="./Assets/icons used/logos_youtube-icon.svg" height="30px"width="30px"></a>
+            <a href="#" target="_blank"><img src="./Assets/icons used/skill-icons_twitter.svg" height="30px"width="30px"></a>
+        </div>
+        </div>
+      </div>
+  
+      <div class="email">info@PKhardwares.com</div>
+      <div class="copyright">© 2025 PK Hardwares - V.1.0 - All rights reserved</div>
+    
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
 </html>

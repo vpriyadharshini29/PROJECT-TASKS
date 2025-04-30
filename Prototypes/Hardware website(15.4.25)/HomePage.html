@@ -7,16 +7,23 @@
   
  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
     }
 
-    .top-bar {
+    a{
+      text-decoration: none;
+      color: #000;
+    }.top-bar {
       background-color: #FFAE42;
       padding: 15px 30px;
     }
@@ -270,7 +277,168 @@
         .social-icons .fa-facebook-f { color: #3b5998; }
         .social-icons .fa-twitter { color: #1da1f2; }
         .social-icons .fa-youtube { color: #ff0000; }
+        .btn-custom {
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
 
+    /* Modal overlay hidden by default */
+    .modal-login {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* Show modal when targeted */
+    #loginModal:target {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Modal content box */
+    .login-box {
+      background: white;
+      border: 2px solid #FFAE42;
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .orange-btn {
+      background-color: #FFAE42;
+      border: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .orange-btn:hover {
+      background-color: #FFAE42;
+      color: black;
+    }
+
+    .form-control {
+      border: 1px solid #FFAE42;
+      border-radius: 10px;
+    }
+
+    .register-link {
+      color: #FFAE42;
+      text-decoration: none;
+    }
+
+    .register-link:hover {
+      color: #FFAE42;
+    }
+
+    .forget-password {
+      color: black;
+      text-decoration: none;
+    }
+
+    .forget-password:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+     left: 20px;
+     font-size: 24px;
+     color: rgb(6, 1, 1); /* or contrast color */
+
+      text-decoration: none;
+      z-index: 1000;
+    }
+      /* Generic Modal Styles */
+      .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .orange-btn {
+      background-color: #FFAE42;
+      border: none;
+      padding: 10px 20px;
+      color: black;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .orange-btn:hover {
+      background-color: #FFAE42;
+    }
+    .otp-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0;
+    }
+    .otp-inputs input {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border: 1px solid #FFAE42;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .resend-link {
+      display: block;
+      margin-top: 10px;
+      color: #FFAE42;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+
+    /* Layering */
+    #loginModal {
+      z-index: 1000;
+    }
+
+    #forgotModal {
+      z-index: 1001;
+    }
+    #otpModal { z-index: 1002; }
     @media (max-width: 768px) {
   .top-bar, .search-bar input, .btn-custom, .cart-btn {
     width: 100%;
@@ -352,11 +520,11 @@
 
   
  <!-- Header Layout -->
-<div class="bg-warning px-4 pt-3 pb-1">
+<div class="bpx-4 pt-3 pb-1" style="background-color: #FFAE42;">
   <div class="container d-flex flex-wrap">
     <!-- Logo (left column) -->
     <div class="logo-container me-4">
-      <img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" width="160px">
+      <a href="HomePage.html"><img src="./Assets/hardware website images/PK_Hardware logo.png" alt="Logo" width="160px"></a>
     </div>
 
     <!-- Search bar and login (right column) -->
@@ -371,28 +539,28 @@
             </button>
           </div>
         </div>
-        <button class="btn btn-custom">Login / Sign Up</button>
+        <a href="#loginModal" class="btn btn-custom" style="background-color: white;">Login / Sign Up</a>
       </div>
 
       <!-- Navbar Row -->
       <nav class="navbar navbar-expand-lg pt-0 pb-2">
         <ul class="navbar-nav gap-4">
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="About Us page.html">About Us</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Sanitaryware
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Washbasins</a></li>
-              <li><a class="dropdown-item" href="#">Water Closets</a></li>
-              <li><a class="dropdown-item" href="#">Urinals</a></li>
-              <li><a class="dropdown-item" href="#">Bathroom Accessories</a></li>
+              <li><a class="dropdown-item" href="waterbasins.html">Washbasins</a></li>
+              <li><a class="dropdown-item" href="faucet.html">Water Closets</a></li>
+              <li><a class="dropdown-item" href="showers.html">Showers</a></li>
+              <li><a class="dropdown-item" href="bathtub.html">Bathtubs</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#">Modular Kitchen</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Hardware</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-          <li><button class="btn cart-btn"><img src="./Assets/icons used/Vector.svg"> Cart</button></li>
+          <li class="nav-item"><a class="nav-link" href="modular kitchen.html">Modular Kitchen</a></li>
+          <li class="nav-item"><a class="nav-link" href="HardwareProducts.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact Us</a></li>
+          <li><button class="btn cart-btn"style="background-color: white;"><a href="Cartpage.html"><img src="./Assets/icons used/Vector.svg"> Cart</a></button></li>
         </ul>
       </nav>
     </div>
@@ -449,7 +617,7 @@
     <div class="row g-4">
       <div class="col-md-3 col-sm-6">
         <div class="product-card">
-          <img src="./Assets/hardware website images/BS1.png" alt="Roset Handle">
+         <a href="curtainhookProduct.html"> <img src="./Assets/hardware website images/BS1.png" alt="Roset Handle"></a>
           <h3>Roset Handle Altas Antique Forme</h3>
           <p class="stars">✩✩✩✩<span style="color: grey;">✩</span> </p>
           <p class="stars">contact for price</p>
@@ -596,9 +764,64 @@
 </div>
 
 
-
-   
+<div id="loginModal" class="modal-login">
+  <a href="#" class="close-btn">&times;</a> <!-- Close button -->
+  <div class="login-box">
+    <h5 class="text-center mb-3">Login to your Account</h5>
+    <!-- <img src="./Assets/icons used/material-symbols_close-rounded.svg"class="close-btn"> -->
+    <form>
+      <div class="mb-3">
+        <input type="text" class="form-control" placeholder="9791367461" value="9791367461">
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" placeholder="Password" value="********">
+      </div>
+      <div class="d-flex justify-content-between mb-3">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe">
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <a href="#forgotModal">Forget Password?</a>
+      </div>
+      <button  class="btn orange-btn w-100"><a href="#">Login</a> </button>
+      <div class="text-center mt-3">
+        <span>Don't have an account? </span>
+        <a href="create an account.html" class="register-link">Register Now</a>
+      </div>
+    </form>
+  </div>
+</div>
   
+<div id="forgotModal" class="modal">
+  <div class="modal-content">
+    <!-- Go back to login modal on close -->
+    <a href="#loginModal" class="close-btn">&times;</a>
+    <h5>Forgot Password</h5>
+    <form>
+      <label>Enter your phone number to recover your password</label>
+      <input type="text" class="form-control" placeholder="9874563210" style="width:100%; margin-top:10px;">
+      <a href="#otpModal" class="orange-btn" style="display: inline-block; width: 100%; text-align: center;">Send OTP</a>
+    </form>
+  </div>
+</div>
+<div id="otpModal" class="modal">
+  <div class="modal-content">
+    <a href="#forgotModal" class="close-btn">&times;</a>
+    <h5>Enter OTP Sent to 9874651230</h5>
+    <form>
+      <div class="otp-inputs">
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+        <input type="text" maxlength="1" pattern="[0-9]" required>
+      </div>
+      <button class="orange-btn" style="width: 100%;">Verify OTP</button>
+      <a href="#otpModal" class="resend-link">Resend OTP</a>
+    </form>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container">
@@ -625,7 +848,7 @@
         <p><a href="#">Cancellation Policy</a></p>
         <p><a href="#">Privacy Policy</a></p>
         <p><a href="#">Shipping & Delivery</a></p>
-        <p><a href="#">Exchange Policy</a></p>
+        <p><a href="Exchangepolicy.html">Exchange Policy</a></p>
         <p><a href="#">Disclaimer</a></p>
       </div>
 

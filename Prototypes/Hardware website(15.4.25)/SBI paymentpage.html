@@ -16,13 +16,13 @@
    box-sizing: border-box;
    font-family: 'Roboto', sans-serif;
   }
-  a{
-    text-decoration: none;
-    color: #000;
-  }
   html, body {
   width: 100%;
   overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+  color: #000;
 }
 
   .top-bar {
@@ -88,7 +88,7 @@
     font-size: 12px;
     padding: 5px 10px;
     border-radius: 0 0 12px 12px;
-    color: #f9a825;
+    color: #FFAE42;
   }
 
   .order-total {
@@ -97,7 +97,7 @@
   }
 
   .text-orange {
-    color: #f9a825;
+    color: #FFAE42;
     font-weight: 500;
   }
 
@@ -329,6 +329,7 @@
     </div>
   </div>
 </div>
+
 <div class="container my-5">
   <div class="row g-4">
 
@@ -349,7 +350,7 @@
 
         <div class="card-payment mb-3">
           <div class="form-check d-flex align-items-center">
-            <input class="form-check-input me-2" type="radio" checked>
+            <input class="form-check-input me-2" type="radio" >
             <label class="form-check-label d-flex align-items-center w-100">
               <span class="fw-bold me-2">HDFC BANK CREDIT CARD ending in 5274</span>
               <img src="./Assets/icons used/image 8.png" alt="MasterCard" class="me-2">
@@ -362,11 +363,20 @@
             <p class="mt-2 mb-0 text-muted">CVV not needed <a href="#" class="text-decoration-none">Why?</a></p>
           </div>
         </div>
+        <div class="form-check d-flex align-items-center">
+            <input class="form-check-input me-2" type="radio" checked>
+            <label class="form-check-label d-flex align-items-center w-100">
+              <span class="fw-bold me-2">SBI CREDIT CARD ending in 5872</span>
+              <img src="./Assets/icons used/image 8.png" alt="MasterCard" class="me-2">
+              <span>Praveen</span>
+            </label>
+          </div>
+          <p>EMI available</p>
 
         <div class="form-check">
           <input class="form-check-input me-2" type="radio">
           <label class="form-check-label fw-bold">
-            <a href="AddCardPage.html">ADD NEW CARD</a> 
+            ADD NEW CARD
           </label>
         </div>
       </div>
@@ -431,16 +441,10 @@
       </label>
       <select class="form-select mt-2" aria-label="Select Bank">
         <option selected style="background-color: grey;">Choose an Option</option>
-        <option value="sbi">state Bank of India </a></option>
+        <option value="sbi">State Bank of India</option>
         <option value="hdfc">HDFC Bank</option>
         <option value="icici">ICICI Bank</option>
       </select>
-    </div>
-    <div class="payment-option form-check">
-      <input class="form-check-input" type="radio" name="paymentOption" id="upiApps">
-      <label class="form-check-label payment-label" for="upiApps">
-        <a href="SBI paymentpage.html">SBI payment</a>
-      </label>
     </div>
 
     <div class="payment-option form-check">
