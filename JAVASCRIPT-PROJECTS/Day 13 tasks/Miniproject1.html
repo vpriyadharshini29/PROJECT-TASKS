@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Product Catalog</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .product { border: 1px solid #ccc; padding: 10px; margin: 10px; width: 200px; }
+    .products { display: flex; flex-wrap: wrap; gap: 10px; }
+    #details { margin-top: 30px; padding: 10px; border: 1px solid #888; background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h1>Product Catalog</h1>
+
+  <label>
+    <input type="checkbox" id="priceFilter">
+    Show products below $500
+  </label>
+
+  <label for="sortSelect">Sort by:</label>
+  <select id="sortSelect">
+    <option value="none">None</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+  </select>
+
+  <div class="products" id="productContainer"></div>
+
+  <div id="details"></div>
+
+  <script src="Miniproject1.js"></script>
+</body>
+</html>

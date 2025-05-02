@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch & AJAX Mini Projects</title>
+  <style>
+    section { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+    img { max-width: 100px; }
+  </style>
+</head>
+<body>
+  <h1>Fetch & AJAX Mini Projects</h1>
+
+  <section>
+    <h2>1. Random Joke</h2>
+    <button onclick="getJoke()">Get Joke</button>
+    <p id="jokeOutput"></p>
+  </section>
+
+  <section>
+    <h2>2. Posts List</h2>
+    <ul id="postList"></ul>
+  </section>
+
+  <section>
+    <h2>3. Submit Form</h2>
+    <form id="postForm">
+      <input type="text" name="title" placeholder="Title" required>
+      <input type="text" name="body" placeholder="Body" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formResult"></p>
+  </section>
+
+  <section>
+    <h2>4. Weather (London)</h2>
+    <p id="weatherOutput"></p>
+  </section>
+
+  <section>
+    <h2>5. GitHub User</h2>
+    <button onclick="getGitHubUser()">Fetch GitHub Profile</button>
+    <div id="githubProfile"></div>
+  </section>
+
+  <section>
+    <h2>6. Image Gallery</h2>
+    <div id="gallery"></div>
+  </section>
+
+  <section>
+    <h2>7. Pagination</h2>
+    <button onclick="loadPage()">Load More Posts</button>
+    <div id="paginatedPosts"></div>
+  </section>
+
+  <section>
+    <h2>8. AJAX Comments</h2>
+    <button onclick="loadComments()">Load Comments</button>
+    <div id="comments"></div>
+  </section>
+
+  <section>
+    <h2>9. Currency Exchange Rate (USD to EUR)</h2>
+    <p id="exchangeRate"></p>
+  </section>
+
+  <section>
+    <h2>10. Load Data on Button Click</h2>
+    <button onclick="loadUser()">Load User</button>
+    <p id="userOutput"></p>
+  </section>
+
+  <section>
+    <h2>11. API Error Handling</h2>
+    <button onclick="handleError()">Test Error</button>
+    <p id="errorOutput"></p>
+  </section>
+
+  <section>
+    <h2>12. Search Posts</h2>
+    <input type="text" id="searchBox" placeholder="Search posts...">
+    <div id="searchResults"></div>
+  </section>
+
+  <script src="./Day 14 tasks.js"></script>
+</body>
+</html>
