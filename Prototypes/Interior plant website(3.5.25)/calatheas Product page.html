@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calatheas Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+    body {
+     
+      background-color: #f8f9fa;
+      color: #000;
+    }
+    .bg-primary-green {
+  background-color: #0D4F36;
+}
+    .navbar .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .navbar .nav-link.active {
+    text-decoration: underline wavy 2px;
+    text-underline-offset: 4px;
+    color: #F2F2F2;
+  }
+    .header {
+      background-color: #DAF8EC;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      
+      border-top: 5px solid #0D4F36;
+    }
+    .product-image-main {
+      border-radius: 10px;
+      object-fit: cover;
+      width: 100%;
+      height: 450px;
+    }
+
+    .thumbnail-img {
+      width: 100%;
+      height: 170px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+
+    .quantity-box button {
+      font-weight: 800;
+     color: #0D4F36;
+      border: none;
+      width: 32px;
+      height: 32px;
+      font-size: 20px;
+      border-radius: 6px;
+    }
+
+    .quantity-box span {
+        background-color: #0D4F36;
+        color: #fff;
+      font-size: 18px;
+      min-width: 40px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .btn-green {
+      background-color: #0D4F36;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn-green:hover {
+      background-color: #0b3f2b;
+    }
+
+    .size-option input {
+      margin-right: 5px;
+    }
+
+    .shipping-info i {
+      margin-right: 6px;
+    }
+
+    .info-link {
+      color: rgb(3, 214, 3);
+      text-decoration: underline;
+    }
+   .description h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+      .description  p {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+      .description  ul, ol {
+            font-size: 30px;
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+       .description ul li, ol li {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .bold {
+
+            font-weight: bold;
+        }
+    .plant-card {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .plant-card img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .plant-card h6 {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .plant-card p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .service-box {
+      background-color: #DAF8EC;
+      border-radius: 16px;
+      padding: 40px 20px;
+      margin: 50px auto;
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+
+    .service-title {
+      font-weight: 600;
+      color: #0D4F36;
+      font-size: 18px;
+    }
+
+    .service-text {
+      color: #131313;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+    .footer {
+    background-color: #0D4F36;
+    color: #F2F2F2;
+    padding: 50px 0 20px;
+    font-size: 20px;
+  }
+
+  .footer h5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #F2F2F2;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+    font-size:20px;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer .social-icons a {
+    color: #F2F2F2;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s;
+  }
+
+  .footer .social-icons a:hover {
+    color: #DAF8EC;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #F2F2F2;
+    margin-top: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .footer .middle p {
+    max-width: 400px;
+    margin: 0 auto 20px;
+    font-size: 20px;
+  }
+  </style>
+</head>
+<body>
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary-green px-4 ">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
+      <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
+      <!-- <span class="ms-2">Indo-Green</span> -->
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="d-flex gap-3 me-8">
+      <i class="bi bi-cart fs-5 text-white"></i>
+      <i class="bi bi-heart fs-5 text-white"></i>
+      <i class="bi bi-person fs-5 text-white"></i>
+    </div>
+  </nav>
+  <div class="header">
+    Indoor plants
+  </div>
+  <div class="container py-5">
+    <div class="row g-5 align-items-start">
+
+      <!-- Left Column: Images -->
+      <div class="col-md-6">
+        <img src="./Assets/interior plant website/indoor -image section 1.png" alt="Main Plant" class="product-image-main mb-3">
+        <div class="row g-2">
+          <div class="col-4">
+            <img src="./Assets/interior plant website/indoor -image section 1.png" class="thumbnail-img" alt="Thumb1">
+          </div>
+          <div class="col-4">
+            <img src="./Assets/interior plant website/indoor -image section 2.png" class="thumbnail-img" alt="Thumb2">
+          </div>
+          <div class="col-4">
+            <img src="./Assets/interior plant website/indoor -image section 3.png" class="thumbnail-img" alt="Thumb3">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Info -->
+      <div class="col-md-6 fw-bold" style="line-height: 2.5rem;">
+        <h2>Calatheas</h2>
+        <p class="text-muted">Each of our products are hand-selected for its unique aesthetic appearance and ability to enhance your home....</p>
+        <h4>₹ 800</h4>
+        <p class="fw-bold">TAX INCLUDED | SHIPPING CALCULATED AT CHECKOUT</p>
+
+        <!-- Quantity Selector -->
+        <div class="quantity-box d-flex align-items-center my-3">
+          <button id="decrease">-</button>
+          <span id="quantity">1</span>
+          <button id="increase">+</button>
+        </div>
+
+        <!-- Sizes -->
+        <p class="fw-bold mb-1">Sizes: <span class="fw-normal">S</span></p>
+        <div class="mb-3">
+          <label class="me-3"><input type="checkbox" /> S</label>
+          <label class="me-3"><input type="checkbox" /> M</label>
+          <label><input type="checkbox" /> L</label>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button class=" w-50 mb-4 add-btn">Add to Cart</button>
+
+        <!-- Delivery Info -->
+        <div class="shipping-info">
+          <p><i class="bi bi-truck"></i> Free shipping on all orders over 450 rupees</p>
+          <p><i class="bi bi-clock"></i> Delivery in 3–4 working days shipping & return</p>
+          <p><a href="#" class="info-link">Free delivery and return policies</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container description">
+    <h1>Description</h1>
+    <p>
+        Plants that require a low amount of light and water to thrive are typically known as indoor plants. Good indoor plants will tolerate lower light and humidity. Also, they will be less likely to deal with pests. Plus, they usually do not grow too much (you wouldn’t want an indoor plant to grow at a rapid rate). The best indoor plants include the following. All plants can act as air purifiers but these plants are more beneficial than others. Succulents and cacti need continuous, daily sunlight. Plants with foliage need roughly 8 hours of light per day. The amount of light depends on the plants you are growing, so we suggest doing research on the specific plants you are growing.
+    </p>
+    <ul>
+        <li>Red-Edged Dracaena</li>
+        <li>Weeping Fig</li>
+        <li>Bamboo Palm</li>
+    </ul>
+    <p class="bold">
+        More information on plants that improve air quality
+    </p>
+    <ol>
+        <li>
+            <span class="bold">A good root system</span> – This is incredibly important when choosing a plant. It’s not practical to pull a plant out of its pot to check its roots but if it is a small plants this can be done. Healthy roots are thick and light in color.
+        </li>
+        <li>
+            <span class="bold">Foliage</span> – Here’s a good rule of thumb when it comes to plant foliage: if you can’t see through it, the foliage is thick enough.
+        </li>
+        <li>
+            <span class="bold">Check for disease</span> – Some signs of a plant with pests or disease are: white dots, sticky residue on the leaves and a bad odor.
+        </li>
+    </ol>
+</div>
+  <div class="container py-5">
+    <div class="row justify-content-center g-4">
+      <!-- Card 1 -->
+      <div class="col-6 col-md-3">
+        <div class="plant-card">
+          <img src="./Assets/interior plant website/home all plants 1.png" alt="Commodo Dolor" />
+          <h6>Commodo Dolor</h6>
+          <p>₹ 300</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-6 col-md-3">
+        <div class="plant-card">
+          <img src="./Assets/interior plant website/home all plants 2.png" alt="Sansevieria" />
+          <h6>Sansevieria</h6>
+          <p>₹ 270</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-6 col-md-3">
+        <div class="plant-card">
+          <img src="./Assets/interior plant website/home all plants 3.png" alt="Epipremnum Aureum" />
+          <h6>Epipremnum Aureum</h6>
+          <p>₹ 350</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-6 col-md-3">
+        <div class="plant-card">
+          <img src="./Assets/interior plant website/home all plants 4.png" alt="Ficus Lyrata" />
+          <h6>Ficus Lyrata</h6>
+          <p>₹ 140</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row text-center service-box">
+      
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/delivery icon.png">
+        </div>
+        <div class="service-title">Free Delivery</div>
+        <div class="service-text">For all orders<br>above 545 rupees</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home customer care icon.png">
+        </div>
+        <div class="service-title">Customer Care</div>
+        <div class="service-text">Free care tips for<br>every purchase</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home easy return icon.png">
+        </div>
+        <div class="service-title">Easy Return</div>
+        <div class="service-text">Return window is<br>activated till 30 days</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home payment icon.png">
+        </div>
+        <div class="service-title">Secure Payment</div>
+        <div class="service-text">Confidence on all<br>your devices</div>
+      </div>
+    </div>
+    </div>
+     <!-- Footer Section -->
+<footer class="footer text-center text-md-start">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        
+        <!-- Customer Care -->
+        <div class="col-md-4 mb-4">
+          <h5>Customer Care</h5>
+          <p>No.5, South Fairlands,<br>Yercaud Main Road, Salem,<br>Tamilnadu</p>
+          <p>+91 90000 91010<br>+91 98547 54873</p>
+          <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
+        </div>
+  
+        <!-- Center -->
+        <div class="col-md-4 mb-4 middle text-center">
+          <div class="footer-logo">
+            <img src="./Assets/interior plant website/logo.png" alt="Indo-Green Logo" />
+          </div>
+          <p>
+            The seed of gardening is a love that never dies. but
+            it never grows to the enduring happiness that the
+            love of gardening provides the nature.
+          </p>
+          <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
+            <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
+            
+          </div>
+        </div>
+  
+        <!-- Right Info -->
+        <div class="col-md-4 mb-4 text-md-end ms-md-auto">
+            <p>Reg: S1203014054</p>
+          <p>TIN: 109201GST1204</p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Terms of Use</a></p>
+        </div>
+      </div>
+  
+      <!-- Bottom Line -->
+      <div class="footer-bottom mt-4">
+        Indo-Green © 2022. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  
+  
+
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="./Assets/js/productpage.js">
+   
+  </script>
+</body>
+</html>

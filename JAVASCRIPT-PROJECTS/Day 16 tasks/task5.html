@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Loan EMI Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { margin: 5px 0; padding: 5px; }
+    button { padding: 8px 12px; }
+    #result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Loan EMI Calculator</h1>
+  
+  <label>Loan Amount:</label><br />
+  <input type="number" id="amount" placeholder="Enter amount" /><br />
+
+  <label>Annual Interest Rate (%):</label><br />
+  <input type="number" id="interest" placeholder="Enter interest" /><br />
+
+  <label>Loan Term (Years):</label><br />
+  <input type="number" id="years" placeholder="Enter years" /><br />
+
+  <button onclick="calculateEMI()">Calculate EMI</button>
+
+  <div id="result"></div>
+
+  <script src="./task5.js"></script>
+</body>
+</html>

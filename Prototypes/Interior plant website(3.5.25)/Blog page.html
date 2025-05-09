@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Featured Article Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+      background-color: #f2f2f2;
+      
+      font-family: 'Quicksand', sans-serif;
+     
+    }
+    .bg-primary-green {
+  background-color: #0D4F36;
+}
+    .navbar .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .navbar .nav-link.active {
+    text-decoration: underline wavy 2px;
+    text-underline-offset: 4px;
+    color: #F2F2F2;
+  }
+    .header {
+      background-color: #DAF8EC;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      
+      border-top: 5px solid #0D4F36;
+    }
+
+    .article-card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 22px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .article-image {
+      position: relative;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      overflow: hidden;
+      height: 450px;
+      width: 100%;
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #eaf3eb;
+      color: #0a472e;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: 25px;
+    }
+
+    .article-text {
+      padding: 20px;
+    }
+
+    .article-text h5 {
+      font-weight: 700;
+    }
+
+    .article-text p {
+      margin: 0;
+      color: #444;
+    }
+
+    .prefix-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-bottom: 3px solid #000;
+      display: inline-block;
+    }
+
+    .prefix-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .prefix-list li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: #111;
+    }
+    .blog-section h2 {
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 50px;
+    }
+
+    .blog-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #f2f2f2;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .blog-content p {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .blog-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #0D4F36;
+    }
+
+    .blog-button {
+      background-color: #0D4F36;
+      color: white;
+      font-weight: 700;
+      padding: 8px 2px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: auto;
+      width: 150px;
+      text-align: center;
+    }
+
+    .blog-button:hover {
+      background-color: #0D4F36;
+      color: #fff;
+    }
+    .service-box {
+      background-color: #DAF8EC;
+      border-radius: 16px;
+      padding: 40px 20px;
+      margin: 50px auto;
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+
+    .service-title {
+      font-weight: 600;
+      color: #0D4F36;
+      font-size: 18px;
+    }
+
+    .service-text {
+      color: #131313;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .footer {
+    background-color: #0D4F36;
+    color: #F2F2F2;
+    padding: 50px 0 20px;
+    font-size: 20px;
+  }
+
+  .footer h5 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .footer p,
+  .footer a {
+    color: #F2F2F2;
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+    font-size:20px;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .footer .social-icons a {
+    color: #F2F2F2;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: color 0.3s;
+  }
+
+  .footer .social-icons a:hover {
+    color: #DAF8EC;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #F2F2F2;
+    margin-top: 30px;
+    padding-top: 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .footer .middle p {
+    max-width: 400px;
+    margin: 0 auto 20px;
+    font-size: 20px;
+  }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary-green px-4 ">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
+      <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
+      <!-- <span class="ms-2">Indo-Green</span> -->
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="d-flex gap-3 me-8">
+      <i class="bi bi-cart fs-5 text-white"></i>
+      <i class="bi bi-heart fs-5 text-white"></i>
+      <i class="bi bi-person fs-5 text-white"></i>
+    </div>
+  </nav>
+  <div class="header">
+    Blog
+  </div>
+
+
+<div class="container py-5">
+  <div class="row g-5 align-items-start">
+    <!-- Featured Article Card -->
+    <div class="col-lg-8">
+      <div class="article-card">
+        <div class="article-image">
+          <img src="./Assets/interior plant website/home blog 1.png" alt="Indoor Plants" class="img-fluid w-100" />
+          <div class="featured-badge">FEATURED ARTICLE</div>
+        </div>
+        <div class="article-text">
+          <small class="text-muted">08/04/2025</small>
+          <h5 class="mt-2">The Ultimate Guide to Indoor Plants</h5>
+          <p>
+            “Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving...”
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Prefix -->
+    <div class="col-lg-4">
+      <div>
+        <span class="prefix-title">Quick Prefix in this Article:</span>
+        <ul class="prefix-list mt-3">
+          <li>1. What are Indoor Plants?</li>
+          <li>2. How do you plant indoor plants?</li>
+          <li>3. How much light do indoor plants need?</li>
+          <li>4. What qualities make for a good indoor plant?</li>
+          <li>5. Which indoor plants are easy to take care of?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="blog-section">
+    <div class="container">
+     
+      <div class="row g-4">
+        
+        <!-- Blog Card 1 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/blog 1.png" alt="Plant Care" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">08/04/2025</p>
+              <div class="blog-title">Plant Care Tips & Guides</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Blog Card 2 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/blog 2.png" alt="Bringing the Outdoors In" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">22/03/2025</p>
+              <div class="blog-title">Bringing the Outdoors In</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Blog Card 3 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/blog 3.png" alt="Indoor Plants & Mental Wellness" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">15/03/2025</p>
+              <div class="blog-title">Indoor Plants & Mental Wellness</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+          <!-- Blog Card 1 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <img src="./Assets/interior plant website/blog 4.png" alt="Plant Care" />
+              <div class="blog-content">
+                <p class="text-muted mb-1">08/04/2025</p>
+                <div class="blog-title">Plant Care Tips & Guides</div>
+                <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+                <a href="#" class="blog-button">Read Now</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Blog Card 2 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <img src="./Assets/interior plant website/blog 5.png" alt="Bringing the Outdoors In" />
+              <div class="blog-content">
+                <p class="text-muted mb-1">22/03/2025</p>
+                <div class="blog-title">Bringing the Outdoors In</div>
+                <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+                <a href="#" class="blog-button">Read Now</a>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Blog Card 3 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <img src="./Assets/interior plant website/blog 6.png" alt="Indoor Plants & Mental Wellness" />
+              <div class="blog-content">
+                <p class="text-muted mb-1">15/03/2025</p>
+                <div class="blog-title">Indoor Plants & Mental Wellness</div>
+                <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
+                <a href="#" class="blog-button">Read Now</a>
+              </div>
+            </div>
+          </div>
+    
+  
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row text-center service-box">
+      
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/delivery icon.png">
+        </div>
+        <div class="service-title">Free Delivery</div>
+        <div class="service-text">For all orders<br>above 545 rupees</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home customer care icon.png">
+        </div>
+        <div class="service-title">Customer Care</div>
+        <div class="service-text">Free care tips for<br>every purchase</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home easy return icon.png">
+        </div>
+        <div class="service-title">Easy Return</div>
+        <div class="service-text">Return window is<br>activated till 30 days</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home payment icon.png">
+        </div>
+        <div class="service-title">Secure Payment</div>
+        <div class="service-text">Confidence on all<br>your devices</div>
+      </div>
+  
+    </div>
+  </div>
+
+ <!-- Footer Section -->
+ <footer class="footer text-center text-md-start">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        
+        <!-- Customer Care -->
+        <div class="col-md-4 mb-4">
+          <h5>Customer Care</h5>
+          <p>No.5, South Fairlands,<br>Yercaud Main Road, Salem,<br>Tamilnadu</p>
+          <p>+91 90000 91010<br>+91 98547 54873</p>
+          <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
+        </div>
+  
+        <!-- Center -->
+        <div class="col-md-4 mb-4 middle text-center">
+          <div class="footer-logo">
+            <img src="./Assets/interior plant website/logo.png" alt="Indo-Green Logo" />
+          </div>
+          <p>
+            The seed of gardening is a love that never dies. but
+            it never grows to the enduring happiness that the
+            love of gardening provides the nature.
+          </p>
+          <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
+            <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
+            
+          </div>
+        </div>
+  
+        <!-- Right Info -->
+        <div class="col-md-4 mb-4 text-md-end ms-md-auto">
+            <p>Reg: S1203014054</p>
+          <p>TIN: 109201GST1204</p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Terms of Use</a></p>
+        </div>
+      </div>
+  
+      <!-- Bottom Line -->
+      <div class="footer-bottom mt-4">
+        Indo-Green © 2022. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

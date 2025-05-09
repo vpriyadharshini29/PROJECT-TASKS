@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Attendance Management</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    .button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+    #filterForm { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Employee Attendance Management System</h1>
+
+  <div id="filterForm">
+    <label for="department">Filter by Department:</label>
+    <select id="department" onchange="filterEmployees()">
+      <option value="all">All</option>
+      <option value="HR">HR</option>
+      <option value="IT">IT</option>
+      <option value="Sales">Sales</option>
+    </select>
+
+    <label for="status">Filter by Status:</label>
+    <select id="status" onchange="filterEmployees()">
+      <option value="all">All</option>
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+    </select>
+  </div>
+
+  <button onclick="addEmployee()">Add Employee</button>
+
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Attendance Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <script src="./task10.js"></script>
+</body>
+</html>

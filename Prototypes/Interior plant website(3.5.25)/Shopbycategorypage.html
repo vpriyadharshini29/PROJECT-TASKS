@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plant Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+    body {
+     
+      background-color: #f2f2f2;
+      color: #000;
+    }
+    .bg-primary-green {
+  background-color: #0D4F36;
+}
+    .navbar .nav-link {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .navbar .nav-link.active {
+    text-decoration: underline wavy 2px;
+    text-underline-offset: 4px;
+    color: #F2F2F2;
+  }
+    .header {
+      background-color: #DAF8EC;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      
+      border-top: 5px solid #0D4F36;
+    }
+    .shop-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .shop-section h2 {
+            color: #0D4F36; 
+            font-size: 2.15rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+        .shop-section p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .category-card {
+            /* background-color: white; */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .category-card img {
+            width: 100%;
+            height: 320px; /* Adjusted height to match proportions */
+            object-fit: cover;
+            border-radius: 15px; /* Rounded corners only at the top */
+        }
+        .category-card h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color:#000;
+            margin: 20px 0;
+        }
+        .instagram-section {
+      background-color: #F2F2F2;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .instagram-section h2 {
+      color: #0D4F36;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      /* border: 5px solid rgba(0, 0, 0, 0.2); */
+    }
+    .gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px);
+      gap: 15px;
+    }
+    /* Grid area naming */
+    .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .item2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+    .item3 { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .item4 { grid-column: 2 / 3; grid-row: 2 / 3; }
+    .item5 { grid-column: 1 / 3; grid-row: 3 / 4; }
+
+    .item6 { grid-column: 3 / 4; grid-row: 1 / 3; }
+    .item7 { grid-column: 4 / 32; grid-row: 1 / 4; }
+    .item8 { grid-column: 3 / 4; grid-row: 3 / 4; }
+    .service-box {
+      background-color: #DAF8EC;
+      border-radius: 16px;
+      padding: 40px 20px;
+      margin: 50px auto;
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+
+    .service-title {
+      font-weight: 600;
+      color: #0D4F36;
+      font-size: 18px;
+    }
+
+    .service-text {
+      color: #131313;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+    .footer {
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      padding: 50px 0 20px;
+      font-size: 20px;
+    }
+
+    .footer h5 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #F2F2F2;
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+      font-size:20px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      color: #F2F2F2;
+      font-size: 20px;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #DAF8EC;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #F2F2F2;
+      margin-top: 30px;
+      padding-top: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .footer .middle p {
+      max-width: 400px;
+      margin: 0 auto 20px;
+      font-size: 20px;
+    }
+        </style>
+</head>>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary-green px-4 ">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
+      <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
+      <!-- <span class="ms-2">Indo-Green</span> -->
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="d-flex gap-3 me-8">
+      <i class="bi bi-cart fs-5 text-white"></i>
+      <i class="bi bi-heart fs-5 text-white"></i>
+      <i class="bi bi-person fs-5 text-white"></i>
+    </div>
+  </nav>
+  <div class="header">
+    Shop by categories
+  </div>
+  <section class="shop-section">
+    <div class="container ">
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category indoor plants.png" alt="Indoor Plants">
+                    <h5>Indoor Plants</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category terrace.png" alt="Terrace & Balcony">
+                    <h5>Terrace & Balcony</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category desk plants.png" alt="Desk Plants">
+                    <h5>Desk Plants</h5>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category modern pots.png" alt="Indoor Plants">
+                    <h5>Modern plants</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category garden equip.png" alt="Terrace & Balcony">
+                    <h5>Garden Equipments</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category herbal plants.png" alt="Desk Plants">
+                    <h5>Herbal indoor plants</h5>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category bonsai.png" alt="Indoor Plants">
+                    <h5>Bonsai trees</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-card">
+                    <img src="./Assets/interior plant website/category cactus.png" alt="Terrace & Balcony">
+                    <h5>Cactus</h5>
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+  </section>
+  <section class="instagram-section">
+    <div class="container">
+      <h2>Follow us on Instagram</h2>
+      <div class="gallery">
+        <div class="grid">
+          <!-- Left Grid Images -->
+          <div class="item1"><img src="./Assets/interior plant website/home insta 1.png" alt="plant1"></div>
+          <div class="item2"><img src="./Assets/interior plant website/home insta 2.png" alt="plant2"></div>
+          <div class="item3"><img src="./Assets/interior plant website/home insta 4.png" alt="plant3"></div>
+          <div class="item4"><img src="./Assets/interior plant website/home insta 5.png" alt="plant4"></div>
+          <div class="item5"><img src="./Assets/interior plant website/home insta 6.png" alt="plant5"></div>
+  
+          <!-- Right Grid Images -->
+          <div class="item6"><img src="./Assets/interior plant website/home insta 3.png" alt="plant6"></div>
+          <div class="item7"><img src="./Assets/interior plant website/home insta big image.png" alt="plant7"></div>
+          <div class="item8"><img src="./Assets/interior plant website/home insta 7.png" alt="plant8"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="row text-center service-box">
+      
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/delivery icon.png">
+        </div>
+        <div class="service-title">Free Delivery</div>
+        <div class="service-text">For all orders<br>above 545 rupees</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home customer care icon.png">
+        </div>
+        <div class="service-title">Customer Care</div>
+        <div class="service-text">Free care tips for<br>every purchase</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home easy return icon.png">
+        </div>
+        <div class="service-title">Easy Return</div>
+        <div class="service-text">Return window is<br>activated till 30 days</div>
+      </div>
+  
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home payment icon.png">
+        </div>
+        <div class="service-title">Secure Payment</div>
+        <div class="service-text">Confidence on all<br>your devices</div>
+      </div>
+  
+    </div>
+  </div>
+   <!-- Footer Section -->
+<footer class="footer text-center text-md-start">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        
+        <!-- Customer Care -->
+        <div class="col-md-4 mb-4">
+          <h5>Customer Care</h5>
+          <p>No.5, South Fairlands,<br>Yercaud Main Road, Salem,<br>Tamilnadu</p>
+          <p>+91 90000 91010<br>+91 98547 54873</p>
+          <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
+        </div>
+  
+        <!-- Center -->
+        <div class="col-md-4 mb-4 middle text-center">
+          <div class="footer-logo">
+            <img src="./Assets/interior plant website/logo.png" alt="Indo-Green Logo" />
+          </div>
+          <p>
+            The seed of gardening is a love that never dies. but
+            it never grows to the enduring happiness that the
+            love of gardening provides the nature.
+          </p>
+          <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
+            <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
+            
+          </div>
+        </div>
+  
+        <!-- Right Info -->
+        <div class="col-md-4 mb-4 text-md-end ms-md-auto">
+            <p>Reg: S1203014054</p>
+          <p>TIN: 109201GST1204</p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Terms of Use</a></p>
+        </div>
+      </div>
+  
+      <!-- Bottom Line -->
+      <div class="footer-bottom mt-4">
+        Indo-Green © 2022. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  
+ </body>
+</html>

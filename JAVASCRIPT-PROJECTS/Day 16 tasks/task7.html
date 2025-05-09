@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+    input { margin: 5px; padding: 5px; }
+    button { margin: 5px; padding: 6px 10px; }
+  </style>
+</head>
+<body>
+  <h1>Student Management</h1>
+
+  <input type="text" id="name" placeholder="Name" />
+  <input type="number" id="age" placeholder="Age" />
+  <input type="text" id="class" placeholder="Class" />
+  <input type="text" id="grade" placeholder="Grade" />
+  <button onclick="addStudent()">Add Student</button>
+
+  <br>
+  <input type="text" id="search" placeholder="Search by name" oninput="searchStudent()" />
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Age</th><th>Class</th><th>Grade</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+  </table>
+
+  <script src="./task7.js"></script>
+</body>
+</html>

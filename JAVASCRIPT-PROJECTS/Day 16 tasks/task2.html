@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drag & Drop File Uploader</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    #dropZone {
+      border: 2px dashed #999;
+      padding: 30px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    #dropZone.dragover {
+      background-color: #e0f7fa;
+    }
+    #preview {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>File Uploader</h1>
+  <div id="dropZone">Drag and drop a file here or click to select</div>
+  <input type="file" id="fileInput" hidden>
+  <div id="preview"></div>
+
+  <script src="./task2.js"></script>
+</body>
+</html>

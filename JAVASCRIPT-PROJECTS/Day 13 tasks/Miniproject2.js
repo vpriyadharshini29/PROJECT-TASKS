@@ -7,7 +7,7 @@ async function searchMovie() {
       return;
     }
   
-    const apiKey = 'your_api_key'; 
+    const apiKey = 'abcd123'; 
     const url = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${apiKey}`;
   
     try {

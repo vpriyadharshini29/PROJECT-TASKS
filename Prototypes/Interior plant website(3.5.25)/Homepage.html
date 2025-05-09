@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indo-Green</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #F2F2F2;
+      color: #131313;
+    }
+
+    .hero-section {
+
+      background-color: #DAF8EC;
+      color: #131313;
+
+    }
+
+
+    .bg-primary-green {
+      background-color: #0D4F36;
+    }
+
+    .navbar .nav-link {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .navbar .nav-link.active {
+      text-decoration: underline wavy 2px;
+      text-underline-offset: 4px;
+      color: #F2F2F2;
+    }
+
+    .hero-heading {
+      color: #131313;
+      font-size: 2.4rem;
+    }
+
+    .register-btn {
+      background-color: #0D4F36;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+
+    .register-btn:hover {
+      background-color: #0D4F36;
+    }
+
+    .info-box {
+      height: 100%;
+      min-height: 400px;
+
+      background-color: #F2F2F2;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+      font-weight: 500;
+
+    }
+
+
+    .custom-img {
+      max-width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .learn-more {
+      color: #0D4F36;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+
+    .text-muted {
+      color: #686868;
+    }
+
+
+    .plant-left,
+    .plant-right {
+      position: absolute;
+      top: 20px;
+      width: 80px;
+      z-index: 0;
+    }
+
+    .plant-left {
+      left: 10px;
+    }
+
+    .plant-right {
+      right: 10px;
+    }
+
+    .services-section {
+      background-color: #F2F2F2;
+      padding: 60px 20px;
+    }
+
+    .service-item {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .service-item img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .service-item h5 {
+      color: #0D4F36;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      color: #686868;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .featured-products {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .featured-products h3 {
+      color: #0D4F36;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .featured-products p {
+      font-size: 20px;
+      color: #131313;
+    }
+
+    .tabs {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .tabs span {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 15px;
+      cursor: pointer;
+      position: relative;
+      color: #131313;
+    }
+
+    .tabs .active {
+      color: #0D4F36;
+
+    }
+
+    .tabs .active::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 3px;
+      background-color: #0D4F36;
+      border-radius: 5px;
+    }
+
+    .product-card {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .product-card h6 {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .product-card p {
+      font-size: 18px;
+      color: #131313;
+    }
+
+    /* Overlay container */
+    .product-card .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+
+    .product-card .overlay-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5);
+      /* translucent white */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 15px;
+    }
+
+    /* Show icons on hover */
+    .product-card:hover .overlay-icons {
+      opacity: 1;
+    }
+
+    .overlay-icons .icon-box {
+      background-color: white;
+      border-radius: 8px;
+      padding: 5px;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
+    .btn-custom-outline {
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 0.75rem;
+      border: 2px solid #0D4F36;
+      color: #0D4F36;
+      /* background-color: #DAF8EC; */
+      box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+      margin-left: 150px;
+    }
+
+    .btn-custom-outline:hover {
+      background-color: #0D4F36;
+      color: white;
+    }
+
+    .promo-section {
+      height: 500px;
+      background-color: #DAF8EC;
+      padding: 0 1rem;
+    }
+
+    .promo-content {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .promo-heading {
+      color: #0D4F36;
+      font-weight: 800;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .promo-offer {
+      background-color: #0D4F36;
+      color: white;
+      font-weight: 700;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .promo-desc {
+      font-size: 1.5rem;
+
+      font-weight: 900;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .promo-img {
+      max-width: 280px;
+      height: auto;
+    }
+
+    .shop-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .shop-section h2 {
+      color: #0D4F36;
+      font-size: 2.15rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .shop-section p {
+      color: #666;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .category-card {
+      /* background-color: white; */
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 320px;
+      /* Adjusted height to match proportions */
+      object-fit: cover;
+      border-radius: 15px;
+      /* Rounded corners only at the top */
+    }
+
+    .category-card h5 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #000;
+      margin: 20px 0;
+    }
+
+    .view-all-btn {
+      margin-top: 40px;
+      background-color: transparent;
+      border: 2px solid #0D4F36;
+      color: #0D4F36;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 12px;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .view-all-btn:hover {
+      background-color: #0D4F36;
+      color: white;
+    }
+
+    .view-all-btn::after {
+      content: '→';
+      margin-left: 5px;
+    }
+
+    .section-title {
+      color: #0D4F36;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .section-subtitle {
+      color: #222;
+      font-size: 1.125rem;
+    }
+
+    .feedback-card {
+      background-color: #DAF8EC;
+      border-radius: 1rem;
+    }
+
+    .user-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .quote-mark {
+      font-size: 5.5rem;
+      color: #0D4F36;
+      margin-bottom: 0.5rem;
+      padding-top: 2px;
+    }
+
+    .vertical-line {
+      width: 4px;
+      height: 100px;
+      background-color: #0D4F36;
+      margin: 0 auto;
+      border-radius: 4px;
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .checked {
+      color: orange;
+    }
+
+    .instagram-section {
+      background-color: #F2F2F2;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .instagram-section h2 {
+      color: #0D4F36;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+      /* border: 5px solid rgba(0, 0, 0, 0.2); */
+    }
+
+    .gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 200px);
+      gap: 15px;
+    }
+
+    /* Grid area naming */
+    .item1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .item2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .item3 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .item4 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .item5 {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+    }
+
+    .item6 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+
+    .item7 {
+      grid-column: 4 / 32;
+      grid-row: 1 / 4;
+    }
+
+    .item8 {
+      grid-column: 3 / 4;
+      grid-row: 3 / 4;
+    }
+
+    .blog-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .service-box {
+      background-color: #DAF8EC;
+      border-radius: 16px;
+      padding: 40px 20px;
+      margin: 50px auto;
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 32px;
+      margin: 0 auto 20px;
+    }
+
+    .service-title {
+      font-weight: 600;
+      color: #0D4F36;
+      font-size: 18px;
+    }
+
+    .service-text {
+      color: #131313;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .blog-section h2 {
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 50px;
+    }
+
+    .blog-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: #DAF8EC;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .blog-content p {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .blog-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #0D4F36;
+    }
+
+    .blog-button {
+      background-color: #0D4F36;
+      color: white;
+      font-weight: 700;
+      padding: 8px 2px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: auto;
+      width: 150px;
+      text-align: center;
+    }
+
+    .blog-button:hover {
+      background-color: #0D4F36;
+      color: #fff;
+    }
+
+    .footer {
+      background-color: #0D4F36;
+      color: #F2F2F2;
+      padding: 50px 0 20px;
+      font-size: 20px;
+    }
+
+    .footer h5 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #F2F2F2;
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+      font-size: 20px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      color: #F2F2F2;
+      font-size: 20px;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #DAF8EC;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #F2F2F2;
+      margin-top: 30px;
+      padding-top: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .footer .middle p {
+      max-width: 400px;
+      margin: 0 auto 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary-green px-4 ">
+    <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
+      <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
+      <!-- <span class="ms-2">Indo-Green</span> -->
+    </a>
+
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="d-flex gap-3 me-8">
+      <div class="position-relative">
+        <i class="bi bi-cart fs-5 text-white"></i>
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </div>
+      <div class="position-relative">
+        <i class="bi bi-heart fs-5 text-white"></i>
+        <span id="wishlist-count"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </div>
+      <i class="bi bi-person fs-5 text-white"></i>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex flex-column align-items-center text-center px-4 py-5 position-relative">
+    <img src="./Assets/interior plant website/illustration 1 in header.png" class="plant-left d-none d-md-block"
+      alt="Left Plant" />
+    <h1 class="fw-bold hero-heading">Trees, Plants to Grow in<br />Your Living Room</h1>
+    <button class="btn register-btn mt-3 fw-bold px-4 py-2">REGISTER</button>
+
+    <div class="container mt-5">
+      <div class="row align-items-center tight-row">
+
+        <!-- Info Box -->
+        <div class="col-md-6 mb-4 mb-md-0 d-flex align-items-center justify-content-center mt-8">
+          <div class="info-box p-4 rounded ">
+            <p class="text-dark " style="padding-top: 60px;">
+              A houseplant, also known as a pot plant, potted plant, or indoor plant, is an ornamental plant cultivated
+              indoors for aesthetic or practical purposes. These plants are commonly found in homes, offices, and
+              various indoor spaces, where they contribute natural beauty and improving air quality.
+            </p>
+            <div class="text-md-start"> <a href="#" class="learn-more ">Learn More <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="d-flex gap-5 mt-4">
+              <div><strong class="fs-5 text-dark">200+</strong><br /><span class="text-muted">Plant Species</span></div>
+              <div><strong class="fs-5 text-dark">1.2k+</strong><br /><span class="text-muted">Members Joined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="col-md-6 text-center">
+          <img src="./Assets/interior plant website/home sprayingplant.png" class="img-fluid rounded custom-img"
+            alt="Spraying plant" />
+        </div>
+
+      </div>
+    </div>
+
+    <img src="./Assets/interior plant website/illustration 2 in header.png" class="plant-right d-none d-md-block"
+      alt="Right Plant" />
+  </section>
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="row justify-content-center text-center d-flex flex-nowrap">
+        <div class="col-md-3 col-sm-6 service-item">
+          <img src="./Assets/interior plant website/home illu garden care.png" alt="Garden Care">
+          <h5>Garden Care</h5>
+          <p>
+            Our Garden Care sector offers expert tips and advice to help you nurture a healthy, beautiful garden you
+            need.
+          </p>
+        </div>
+        <div class="col-md-3 col-sm-6 service-item">
+          <img src="./Assets/interior plant website/home illu plant reno.png" alt="Plant Renovation">
+          <h5>Plant Renovation</h5>
+          <p>
+            Our Plant Renovation sector provides expert guidance and transform your plants for a further healthier look.
+          </p>
+        </div>
+        <div class="col-md-3 col-sm-6 service-item">
+          <img src="./Assets/interior plant website/home illu seed supply.png" alt="Seed Supply">
+          <h5>Seed Supply</h5>
+          <p>
+            Our Seed Supply sector offers expert tips and advice to help you nurture a healthy and a vibrant garden.
+          </p>
+        </div>
+        <div class="col-md-3 col-sm-6 service-item">
+          <img src="./Assets/interior plant website/home illu watering gar.png" alt="Watering Garden">
+          <h5>Watering Garden</h5>
+          <p>
+            Our Watering Garden sector provides you essential tips and techniques for watering your plants, ensuring
+            they thrive and flourish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-products">
+    <div class="container">
+      <h3>Featured Products</h3>
+      <p>
+        Discover our top plants chosen for their beauty and resilience. Add colorful or greenery to your garden with
+        these customer favorites. Bring nature’s charm home today
+      </p>
+    </div>
+  </section>
+  <div class="tabs">
+    <span class="active">All Plants</span>
+    <span>|</span>
+    <span>New Arrivals</span>
+  </div>
+
+  <!-- Plant Grid -->
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Product Card -->
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 1.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="commodo dolor" data-price="₹ 300"
+                  data-img="./Assets/interior plant website/home all plants 1.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="commodo dolor" data-price="₹ 300"
+                  data-img="./Assets/interior plant website/home all plants 1.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <h6>commodo dolor</h6>
+          <p>₹ 300</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 2.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="Sansevieria" data-price="₹ 270"
+                  data-img="./Assets/interior plant website/home all plants 2.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Sansevieria" data-price="₹ 270"
+                  data-img="./Assets/interior plant website/home all plants 2.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Sansevieria</h6>
+          <p>₹ 270</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 3.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="Epipremnum aureum" data-price="₹ 350"
+                  data-img="./Assets/interior plant website/home all plants 3.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Epipremnum aureum" data-price="₹ 350"
+                  data-img="./Assets/interior plant website/home all plants 3.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Epipremnum aureum</h6>
+          <p>₹ 350</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 4.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="Ficus lyrata" data-price="₹ 140"
+                  data-img="./Assets/interior plant website/home all plants 4.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Ficus lyrata" data-price="₹ 140"
+                  data-img="./Assets/interior plant website/home all plants 4.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Ficus lyrata</h6>
+          <p>₹ 140</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 5.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="Chlorophytum coso" data-price="₹ 190"
+                  data-img="./Assets/interior plant website/home all plants 5.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Chlorophytum coso" data-price="₹ 190"
+                  data-img="./Assets/interior plant website/home all plants 5.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Chlorophytum coso</h6>
+          <p>₹ 190</p>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 6.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="Zamiocilcas" data-price="₹ 390"
+                  data-img="./Assets/interior plant website/home all plants 6.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Zamiocilcas" data-price="₹ 390"
+                  data-img="./Assets/interior plant website/home all plants 6.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Zamiocilcas</h6>
+          <p>₹ 390</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 7.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box"><button class="add-btn" data-name="spathiphylum" data-price="₹ 220"
+                  data-img="./Assets/interior plant website/home all plants 7.png">
+                  <i class="bi bi-cart"></i></button></div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="spathiphylum" data-price="₹ 220"
+                  data-img="./Assets/interior plant website/home all plants 7.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>spathiphylum</h6>
+          <p>₹ 220</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="./Assets/interior plant website/home all plants 8.png" alt="Sansevieria">
+            <div class="overlay-icons">
+              <div class="icon-box">
+                <button class="add-btn" data-name="Philodendron" data-price="₹ 410"
+                  data-img="./Assets/interior plant website/home all plants 8.png">
+                  <i class="bi bi-cart"></i>
+                </button>
+              </div>
+              <div class="icon-box">
+                <button class="wishlist-btn" data-name="Philodendron" data-price="₹ 410"
+                  data-img="./Assets/interior plant website/home all plants 8.png">
+                  <i class="bi bi-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <h6>Philodendron</h6>
+          <p>₹ 410</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Top Button -->
+  <div class="text-center my-5">
+    <button class="btn btn-custom-outline">View All →</button>
+  </div>
+
+  <!-- Promo Section -->
+  <section class="promo-section">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+
+        <!-- Left Image -->
+        <div class="col-md-6 text-center">
+          <img src="./Assets/interior plant website/home cactus illustrationn.png" alt="Cactus" class="promo-img" />
+        </div>
+
+        <!-- Right Content -->
+        <div class="col-md-6 d-flex flex-column justify-content-center promo-content">
+          <div class="promo-heading">
+            VARIETY OF CACTI AVAILABLE AT BEST PRICE IN THE TOWN
+          </div>
+          <div class="promo-offer">BUY 1, GET 1 50% OFF!</div>
+          <div class="promo-desc">
+            From small desk-sized to tall statement pieces.<br />
+            Free care tips with every purchase.
+          </div>
+          <button class="btn btn-custom-outline w-50 ">Explore More →</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-section">
+    <div class="container">
+      <h2>Shop by Category</h2>
+      <p>Shop by category to find the perfect plants, trees, and accessories for your indoor garden set-up.<br>Discover
+        a wide range of products tailored to your gardening needs.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="category-card">
+            <img src="./Assets/interior plant website/category indoor plants.png" alt="Indoor Plants">
+            <h5>Indoor Plants</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="category-card">
+            <img src="./Assets/interior plant website/category terrace.png" alt="Terrace & Balcony">
+            <h5>Terrace & Balcony</h5>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="category-card">
+            <img src="./Assets/interior plant website/category desk plants.png" alt="Desk Plants">
+            <h5>Desk Plants</h5>
+          </div>
+        </div>
+      </div>
+      <button class="view-all-btn">VIEW ALL</button>
+    </div>
+  </section>
+
+  <section class="feedback-section py-5">
+    <div class="container text-center">
+      <h2 class="section-title">Our Customers Feedback</h2>
+      <p class="section-subtitle mt-3">
+        Here are some of our valuable customers feedback on their purchase with us.<br>
+        We value the opinion of our customers and strive to provide the best experience possible.
+      </p>
+      <div id="feedback-container">
+        <div class="card feedback-card mt-5 border-0 shadow-sm px-4 py-4">
+          <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-md-2 text-center">
+              <img src="./Assets/interior plant website/feedback 2.png" alt="Micheal Smith"
+                class="rounded-3 img-fluid user-img mb-3" />
+              <h6 class="mb-0 fw-bold">Micheal Smith</h6>
+              <p class="text-muted mb-0">Marketing Manager</p>
+            </div>
+
+            <!-- Vertical Divider with Quote -->
+            <div class="col-md-1 text-center">
+              <div class="quote-mark">,,</div>
+              <div class="vertical-line"></div>
+            </div>
+
+            <!-- Testimonial Text -->
+            <div class="col-md-9 text-md-start text-center">
+              <p class="testimonial-text mb-3">
+                I appreciate the detailed care instruction. My plants are growing beautifully, and it really brightens
+                up my workspace. The plants are not only beautiful but also very affordable. I’ll definitely be back for
+                more!
+              </p>
+
+              <div class="stars text-warning mb-2">
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card feedback-card mt-5 border-0 shadow-sm px-4 py-4" style="display: none;">
+          <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-md-2 text-center">
+              <img src="./Assets/interior plant website/feedback 1.png" alt="Micheal Smith"
+                class="rounded-3 img-fluid user-img mb-3" />
+              <h6 class="mb-0 fw-bold">Jessica Taylor</h6>
+              <p class="text-muted mb-0">Owner,Architecture</p>
+            </div>
+
+            <!-- Vertical Divider with Quote -->
+            <div class="col-md-1 text-center">
+              <div class="quote-mark">,,</div>
+              <div class="vertical-line"></div>
+            </div>
+
+            <!-- Testimonial Text -->
+            <div class="col-md-9 text-md-start text-center">
+              <p class="testimonial-text mb-3">
+                I purchased a peae lily and it has transformed my living room!.The experts provided excellent care tips,
+                and I appreciate the follow-up support.Top notch quality
+              </p>
+
+              <div class="stars text-warning mb-2">
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card feedback-card mt-5 border-0 shadow-sm px-4 py-4" style="display: none;">
+          <div class="row align-items-center">
+            <!-- Image Column -->
+            <div class="col-md-2 text-center">
+              <img src="./Assets/interior plant website/feedback 3.png" alt="Micheal Smith"
+                class="rounded-3 img-fluid user-img mb-3" />
+              <h6 class="mb-0 fw-bold">Sarah lee</h6>
+              <p class="text-muted mb-0">Graphic Artist</p>
+            </div>
+
+            <!-- Vertical Divider with Quote -->
+            <div class="col-md-1 text-center">
+              <div class="quote-mark">,,</div>
+              <div class="vertical-line"></div>
+            </div>
+
+            <!-- Testimonial Text -->
+            <div class="col-md-9 text-md-start text-center">
+              <p class="testimonial-text mb-3">
+                I bought several plants for my workspace, and they've created a calming atmosphere for my colleagues.My
+                new plant collections are conversation starter in my living room.Thankyou for the great selection!
+              </p>
+
+              <div class="stars text-warning mb-2">
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+  <section class="instagram-section">
+    <div class="container">
+      <h2>Follow us on Instagram</h2>
+      <div class="gallery">
+        <div class="grid">
+          <!-- Left Grid Images -->
+          <div class="item1"><img src="./Assets/interior plant website/home insta 1.png" alt="plant1"></div>
+          <div class="item2"><img src="./Assets/interior plant website/home insta 2.png" alt="plant2"></div>
+          <div class="item3"><img src="./Assets/interior plant website/home insta 4.png" alt="plant3"></div>
+          <div class="item4"><img src="./Assets/interior plant website/home insta 5.png" alt="plant4"></div>
+          <div class="item5"><img src="./Assets/interior plant website/home insta 6.png" alt="plant5"></div>
+
+          <!-- Right Grid Images -->
+          <div class="item6"><img src="./Assets/interior plant website/home insta 3.png" alt="plant6"></div>
+          <div class="item7"><img src="./Assets/interior plant website/home insta big image.png" alt="plant7"></div>
+          <div class="item8"><img src="./Assets/interior plant website/home insta 7.png" alt="plant8"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section -->
+  <div class="container">
+    <div class="row text-center service-box">
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/delivery icon.png">
+        </div>
+        <div class="service-title">Free Delivery</div>
+        <div class="service-text">For all orders<br>above 545 rupees</div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home customer care icon.png">
+        </div>
+        <div class="service-title">Customer Care</div>
+        <div class="service-text">Free care tips for<br>every purchase</div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home easy return icon.png">
+        </div>
+        <div class="service-title">Easy Return</div>
+        <div class="service-text">Return window is<br>activated till 30 days</div>
+      </div>
+
+      <div class="col-md-3 col-6 mb-4">
+        <div class="service-icon">
+          <img src="./Assets/interior plant website/home payment icon.png">
+        </div>
+        <div class="service-title">Secure Payment</div>
+        <div class="service-text">Confidence on all<br>your devices</div>
+      </div>
+
+    </div>
+  </div>
+  <section class="blog-section">
+    <div class="container">
+      <h2>Read our BLOG</h2>
+      <div class="row g-4">
+
+        <!-- Blog Card 1 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/home blog 1.png" alt="Plant Care" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">08/04/2025</p>
+              <div class="blog-title">Plant Care Tips & Guides</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have
+                your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/home blog 2.png" alt="Bringing the Outdoors In" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">22/03/2025</p>
+              <div class="blog-title">Bringing the Outdoors In</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have
+                your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="col-md-4">
+          <div class="blog-card">
+            <img src="./Assets/interior plant website/home blog 3.png" alt="Indoor Plants & Mental Wellness" />
+            <div class="blog-content">
+              <p class="text-muted mb-1">15/03/2025</p>
+              <div class="blog-title">Indoor Plants & Mental Wellness</div>
+              <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have
+                your trees, and plants healthy and thriving…”</p>
+              <a href="#" class="blog-button">Read Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer text-center text-md-start">
+    <div class="container">
+      <div class="row text-center text-md-start">
+
+        <!-- Customer Care -->
+        <div class="col-md-4 mb-4">
+          <h5>Customer Care</h5>
+          <p>No.5, South Fairlands,<br>Yercaud Main Road, Salem,<br>Tamilnadu</p>
+          <p>+91 90000 91010<br>+91 98547 54873</p>
+          <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
+        </div>
+
+        <!-- Center -->
+        <div class="col-md-4 mb-4 middle text-center">
+          <div class="footer-logo">
+            <img src="./Assets/interior plant website/logo.png" alt="Indo-Green Logo" />
+          </div>
+          <p>
+            The seed of gardening is a love that never dies. but
+            it never grows to the enduring happiness that the
+            love of gardening provides the nature.
+          </p>
+          <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
+            <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
+
+          </div>
+        </div>
+
+        <!-- Right Info -->
+        <div class="col-md-4 mb-4text-md-end ms-md-auto">
+          <h5>Indo-Green</h5>
+          <p>Reg: S1203014054</p>
+          <p>TIN: 109201GST1204</p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Terms of Use</a></p>
+        </div>
+      </div>
+
+      <!-- Bottom Line -->
+      <div class="footer-bottom mt-4">
+        Indo-Green © 2022. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <script src="./Assets/js/home.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

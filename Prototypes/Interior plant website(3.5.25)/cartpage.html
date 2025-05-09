@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+   <!-- Bootstrap Icons -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+
+    .cart-header {
+      background-color: #E8FCF5;
+      text-align: center;
+      padding: 30px 0 15px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .cart-steps {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .cart-steps span {
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    .cart-steps .active {
+      color: #0D4F36;
+    }
+
+    .cart-container {
+      padding: 0 5%;
+    }
+
+    .cart-box {
+      background-color: #E8FCF5;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-item img {
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+    }
+
+    .cart-item-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .cart-item-category {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .cart-item-price {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .quantity-box {
+      display: flex;
+      align-items: center;
+      background-color: #0D4F36;
+      color: #fff;
+      border-radius: 10px;
+      padding: 6px 10px;
+      font-weight: 600;
+    }
+
+    .quantity-box span {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    .cart-summary {
+      background-color: #E8FCF5;
+      border-radius: 20px;
+      padding: 25px;
+      font-size: 16px;
+    }
+
+    .cart-summary .line {
+      border-top: 1px solid #ccc;
+      margin: 15px 0;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .total {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background-color: #0D4F36;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-btn:hover {
+      background-color: #0b3c2b;
+    }
+
+    .secure-note {
+      text-align: center;
+      margin-top: 20px;
+      color: #000;
+      font-size: 14px;
+    }
+
+    .secure-note i {
+      margin-right: 5px;
+    }
+    .increase{
+      cursor: pointer;
+    }
+    .decrease{
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        margin-bottom: 10px;
+      }
+
+      .cart-container {
+        padding: 0 3%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="cart-header">Cart</div>
+  <div class="cart-steps">
+    <span class="active">BAG</span> &gt;
+    <span>ADDRESS</span> &gt;
+    <span>PAYMENT</span>
+  </div>
+
+  <!-- Cart Layout -->
+  <div class="container cart-container mb-5">
+    <div class="row g-4">
+      <!-- Left Column (Items) -->
+      <div class="col-md-8">
+        <div class="cart-box">
+          <!-- Item 1 -->
+          <div class="cart-item">
+            <img src="https://images.unsplash.com/photo-1616627562155-e527d9b78e97?auto=format&fit=crop&w=500&q=80" alt="Fiddle Leaf Fig">
+            <div class="cart-item-details">
+              <div class="cart-item-title">Fiddle Leaf Fig</div>
+              <div class="cart-item-category">Desk Plants</div>
+              <div class="cart-item-price">₹ 1200</div>
+            </div>
+            <div class="quantity-box">
+              <span>-</span>
+              <span>1</span>
+              <span>+</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="cart-item">
+            <img src="https://images.unsplash.com/photo-1559060385-7aa4a4e92f62?auto=format&fit=crop&w=500&q=80" alt="Spade">
+            <div class="cart-item-details">
+              <div class="cart-item-title">Spade</div>
+              <div class="cart-item-category">Gardening Accessories</div>
+              <div class="cart-item-price">₹ 820</div>
+            </div>
+            <div class="quantity-box">
+              <span>-</span>
+              <span>1</span>
+              <span>+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (Summary) -->
+      <div class="col-md-4">
+        <div class="cart-summary">
+          <div class="summary-item">
+            <span>Subtotal</span>
+            <span>₹ 4580</span>
+          </div>
+          <div class="summary-item">
+            <span>Delivery Charges</span>
+            <span>₹ 0</span>
+          </div>
+          <div class="summary-item">
+            <span>Discount</span>
+            <span>- ₹ 220</span>
+          </div>
+          <div class="line"></div>
+          <div class="summary-item total">
+            <span>Total</span>
+            <span>₹ 4360</span>
+          </div>
+          <button class="checkout-btn">CHECKOUT</button>
+        </div>
+
+        <div class="secure-note mt-3">
+          <i class="bi bi-lock-fill"></i> 100% Secure Payments
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./Assets/js/cartpage.js"></script>
+
+ </body>
+</html>
