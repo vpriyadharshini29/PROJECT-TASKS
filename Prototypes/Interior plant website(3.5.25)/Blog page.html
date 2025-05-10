@@ -34,6 +34,10 @@
     text-underline-offset: 4px;
     color: #F2F2F2;
   }
+  a{
+    text-decoration: none;
+    color: #000;
+  }
     .header {
       background-color: #DAF8EC;
       padding: 30px 0;
@@ -251,41 +255,435 @@
     margin: 0 auto 20px;
     font-size: 20px;
   }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 8px 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .navbar-brand img {
+    height: 30px;
+    width: auto;
+    max-width: 100%;
+  }
+  .navbar-toggler {
+    border: none;
+    color: #ffffff;
+    padding: 5px;
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 28px;
+    height: 28px;
+  }
+  .navbar-collapse {
+    background-color: #0D4F36;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navbar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    text-decoration: underline wavy 2px;
+    text-underline-offset: 4px;
+  }
+  .navbar .d-flex {
+    margin-right: 0;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+  }
+  .navbar .d-flex i {
+    font-size: 1.4rem;
+    color: #ffffff;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  .navbar .d-flex i:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navbar .d-flex .position-relative {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar .d-flex .badge {
+    font-size: 0.75rem;
+    padding: 2px 5px;
+  }
+
+  /* Header Section */
+  .header {
+    padding: 20px 10px;
+    font-size: 1.8rem;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Article Card Section */
+  .container.py-5 {
+    padding: 20px 10px !important;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .article-card {
+    border-radius: 15px;
+  }
+  .article-image {
+    height: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .article-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .featured-badge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+  .article-text {
+    padding: 15px;
+  }
+  .article-text h5 {
+    font-size: 1.2rem;
+  }
+  .article-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Quick Prefix Section */
+  .prefix-title {
+    font-size: 1.1rem;
+    border-bottom-width: 2px;
+  }
+  .prefix-list li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  /* Blog Section */
+  .blog-section {
+    padding: 20px 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .blog-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .blog-card {
+    border-radius: 10px;
+  }
+  .blog-card img {
+    height: 200px;
+  }
+  .blog-content {
+    padding: 15px;
+  }
+  .blog-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .blog-content p {
+    font-size: 14px;
+  }
+  .blog-button {
+    font-size: 14px;
+    padding: 6px 0;
+    width: 120px;
+    border-radius: 6px;
+  }
+
+  /* Service Box Section */
+  .service-box {
+    padding: 20px 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .service-title {
+    font-size: 14px;
+  }
+  .service-text {
+    font-size: 13px;
+  }
+
+  /* Footer Section */
+  .footer {
+    padding: 20px 0 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .footer h5 {
+    font-size: 14px;
+  }
+  .footer p, .footer a {
+    font-size: 12px;
+  }
+  .footer .middle p {
+    font-size: 12px;
+  }
+  .footer-logo img {
+    width: 30px;
+  }
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 6px 8px;
+  }
+  .navbar-brand img {
+    height: 25px;
+  }
+  .navbar-toggler {
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .navbar-collapse {
+    padding: 10px;
+  }
+  .navbar .nav-link {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+  .navbar .d-flex {
+    gap: 15px;
+    margin-top: 10px;
+    padding: 8px 0;
+  }
+  .navbar .d-flex i {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+  .navbar .d-flex .badge {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  /* Header Section */
+  .header {
+    padding: 15px 8px;
+    font-size: 1.5rem;
+  }
+
+  /* Article Card Section */
+  .container.py-5 {
+    padding: 15px 8px !important;
+  }
+  .article-card {
+    border-radius: 10px;
+  }
+  .article-image {
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .featured-badge {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+  .article-text {
+    padding: 10px;
+  }
+  .article-text h5 {
+    font-size: 1.1rem;
+  }
+  .article-text p {
+    font-size: 0.85rem;
+  }
+
+  /* Quick Prefix Section */
+  .prefix-title {
+    font-size: 1rem;
+  }
+  .prefix-list li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  /* Blog Section */
+  .blog-section {
+    padding: 15px 0;
+  }
+  .blog-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .blog-card {
+    border-radius: 8px;
+  }
+  .blog-card img {
+    height: 180px;
+  }
+  .blog-content {
+    padding: 10px;
+  }
+  .blog-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .blog-content p {
+    font-size: 13px;
+  }
+  .blog-button {
+    font-size: 13px;
+    padding: 5px 0;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  /* Service Box Section */
+  .service-box {
+    padding: 15px 8px;
+    margin: 15px auto;
+  }
+  .service-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  .service-title {
+    font-size: 13px;
+  }
+  .service-text {
+    font-size: 12px;
+  }
+
+  /* Footer Section */
+  .footer {
+    padding: 15px 0 8px;
+  }
+  .footer h5 {
+    font-size: 13px;
+  }
+  .footer p, .footer a {
+    font-size: 11px;
+  }
+  .footer .middle p {
+    font-size: 11px;
+  }
+  .footer-logo img {
+    width: 25px;
+  }
+  .footer-bottom {
+    font-size: 11px;
+  }
+}
+
   </style>
 </head>
 <body>
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-primary-green px-4 ">
+  <nav class="navbar navbar-expand-lg bg-primary-green px-4">
     <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
       <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
-      <!-- <span class="ms-2">Indo-Green</span> -->
     </a>
 
-    <div class="collapse navbar-collapse justify-content-center">
+    <!-- Add Navbar Toggler Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Collapse with Correct ID -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul class="navbar-nav gap-4">
-        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="Homepage.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Shopbycategorypage.html">Shop</a></li>
+        <li class="nav-item"><a class="nav-link" href="Aboutus.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="Blog page.html">Blog</a></li>
       </ul>
     </div>
 
     <div class="d-flex gap-3 me-8">
-      <i class="bi bi-cart fs-5 text-white"></i>
-      <i class="bi bi-heart fs-5 text-white"></i>
-      <i class="bi bi-person fs-5 text-white"></i>
+      <div class="position-relative">
+       <a href="cartpage.html"><i class="bi bi-cart fs-5 text-white"></i>
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+        </a> 
+      </div>
+      <div class="position-relative">
+       <a href="wishlistpage.html"> <i class="bi bi-heart fs-5 text-white"></i>
+        <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </div></a>
+        <a href="Loginpage.html"> <i class="bi bi-person fs-5 text-white"></i></a>
     </div>
   </nav>
-  <div class="header">
-    Blog
-  </div>
 
 
 <div class="container py-5">
   <div class="row g-5 align-items-start">
     <!-- Featured Article Card -->
     <div class="col-lg-8">
-      <div class="article-card">
+     <a href="Blog-the ultimate tour.html"> <div class="article-card">
         <div class="article-image">
           <img src="./Assets/interior plant website/home blog 1.png" alt="Indoor Plants" class="img-fluid w-100" />
           <div class="featured-badge">FEATURED ARTICLE</div>
@@ -297,7 +695,7 @@
             “Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving...”
           </p>
         </div>
-      </div>
+      </div></a>
     </div>
 
     <!-- Quick Prefix -->
@@ -328,7 +726,7 @@
               <p class="text-muted mb-1">08/04/2025</p>
               <div class="blog-title">Plant Care Tips & Guides</div>
               <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-              <a href="#" class="blog-button">Read Now</a>
+              <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
             </div>
           </div>
         </div>
@@ -341,7 +739,7 @@
               <p class="text-muted mb-1">22/03/2025</p>
               <div class="blog-title">Bringing the Outdoors In</div>
               <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-              <a href="#" class="blog-button">Read Now</a>
+              <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
             </div>
           </div>
         </div>
@@ -354,7 +752,7 @@
               <p class="text-muted mb-1">15/03/2025</p>
               <div class="blog-title">Indoor Plants & Mental Wellness</div>
               <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-              <a href="#" class="blog-button">Read Now</a>
+              <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
             </div>
           </div>
         </div>
@@ -369,7 +767,7 @@
                 <p class="text-muted mb-1">08/04/2025</p>
                 <div class="blog-title">Plant Care Tips & Guides</div>
                 <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-                <a href="#" class="blog-button">Read Now</a>
+                <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
               </div>
             </div>
           </div>
@@ -382,7 +780,7 @@
                 <p class="text-muted mb-1">22/03/2025</p>
                 <div class="blog-title">Bringing the Outdoors In</div>
                 <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-                <a href="#" class="blog-button">Read Now</a>
+                <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
               </div>
             </div>
           </div>
@@ -395,7 +793,7 @@
                 <p class="text-muted mb-1">15/03/2025</p>
                 <div class="blog-title">Indoor Plants & Mental Wellness</div>
                 <p>“Welcome to our Plant Care section, where we share expert advice and practical tips to help you have your trees, and plants healthy and thriving…”</p>
-                <a href="#" class="blog-button">Read Now</a>
+                <a href="Blog-the ultimate tour.html" class="blog-button">Read Now</a>
               </div>
             </div>
           </div>
@@ -478,8 +876,8 @@
         <div class="col-md-4 mb-4 text-md-end ms-md-auto">
             <p>Reg: S1203014054</p>
           <p>TIN: 109201GST1204</p>
-          <p><a href="#">Privacy Policy</a></p>
-          <p><a href="#">Terms of Use</a></p>
+          <p><a href="privacy policy.html">Privacy Policy</a></p>
+          <p><a href="Terms and services page.html">Terms of Use</a></p>
         </div>
       </div>
   
@@ -489,6 +887,8 @@
       </div>
     </div>
   </footer>
-  
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="./Assets/js/wishlist.js"></script>
 </body>
 </html>

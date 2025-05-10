@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Plant Catalog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indo-Green</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
 
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
-    }
-    body {
-     
-      background-color: #f2f2f2;
-      color: #000;
     }
 
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #F2F2F2;
+      color: #131313;
+    }
+     html,body{
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+
+    
+
+
     .bg-primary-green {
-  background-color: #0D4F36;
-}
+      background-color: #0D4F36;
+    }
+
     .navbar .nav-link {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  
-  .navbar .nav-link.active {
-    text-decoration: underline wavy 2px;
-    text-underline-offset: 4px;
-    color: #F2F2F2;
-  }
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .navbar .nav-link.active {
+      text-decoration: underline wavy 2px;
+      text-underline-offset: 4px;
+      color: #F2F2F2;
+    }
     .header {
       background-color: #DAF8EC;
       padding: 30px 0;
@@ -45,54 +66,68 @@
       
       border-top: 5px solid #0D4F36;
     }
-    .shop-section {
-            padding: 50px 0;
-            text-align: center;
+
+
+.header-section {
+            background-color: #f2f2f2;
+            padding: 40px 0;
+            
+            font-weight: 700;
         }
-        .shop-section h2 {
-            color: #0D4F36; 
-            font-size: 2.15rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
+        .header-section h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
-        .shop-section p {
-            color: #666;
-            font-size: 1rem;
+        .header-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        .content-section p {
+            font-size: 1.1rem;
             line-height: 1.6;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 700;
         }
-        .category-card {
-            /* background-color: white; */
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
-        .category-card img {
-            width: 100%;
-            height: 320px; /* Adjusted height to match proportions */
-            object-fit: cover;
-            border-radius: 15px; /* Rounded corners only at the top */
+        .sub-section-title {
+            font-size: 1.5rem;
+           font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        .category-card h5 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color:#000;
-            margin: 20px 0;
-        }
-        .instagram-section {
+
+
+
+
+
+
+
+     .instagram-section {
       background-color: #F2F2F2;
       padding: 40px 0;
       text-align: center;
     }
+
     .instagram-section h2 {
       color: #0D4F36;
       font-weight: 700;
       margin-bottom: 30px;
     }
+
     .gallery img {
       width: 100%;
       height: 100%;
@@ -100,23 +135,55 @@
       border-radius: 15px;
       /* border: 5px solid rgba(0, 0, 0, 0.2); */
     }
+
     .gallery .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(3, 200px);
       gap: 15px;
     }
-    /* Grid area naming */
-    .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-    .item2 { grid-column: 2 / 3; grid-row: 1 / 2; }
-    .item3 { grid-column: 1 / 2; grid-row: 2 / 3; }
-    .item4 { grid-column: 2 / 3; grid-row: 2 / 3; }
-    .item5 { grid-column: 1 / 3; grid-row: 3 / 4; }
 
-    .item6 { grid-column: 3 / 4; grid-row: 1 / 3; }
-    .item7 { grid-column: 4 / 32; grid-row: 1 / 4; }
-    .item8 { grid-column: 3 / 4; grid-row: 3 / 4; }
-    .service-box {
+    /* Grid area naming */
+    .item1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .item2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .item3 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .item4 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .item5 {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+    }
+
+    .item6 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+
+    .item7 {
+      grid-column: 4 / 32;
+      grid-row: 1 / 4;
+    }
+
+    .item8 {
+      grid-column: 3 / 4;
+      grid-row: 3 / 4;
+    }
+ .service-box {
       background-color: #DAF8EC;
       border-radius: 16px;
       padding: 40px 20px;
@@ -147,7 +214,7 @@
       font-size: 15px;
       margin-top: 5px;
     }
-    .footer {
+  .footer {
       background-color: #0D4F36;
       color: #F2F2F2;
       padding: 50px 0 20px;
@@ -166,7 +233,7 @@
       text-decoration: none;
       margin-bottom: 8px;
       display: block;
-      font-size:20px;
+      font-size: 20px;
     }
 
     .footer a:hover {
@@ -202,13 +269,7 @@
       margin: 0 auto 20px;
       font-size: 20px;
     }
-    /* Ensure global prevention of horizontal scroll */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
   /* Navbar adjustments */
   .navbar {
     padding: 8px 10px;
@@ -308,58 +369,73 @@ html, body {
     overflow-x: hidden;
   }
 
-  /* Shop Section */
-  .shop-section {
-    padding: 30px 0;
+  /* Header Section */
+  .header-section {
+    padding: 30px 10px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
-  .shop-section h2 {
+  .header-section h1 {
     font-size: 1.5rem;
+  }
+  .header-section h2 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  /* Content Section */
+  .content-section {
+    padding: 20px 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .content-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .main-title {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  .sub-section-title {
+    font-size: 1.3rem;
+    margin-top: 20px;
     margin-bottom: 10px;
-  }
-  .shop-section p {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    padding: 0 10px;
-  }
-  .category-card img {
-    height: 200px;
-    border-radius: 10px;
-  }
-  .category-card h5 {
-    font-size: 1rem;
-    margin: 15px 0;
   }
 
   /* Instagram Section */
   .instagram-section {
-    padding: 20px 0;
+    padding: 20px 10px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
   .instagram-section h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .gallery .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
-    grid-template-rows: repeat(4, 150px); /* Adjust rows for tablet */
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 8px;
+    width: 100%;
   }
-  /* Adjust grid items for tablet */
-  .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-  .item2 { grid-column: 2 / 3; grid-row: 1 / 2; }
-  .item3 { grid-column: 1 / 2; grid-row: 2 / 3; }
-  .item4 { grid-column: 2 / 3; grid-row: 2 / 3; }
-  .item5 { grid-column: 1 / 2; grid-row: 3 / 4; }
-  .item6 { grid-column: 2 / 3; grid-row: 3 / 4; }
-  .item7 { grid-column: 1 / 3; grid-row: 4 / 5; }
-  .item8 { grid-column: 1 / 2; grid-row: 5 / 6; }
+  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
+    grid-column: auto;
+    grid-row: auto;
+  }
   .gallery img {
-    border-radius: 10px;
+    border-radius: 8px;
+    height: 140px;
+    width: 100%;
+    max-width: 100%;
   }
 
   /* Service Box Section */
@@ -454,59 +530,51 @@ html, body {
     font-size: 1.5rem;
   }
 
-  /* Shop Section */
-  .shop-section {
-    padding: 20px 0;
+  /* Header Section */
+  .header-section {
+    padding: 20px 8px;
   }
-  .shop-section h2 {
+  .header-section h1 {
     font-size: 1.3rem;
-    margin-bottom: 8px;
   }
-  .shop-section p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    padding: 0 8px;
+  .header-section h2 {
+    font-size: 1rem;
   }
-  .category-card img {
-    height: 150px;
-    border-radius: 8px;
+
+  /* Content Section */
+  .content-section {
+    padding: 15px 8px;
   }
-  .category-card h5 {
+  .content-section p {
     font-size: 0.9rem;
-    margin: 10px 0;
+  }
+  .main-title {
+    font-size: 1.8rem;
+    margin-top: 15px;
+  }
+  .section-title {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .sub-section-title {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
   }
 
   /* Instagram Section */
-  .instagram-section {
-    padding: 15px 0;
-  }
   .instagram-section h2 {
     font-size: 1.3rem;
-    margin-bottom: 15px;
   }
   .gallery .grid {
-    grid-template-columns: 1fr; /* 1 column for mobile */
-    grid-template-rows: repeat(8, 120px); /* Adjust rows for mobile */
-    gap: 8px;
+    grid-template-columns: 1fr;
   }
-  /* Adjust grid items for mobile */
-  .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-  .item2 { grid-column: 1 / 2; grid-row: 2 / 3; }
-  .item3 { grid-column: 1 / 2; grid-row: 3 / 4; }
-  .item4 { grid-column: 1 / 2; grid-row: 4 / 5; }
-  .item5 { grid-column: 1 / 2; grid-row: 5 / 6; }
-  .item6 { grid-column: 1 / 2; grid-row: 6 / 7; }
-  .item7 { grid-column: 1 / 2; grid-row: 7 / 8; }
-  .item8 { grid-column: 1 / 2; grid-row: 8 / 9; }
   .gallery img {
-    border-radius: 8px;
+    height: 180px;
   }
 
   /* Service Box Section */
-  .service-box {
-    padding: 15px 8px;
-    margin: 15px auto;
-  }
   .service-icon {
     width: 45px;
     height: 45px;
@@ -520,9 +588,6 @@ html, body {
   }
 
   /* Footer Section */
-  .footer {
-    padding: 15px 0 8px;
-  }
   .footer h5 {
     font-size: 13px;
   }
@@ -539,10 +604,10 @@ html, body {
     font-size: 11px;
   }
 }
-        </style>
-</head>>
+</style>
+</head>
 <body>
-   <!-- Navbar -->
+     <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-primary-green px-4">
     <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
       <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
@@ -580,75 +645,61 @@ html, body {
         <a href="Loginpage.html"> <i class="bi bi-person fs-5 text-white"></i></a>
     </div>
   </nav>
-  <div class="header">
-    Shop by categories
+ <div class="header">
+    About us
   </div>
-  <section class="shop-section">
-    <div class="container ">
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='IndoorPlants catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category indoor plants.png" alt="Indoor Plants">
-                    <h5>Indoor Plants</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Terrace and balcony catalogue page.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category terrace.png" alt="Terrace & Balcony">
-                    <h5>Terrace & Balcony</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Deskplant catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category desk plants.png" alt="Desk Plants">
-                    <h5>Desk Plants</h5>
-                </div>
-            </div>
+
+ <!-- Header Section -->
+    <div class="header-section text-center">
+        <div class="container">
+            <h1>INDO-GARDEN</h1>
+            <h2>3 YEARS OF ICONIC INDOOR PLANTS SALE, ETHNIC & MODERN POTS COLLECTION AND BONSAI TREES</h2>
         </div>
-        <br>
-        <br>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Modern pots page.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category modern pots.png" alt="Indoor Plants">
-                    <h5>Modern plants</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Garden Equip catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category garden equip.png" alt="Terrace & Balcony">
-                    <h5>Garden Equipments</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Herbal indoor catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category herbal plants.png" alt="Desk Plants">
-                    <h5>Herbal indoor plants</h5>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Bonsai catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category bonsai.png" alt="Indoor Plants">
-                    <h5>Bonsai trees</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Cactus catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category cactus.png" alt="Terrace & Balcony">
-                    <h5>Cactus</h5>
-                </div>
-            </div>
-            
-        </div>
-       
     </div>
-  </section>
-  <section class="instagram-section">
+
+    <!-- Main Content Section -->
+    <div class="container content-section text-center mt-5">
+        <h1 class="section-title">BIGGER, BETTER, BRANDS</h1>
+        <p>
+            SONEE SPORTS IS AN INSPIRATIONAL PORTFOLIO OF WELL-DIVERSIFIED ICONIC SPORTS, LIFESTYLE AND FASHION BRANDS PRESENTED THROUGH UNRIVALED CREATIVITY AND INNOVATION.<br><br>
+            AT SONEE SPORTS WE DELIVER BRANDED PRODUCTS, EXCEPTIONAL SERVICE, UNPARALLELED CUSTOMER SUPPORT AND OPERATIONAL EXCELLENCE TO CREATE HIGHEST VALUE TO OUR CUSTOMERS, EMPLOYEES AND SUPPLIERS. THROUGH A THOROUGH INTEGRATION OF OUR HUMAN RESOURCE, STATE OF THE ART ERP SYSTEM AND E-COMMERCE PLATFORM,
+        </p>
+
+        <!-- Mission Section -->
+        <h2 class="section-title">MISSION</h2>
+        <p>
+            OUR MISSION IS TO IMPROVE THE PERFORMANCE AND LIVES OF SPORTS AND PHYSICAL FITNESS PARTICIPANTS IN MALDIVES. WE DO THAT BY PRESENTING WORLD LEADING BRANDS, INTEGRATED WITH EXCEPTIONAL SERVICE, UNPARALLELED SUPPORT, AND OPERATIONAL EXCELLENCE TO FACILITATE SPORTS AND PLAY.
+        </p>
+
+        <!-- Vision Section -->
+        <h2 class="section-title">VISION</h2>
+        <p>
+            WE ENVISION A FUTURE WHERE MALDIVES EMBRACES HEALTHY LIVING AS PART OF OUR CULTURE BIGGER BETTER BRANDS
+        </p>
+
+        <!-- Health Section -->
+        <h3 class="sub-section-title">HEALTH</h3>
+        <p>
+            SONEE SPORTS WILL INVEST IN PROMOTING HEALTHY LIFESTYLES THROUGH PLAY AND SPORT BECAUSE HEALTHY PEOPLE CONTRIBUTE TO IMPROVING THE SOCIETY BY CHANNELING THE PHYSICAL AND MENTAL ENERGY GENERATED FROM SPORTS TO ACTION, CREATIVITY, AND INNOVATION.
+        </p>
+
+        <!-- Social Change Section -->
+        <h3 class="sub-section-title">SOCIAL CHANGE</h3>
+        <p>
+            WE WILL INVEST IN THE POWER OF SPORTS TO BRING SOCIAL CHANGE. SPORTS PROVIDE A POWERFUL PLATFORM TO ADVANCE SOCIAL CHANGE. OUR PURPOSE OF TRANSFORMING THE MALDIVIAN SOCIETY CAN ONLY BE ACHIEVED THROUGH INCLUSIVITY OF ALL MEMBERS OF THE SOCIETY AND THE SUSTAINABILITY OF THE ENVIRONMENT IN WHICH WE LIVE.
+        </p>
+
+        <!-- Joy Section -->
+        <h3 class="sub-section-title">JOY</h3>
+        <p>
+            SONEE SPORTS WILL INVEST IN ENHANCING THE LIVES OF A HEALTHY NATION BY HELPING PEOPLE EXPERIENCE THE JOY OF CELEBRATING LIFE. WE WILL REDEFINE SOCIAL GATHERING AND HEALTHY EATING 2030 INITIATIVES & GOALS
+        </p>
+    </div>
+
+
+
+
+   <section class="instagram-section">
     <div class="container">
       <h2>Follow us on Instagram</h2>
       <div class="gallery">
@@ -659,7 +710,7 @@ html, body {
           <div class="item3"><img src="./Assets/interior plant website/home insta 4.png" alt="plant3"></div>
           <div class="item4"><img src="./Assets/interior plant website/home insta 5.png" alt="plant4"></div>
           <div class="item5"><img src="./Assets/interior plant website/home insta 6.png" alt="plant5"></div>
-  
+
           <!-- Right Grid Images -->
           <div class="item6"><img src="./Assets/interior plant website/home insta 3.png" alt="plant6"></div>
           <div class="item7"><img src="./Assets/interior plant website/home insta big image.png" alt="plant7"></div>
@@ -668,9 +719,10 @@ html, body {
       </div>
     </div>
   </section>
-  <div class="container">
+
+   <div class="container">
     <div class="row text-center service-box">
-      
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/delivery icon.png">
@@ -678,7 +730,7 @@ html, body {
         <div class="service-title">Free Delivery</div>
         <div class="service-text">For all orders<br>above 545 rupees</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home customer care icon.png">
@@ -686,7 +738,7 @@ html, body {
         <div class="service-title">Customer Care</div>
         <div class="service-text">Free care tips for<br>every purchase</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home easy return icon.png">
@@ -694,7 +746,7 @@ html, body {
         <div class="service-title">Easy Return</div>
         <div class="service-text">Return window is<br>activated till 30 days</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home payment icon.png">
@@ -702,14 +754,15 @@ html, body {
         <div class="service-title">Secure Payment</div>
         <div class="service-text">Confidence on all<br>your devices</div>
       </div>
-  
+
     </div>
   </div>
-   <!-- Footer Section -->
-<footer class="footer text-center text-md-start">
+
+  <!-- Footer Section -->
+  <footer class="footer text-center text-md-start">
     <div class="container">
       <div class="row text-center text-md-start">
-        
+
         <!-- Customer Care -->
         <div class="col-md-4 mb-4">
           <h5>Customer Care</h5>
@@ -717,7 +770,7 @@ html, body {
           <p>+91 90000 91010<br>+91 98547 54873</p>
           <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
         </div>
-  
+
         <!-- Center -->
         <div class="col-md-4 mb-4 middle text-center">
           <div class="footer-logo">
@@ -730,19 +783,20 @@ html, body {
           </p>
           <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
             <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
-            
+
           </div>
         </div>
-  
+
         <!-- Right Info -->
-        <div class="col-md-4 mb-4 text-md-end ms-md-auto">
-            <p>Reg: S1203014054</p>
+        <div class="col-md-4 mb-4text-md-end ms-md-auto">
+          <h5>Indo-Green</h5>
+          <p>Reg: S1203014054</p>
           <p>TIN: 109201GST1204</p>
           <p><a href="privacy policy.html">Privacy Policy</a></p>
           <p><a href="Terms and services page.html">Terms of Use</a></p>
         </div>
       </div>
-  
+
       <!-- Bottom Line -->
       <div class="footer-bottom mt-4">
         Indo-Green © 2022. All Rights Reserved
@@ -750,6 +804,7 @@ html, body {
     </div>
   </footer>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./Assets/js/wishlist.js"></script>
- </body>
+   
+<script src="./Assets/js/home.js"></script>
+</body>
 </html>

@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Plant Catalog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indo-Green</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
 
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
-    }
-    body {
-     
-      background-color: #f2f2f2;
-      color: #000;
     }
 
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #F2F2F2;
+      color: #131313;
+    }
+
+    html,body{
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+
     .bg-primary-green {
-  background-color: #0D4F36;
-}
+      background-color: #0D4F36;
+    }
+
     .navbar .nav-link {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  
-  .navbar .nav-link.active {
-    text-decoration: underline wavy 2px;
-    text-underline-offset: 4px;
-    color: #F2F2F2;
-  }
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .navbar .nav-link.active {
+      text-decoration: underline wavy 2px;
+      text-underline-offset: 4px;
+      color: #F2F2F2;
+    }
     .header {
       background-color: #DAF8EC;
       padding: 30px 0;
@@ -45,54 +64,56 @@
       
       border-top: 5px solid #0D4F36;
     }
-    .shop-section {
-            padding: 50px 0;
-            text-align: center;
+
+
+ .content-section {
+            padding: 40px 0;
         }
-        .shop-section h2 {
-            color: #0D4F36; 
-            font-size: 2.15rem;
-            font-weight: 600;
+        .section-title {
+            font-size: 1.5rem;
+            font-weight:700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .sub-section-title {
+            font-size: 1.2rem;
+           font-weight:700;
+            text-transform: uppercase;
+            margin-top: 30px;
             margin-bottom: 15px;
-            letter-spacing: 0.5px;
         }
-        .shop-section p {
-            color: #666;
+        .content-section p, .content-section li {
             font-size: 1rem;
             line-height: 1.6;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+             font-weight:700;
         }
-        .category-card {
-            /* background-color: white; */
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        .content-section ul {
+            padding-left: 20px;
+             font-weight:700;
         }
-        .category-card img {
-            width: 100%;
-            height: 320px; /* Adjusted height to match proportions */
-            object-fit: cover;
-            border-radius: 15px; /* Rounded corners only at the top */
+        .content-section li {
+            margin-bottom: 10px;
+             font-weight:700;
         }
-        .category-card h5 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color:#000;
-            margin: 20px 0;
-        }
-        .instagram-section {
+
+
+
+
+
+
+
+     .instagram-section {
       background-color: #F2F2F2;
       padding: 40px 0;
       text-align: center;
     }
+
     .instagram-section h2 {
       color: #0D4F36;
       font-weight: 700;
       margin-bottom: 30px;
     }
+
     .gallery img {
       width: 100%;
       height: 100%;
@@ -100,23 +121,55 @@
       border-radius: 15px;
       /* border: 5px solid rgba(0, 0, 0, 0.2); */
     }
+
     .gallery .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(3, 200px);
       gap: 15px;
     }
-    /* Grid area naming */
-    .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-    .item2 { grid-column: 2 / 3; grid-row: 1 / 2; }
-    .item3 { grid-column: 1 / 2; grid-row: 2 / 3; }
-    .item4 { grid-column: 2 / 3; grid-row: 2 / 3; }
-    .item5 { grid-column: 1 / 3; grid-row: 3 / 4; }
 
-    .item6 { grid-column: 3 / 4; grid-row: 1 / 3; }
-    .item7 { grid-column: 4 / 32; grid-row: 1 / 4; }
-    .item8 { grid-column: 3 / 4; grid-row: 3 / 4; }
-    .service-box {
+    /* Grid area naming */
+    .item1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .item2 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    .item3 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .item4 {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    .item5 {
+      grid-column: 1 / 3;
+      grid-row: 3 / 4;
+    }
+
+    .item6 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+
+    .item7 {
+      grid-column: 4 / 32;
+      grid-row: 1 / 4;
+    }
+
+    .item8 {
+      grid-column: 3 / 4;
+      grid-row: 3 / 4;
+    }
+ .service-box {
       background-color: #DAF8EC;
       border-radius: 16px;
       padding: 40px 20px;
@@ -147,7 +200,7 @@
       font-size: 15px;
       margin-top: 5px;
     }
-    .footer {
+  .footer {
       background-color: #0D4F36;
       color: #F2F2F2;
       padding: 50px 0 20px;
@@ -166,7 +219,7 @@
       text-decoration: none;
       margin-bottom: 8px;
       display: block;
-      font-size:20px;
+      font-size: 20px;
     }
 
     .footer a:hover {
@@ -202,13 +255,9 @@
       margin: 0 auto 20px;
       font-size: 20px;
     }
-    /* Ensure global prevention of horizontal scroll */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
+    @media (max-width: 768px) {
 
-@media (max-width: 768px) {
+      
   /* Navbar adjustments */
   .navbar {
     padding: 8px 10px;
@@ -299,250 +348,38 @@ html, body {
     padding: 2px 5px;
   }
 
-  /* Header Section */
-  .header {
-    padding: 20px 10px;
-    font-size: 1.8rem;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
-  /* Shop Section */
-  .shop-section {
-    padding: 30px 0;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  .shop-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  .shop-section p {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    padding: 0 10px;
-  }
-  .category-card img {
-    height: 200px;
-    border-radius: 10px;
-  }
-  .category-card h5 {
-    font-size: 1rem;
-    margin: 15px 0;
-  }
-
-  /* Instagram Section */
+    /* Instagram Section */
   .instagram-section {
-    padding: 20px 0;
+    padding: 20px 10px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
   .instagram-section h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  .gallery .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
-    grid-template-rows: repeat(4, 150px); /* Adjust rows for tablet */
-    gap: 10px;
-  }
-  /* Adjust grid items for tablet */
-  .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-  .item2 { grid-column: 2 / 3; grid-row: 1 / 2; }
-  .item3 { grid-column: 1 / 2; grid-row: 2 / 3; }
-  .item4 { grid-column: 2 / 3; grid-row: 2 / 3; }
-  .item5 { grid-column: 1 / 2; grid-row: 3 / 4; }
-  .item6 { grid-column: 2 / 3; grid-row: 3 / 4; }
-  .item7 { grid-column: 1 / 3; grid-row: 4 / 5; }
-  .item8 { grid-column: 1 / 2; grid-row: 5 / 6; }
-  .gallery img {
-    border-radius: 10px;
-  }
-
-  /* Service Box Section */
-  .service-box {
-    padding: 20px 10px;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  .service-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-  .service-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .service-title {
-    font-size: 14px;
-  }
-  .service-text {
-    font-size: 13px;
-  }
-
-  /* Footer Section */
-  .footer {
-    padding: 20px 0 10px;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  .footer h5 {
-    font-size: 14px;
-  }
-  .footer p, .footer a {
-    font-size: 12px;
-  }
-  .footer .middle p {
-    font-size: 12px;
-  }
-  .footer-logo img {
-    width: 30px;
-  }
-  .footer-bottom {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Navbar adjustments */
-  .navbar {
-    padding: 6px 8px;
-  }
-  .navbar-brand img {
-    height: 25px;
-  }
-  .navbar-toggler {
-    padding: 4px;
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  .navbar-toggler-icon {
-    width: 24px;
-    height: 24px;
-  }
-  .navbar-collapse {
-    padding: 10px;
-  }
-  .navbar .nav-link {
-    font-size: 1rem;
-    padding: 8px 0;
-  }
-  .navbar .d-flex {
-    gap: 15px;
-    margin-top: 10px;
-    padding: 8px 0;
-  }
-  .navbar .d-flex i {
-    font-size: 1.2rem;
-    padding: 6px;
-  }
-  .navbar .d-flex .badge {
-    font-size: 0.65rem;
-    padding: 2px 4px;
-  }
-
-  /* Header Section */
-  .header {
-    padding: 15px 8px;
-    font-size: 1.5rem;
-  }
-
-  /* Shop Section */
-  .shop-section {
-    padding: 20px 0;
-  }
-  .shop-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-  }
-  .shop-section p {
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-    padding: 0 8px;
-  }
-  .category-card img {
-    height: 150px;
-    border-radius: 8px;
-  }
-  .category-card h5 {
-    font-size: 0.9rem;
-    margin: 10px 0;
-  }
-
-  /* Instagram Section */
-  .instagram-section {
-    padding: 15px 0;
-  }
-  .instagram-section h2 {
-    font-size: 1.3rem;
     margin-bottom: 15px;
   }
   .gallery .grid {
-    grid-template-columns: 1fr; /* 1 column for mobile */
-    grid-template-rows: repeat(8, 120px); /* Adjust rows for mobile */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
     gap: 8px;
+    width: 100%;
   }
-  /* Adjust grid items for mobile */
-  .item1 { grid-column: 1 / 2; grid-row: 1 / 2; }
-  .item2 { grid-column: 1 / 2; grid-row: 2 / 3; }
-  .item3 { grid-column: 1 / 2; grid-row: 3 / 4; }
-  .item4 { grid-column: 1 / 2; grid-row: 4 / 5; }
-  .item5 { grid-column: 1 / 2; grid-row: 5 / 6; }
-  .item6 { grid-column: 1 / 2; grid-row: 6 / 7; }
-  .item7 { grid-column: 1 / 2; grid-row: 7 / 8; }
-  .item8 { grid-column: 1 / 2; grid-row: 8 / 9; }
+  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8 {
+    grid-column: auto;
+    grid-row: auto;
+  }
   .gallery img {
     border-radius: 8px;
-  }
-
-  /* Service Box Section */
-  .service-box {
-    padding: 15px 8px;
-    margin: 15px auto;
-  }
-  .service-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-  .service-title {
-    font-size: 13px;
-  }
-  .service-text {
-    font-size: 12px;
-  }
-
-  /* Footer Section */
-  .footer {
-    padding: 15px 0 8px;
-  }
-  .footer h5 {
-    font-size: 13px;
-  }
-  .footer p, .footer a {
-    font-size: 11px;
-  }
-  .footer .middle p {
-    font-size: 11px;
-  }
-  .footer-logo img {
-    width: 25px;
-  }
-  .footer-bottom {
-    font-size: 11px;
+    height: 140px;
+    width: 100%;
+    max-width: 100%;
   }
 }
-        </style>
-</head>>
+</style>
+</head>
 <body>
-   <!-- Navbar -->
+     <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-primary-green px-4">
     <a class="navbar-brand d-flex align-items-center text-white fw-bold ms-8" href="#">
       <img src="./Assets/interior plant website/logo.png" alt="Logo" height="40" />
@@ -580,75 +417,50 @@ html, body {
         <a href="Loginpage.html"> <i class="bi bi-person fs-5 text-white"></i></a>
     </div>
   </nav>
-  <div class="header">
-    Shop by categories
+ <div class="header">
+    Privacy policy
   </div>
-  <section class="shop-section">
-    <div class="container ">
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='IndoorPlants catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category indoor plants.png" alt="Indoor Plants">
-                    <h5>Indoor Plants</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Terrace and balcony catalogue page.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category terrace.png" alt="Terrace & Balcony">
-                    <h5>Terrace & Balcony</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Deskplant catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category desk plants.png" alt="Desk Plants">
-                    <h5>Desk Plants</h5>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Modern pots page.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category modern pots.png" alt="Indoor Plants">
-                    <h5>Modern plants</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Garden Equip catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category garden equip.png" alt="Terrace & Balcony">
-                    <h5>Garden Equipments</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Herbal indoor catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category herbal plants.png" alt="Desk Plants">
-                    <h5>Herbal indoor plants</h5>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="category-card" onclick="location.href='Bonsai catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category bonsai.png" alt="Indoor Plants">
-                    <h5>Bonsai trees</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="category-card"onclick="location.href='Cactus catalogue.html';" style="cursor: pointer;">
-                    <img src="./Assets/interior plant website/category cactus.png" alt="Terrace & Balcony">
-                    <h5>Cactus</h5>
-                </div>
-            </div>
-            
-        </div>
-       
+ <div class="container content-section">
+        <h1 class="section-title">PRIVACY POLICY</h1>
+        <p>
+            Sonee Sports works to ensure that your privacy is protected when using our website. We have a policy setting out how your personal data will be processed and protected. Applicable law and our practices change over time. If we decide to update our Policy, we will post the changes on this site. You should check this page from time to time to ensure that you are happy with any changes.
+        </p>
+
+        <h2 class="section-title">YOUR PERSONAL DATA</h2>
+        <p>
+            In providing you personal data, you consent to us using the data collected in order to meet our commitments to you and to provide you with the service you expect. We need your data for the following purposes:
+        </p>
+        <ul>
+            <li>To create your personal account at Sonee Sports (i.e. your name and email address).</li>
+            <li>To validate that you are of legal age for shopping online (i.e. date of birth).</li>
+            <li>To process your orders through our website (i.e. your name, postal address, and mode of payment).</li>
+            <li>To send you marketing offers such as newsletters and latest sports Sonee affiliated events (i.e. your name and email address).</li>
+            <li>To update and contact you in the event of any problems with the delivery of your items (i.e. contact number, address).</li>
+            <li>To answer your queries and to inform you of important updates (i.e. your email address).</li>
+            <li>To notify the winners in competitions arranged online if in case you joined (i.e. your email address, name, home address and telephone number).</li>
+            <li>To analyze your personal data to provide you with relevant marketing offers and information (i.e. name, buying habits).</li>
+        </ul>
+        <p>
+            We only keep your data for as long as necessary to carry out our services to you and for as long as we are required by the Maldivian laws. After this, your personal data will be deleted. We cannot remove your data when there is a legal storage requirement, such as for taxation purposes or anything legally important held by the Maldivian Laws.
+        </p>
+
+        <h2 class="sub-section-title">USER PROFILE IMAGE UPLOAD - SONEE SPORTS MOBILE APP</h2>
+        <p>
+            At Sonee Sports Mobile App, we are committed to safeguarding the privacy of our users. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information, particularly concerning user profile image uploads. By using our services and uploading your profile image, you agree to the terms outlined in this policy.
+        </p>
+
+        <h2 class="section-title">INFORMATION WE COLLECT</h2>
+        <p>
+            When you upload a profile image on Sonee Sports, we may collect the following information.
+        </p>
     </div>
-  </section>
-  <section class="instagram-section">
+
+
+
+
+
+
+   <section class="instagram-section">
     <div class="container">
       <h2>Follow us on Instagram</h2>
       <div class="gallery">
@@ -659,7 +471,7 @@ html, body {
           <div class="item3"><img src="./Assets/interior plant website/home insta 4.png" alt="plant3"></div>
           <div class="item4"><img src="./Assets/interior plant website/home insta 5.png" alt="plant4"></div>
           <div class="item5"><img src="./Assets/interior plant website/home insta 6.png" alt="plant5"></div>
-  
+
           <!-- Right Grid Images -->
           <div class="item6"><img src="./Assets/interior plant website/home insta 3.png" alt="plant6"></div>
           <div class="item7"><img src="./Assets/interior plant website/home insta big image.png" alt="plant7"></div>
@@ -668,9 +480,10 @@ html, body {
       </div>
     </div>
   </section>
-  <div class="container">
+
+   <div class="container">
     <div class="row text-center service-box">
-      
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/delivery icon.png">
@@ -678,7 +491,7 @@ html, body {
         <div class="service-title">Free Delivery</div>
         <div class="service-text">For all orders<br>above 545 rupees</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home customer care icon.png">
@@ -686,7 +499,7 @@ html, body {
         <div class="service-title">Customer Care</div>
         <div class="service-text">Free care tips for<br>every purchase</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home easy return icon.png">
@@ -694,7 +507,7 @@ html, body {
         <div class="service-title">Easy Return</div>
         <div class="service-text">Return window is<br>activated till 30 days</div>
       </div>
-  
+
       <div class="col-md-3 col-6 mb-4">
         <div class="service-icon">
           <img src="./Assets/interior plant website/home payment icon.png">
@@ -702,14 +515,15 @@ html, body {
         <div class="service-title">Secure Payment</div>
         <div class="service-text">Confidence on all<br>your devices</div>
       </div>
-  
+
     </div>
   </div>
-   <!-- Footer Section -->
-<footer class="footer text-center text-md-start">
+
+  <!-- Footer Section -->
+  <footer class="footer text-center text-md-start">
     <div class="container">
       <div class="row text-center text-md-start">
-        
+
         <!-- Customer Care -->
         <div class="col-md-4 mb-4">
           <h5>Customer Care</h5>
@@ -717,7 +531,7 @@ html, body {
           <p>+91 90000 91010<br>+91 98547 54873</p>
           <p><a href="mailto:info@indogreen.com">info@indogreen.com</a></p>
         </div>
-  
+
         <!-- Center -->
         <div class="col-md-4 mb-4 middle text-center">
           <div class="footer-logo">
@@ -730,19 +544,20 @@ html, body {
           </p>
           <div class="social-icons mt-2 d-flex align-items-center justify-content-center">
             <a href="#"><img src="./Assets/interior plant website/social media icons.png"></a>
-            
+
           </div>
         </div>
-  
+
         <!-- Right Info -->
-        <div class="col-md-4 mb-4 text-md-end ms-md-auto">
-            <p>Reg: S1203014054</p>
+         <div class="col-md-4 mb-4text-md-end ms-md-auto">
+          <h5>Indo-Green</h5>
+          <p>Reg: S1203014054</p>
           <p>TIN: 109201GST1204</p>
           <p><a href="privacy policy.html">Privacy Policy</a></p>
           <p><a href="Terms and services page.html">Terms of Use</a></p>
         </div>
       </div>
-  
+
       <!-- Bottom Line -->
       <div class="footer-bottom mt-4">
         Indo-Green © 2022. All Rights Reserved
@@ -750,6 +565,6 @@ html, body {
     </div>
   </footer>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./Assets/js/wishlist.js"></script>
- </body>
+
+</body>
 </html>

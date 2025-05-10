@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calatheas Product Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+  <title>Featured Article Layout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   
-
   <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Quicksand', sans-serif;
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       
+        
     }
     body {
+      background-color: #f2f2f2;
+      
+      font-family: 'Quicksand', sans-serif;
      
-      background-color: #f8f9fa;
-      color: #000;
     }
     .bg-primary-green {
   background-color: #0D4F36;
@@ -37,128 +36,132 @@
     text-underline-offset: 4px;
     color: #F2F2F2;
   }
-    .header {
-      background-color: #DAF8EC;
-      padding: 30px 0;
-      text-align: center;
-      font-size: 36px;
-      font-weight: 700;
-      
-      border-top: 5px solid #0D4F36;
-    }
-    .product-image-main {
-      border-radius: 10px;
-      object-fit: cover;
-      width: 100%;
-      height: 450px;
-    }
 
-    .thumbnail-img {
-      width: 100%;
-      height: 170px;
-      border-radius: 10px;
-      object-fit: cover;
-      cursor: pointer;
-      border: 1px solid #ccc;
-    }
 
-    .quantity-box button {
-      font-weight: 800;
-     color: #0D4F36;
-      border: none;
-      width: 32px;
-      height: 32px;
-      font-size: 20px;
-      border-radius: 6px;
-    }
 
-    .quantity-box span {
-        background-color: #0D4F36;
-        color: #fff;
-      font-size: 18px;
-      min-width: 40px;
-      display: inline-block;
-      text-align: center;
-      border-radius: 10px;
-    }
+ .placeholder-img img{
+    height: 450px;
+    width: 650px;
+}
 
-    .btn-green {
-      background-color: #0D4F36;
-      color: white;
-      font-size: 18px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-    }
 
-    .btn-green:hover {
-      background-color: #0b3f2b;
-    }
 
-    .size-option input {
-      margin-right: 5px;
-    }
-
-    .shipping-info i {
-      margin-right: 6px;
-    }
-
-    .info-link {
-      color: rgb(3, 214, 3);
-      text-decoration: underline;
-    }
-    .add-btn{
-      background-color: #0D4F36;
-      color: white;
-      border-radius: 15px;
-      font-weight: 400;
-    }
-   .description h1 {
-            font-size: 30px;
+   .content-section {
+            padding: 40px 0;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .main-title {
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 20px;
             text-transform: uppercase;
+            color: #0D4F36; /* Green color to match the heading in the image */
+            margin-bottom: 20px;
         }
-      .description  p {
-            font-size: 30px;
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 30px;
             margin-bottom: 15px;
         }
-      .description  ul, ol {
-            font-size: 30px;
-            margin-bottom: 15px;
-            padding-left: 30px;
-        }
-       .description ul li, ol li {
-            font-size: 30px;
+        .sub-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
-        .bold {
-
-            font-weight: bold;
+        .placeholder-img {
+            width: 100%;
+            max-width: 450px;
+            height: 450px;
+            
+            border-radius: 10px;
+            
+              padding-left: 30%;
         }
-    .plant-card {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+         .content-section {
+            padding: 40px 0;
+             text-align: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0D4F36; /* Green color to match the heading in the image */
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .sub-section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .content-section p, .content-section li {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .content-section ul {
+            padding-left: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .image-row {
+            margin-bottom: 20px;
+            align-items: center;
+              margin-left: 10%;
+        }
+        .placeholder-img {
+            width: 100%;
+            height: 450px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+              
+        }
+        .content-section {
+            padding: 40px 0;
+             text-align: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0D4F36; /* Green color to match the heading in the image */
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        .content-section p, .content-section li {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .content-section ul {
+            padding-left: 20px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .placeholder-img {
+            width: 100%;
+            max-width: 400px;
+            height: 450px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+          padding-left: 20%;
+              align-items: center;
+        }
+        
 
-    .plant-card img {
-      width: 100%;
-      border-radius: 15px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-    }
 
-    .plant-card h6 {
-      margin-top: 15px;
-      font-weight: 600;
-    }
 
-    .plant-card p {
-      margin: 5px 0;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-    .service-box {
+   .service-box {
       background-color: #DAF8EC;
       border-radius: 16px;
       padding: 40px 20px;
@@ -189,6 +192,7 @@
       font-size: 15px;
       margin-top: 5px;
     }
+
     .footer {
     background-color: #0D4F36;
     color: #F2F2F2;
@@ -244,10 +248,7 @@
     margin: 0 auto 20px;
     font-size: 20px;
   }
-  /* Add to the existing <style> tag in the HTML */
-
-/* Ensure global prevention of horizontal scroll */
-html, body {
+ html, body {
   width: 100%;
   overflow-x: hidden;
 }
@@ -345,90 +346,69 @@ html, body {
 
   /* Header Section */
   .header {
-    padding: 20px 10px;
-    font-size: 1.8rem;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
-
-  /* Product Section */
-  .container.py-5 {
-    padding: 20px 10px !important;
+  .header img {
     width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-  .product-image-main {
-    height: 300px;
-    border-radius: 8px;
-  }
-  .thumbnail-img {
-    height: 100px;
-    border-radius: 8px;
-  }
-  .col-md-6.fw-bold {
-    line-height: 2rem;
-  }
-  .col-md-6.fw-bold h2 {
-    font-size: 1.5rem;
-  }
-  .col-md-6.fw-bold p {
-    font-size: 0.9rem;
-  }
-  .col-md-6.fw-bold h4 {
-    font-size: 1.3rem;
-  }
-  .quantity-box button {
-    width: 28px;
-    height: 28px;
-    font-size: 18px;
-  }
-  .quantity-box span {
-    font-size: 16px;
-    min-width: 36px;
-  }
-  .btn-green, .add-btn {
-    font-size: 16px;
-    padding: 8px 16px;
-    width: 100% !important; /* Override w-50 */
-  }
-  .size-option label {
-    font-size: 0.9rem;
-  }
-  .shipping-info p {
-    font-size: 0.9rem;
+    height: auto;
+    max-width: 100%;
   }
 
-  /* Description Section */
-  .description {
+  /* Content Section */
+  .content-section {
     padding: 20px 10px;
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
-  .description h1 {
-    font-size: 1.5rem;
+  .main-title {
+    font-size: 2rem;
     margin-bottom: 15px;
   }
-  .description p, .description ul, .description ol, .description ul li, .description ol li {
-    font-size: 1rem;
+  .section-title {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .sub-section-title {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+  .content-section p, .content-section li {
+    font-size: 0.9rem;
     line-height: 1.5;
   }
-  .description ul, .description ol {
+  .content-section ul {
     padding-left: 15px;
   }
+  .content-section li {
+    margin-bottom: 8px;
+  }
 
-  /* Plant Cards Section */
-  .plant-card img {
-    border-radius: 10px;
+  /* Image Adjustments */
+  .placeholder-img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    padding-left: 0; /* Remove padding to prevent overflow */
+    margin: 0 auto; /* Center the image */
   }
-  .plant-card h6 {
-    font-size: 1rem;
-    margin-top: 10px;
+  .placeholder-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .plant-card p {
-    font-size: 0.9rem;
+  .image-row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .image-row .col-md-6 {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   /* Service Box Section */
@@ -517,82 +497,43 @@ html, body {
     padding: 2px 4px;
   }
 
-  /* Header Section */
-  .header {
+  /* Content Section */
+  .content-section {
     padding: 15px 8px;
-    font-size: 1.5rem;
+  }
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+  }
+  .sub-section-title {
+    font-size: 1rem;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .content-section p, .content-section li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .content-section ul {
+    padding-left: 10px;
+  }
+  .content-section li {
+    margin-bottom: 6px;
   }
 
-  /* Product Section */
-  .container.py-5 {
-    padding: 15px 8px !important;
-  }
-  .product-image-main {
+  /* Image Adjustments */
+  .placeholder-img {
     height: 200px;
     border-radius: 6px;
   }
-  .thumbnail-img {
-    height: 80px;
-    border-radius: 6px;
-  }
-  .col-md-6.fw-bold {
-    line-height: 1.8rem;
-  }
-  .col-md-6.fw-bold h2 {
-    font-size: 1.3rem;
-  }
-  .col-md-6.fw-bold p {
-    font-size: 0.85rem;
-  }
-  .col-md-6.fw-bold h4 {
-    font-size: 1.2rem;
-  }
-  .quantity-box button {
-    width: 24px;
-    height: 24px;
-    font-size: 16px;
-  }
-  .quantity-box span {
-    font-size: 14px;
-    min-width: 32px;
-  }
-  .btn-green, .add-btn {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-  .size-option label {
-    font-size: 0.85rem;
-  }
-  .shipping-info p {
-    font-size: 0.85rem;
-  }
-
-  /* Description Section */
-  .description {
-    padding: 15px 8px;
-  }
-  .description h1 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-  .description p, .description ul, .description ol, .description ul li, .description ol li {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-  .description ul, .description ol {
-    padding-left: 10px;
-  }
-
-  /* Plant Cards Section */
-  .plant-card img {
-    border-radius: 8px;
-  }
-  .plant-card h6 {
-    font-size: 0.9rem;
-    margin-top: 8px;
-  }
-  .plant-card p {
-    font-size: 0.85rem;
+  .image-row .col-md-6 {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   /* Service Box Section */
@@ -674,122 +615,121 @@ html, body {
     </div>
   </nav>
   <div class="header">
-    Indoor plants
+    <img src="./Assets/interior plant website/blog read more header image.png" width="100%"></img>
   </div>
-  <div class="container py-5">
-    <div class="row g-5 align-items-start">
 
-      <!-- Left Column: Images -->
-      <div class="col-md-6">
-        <img src="./Assets/interior plant website/indoor -image section 1.png" alt="Main Plant" class="product-image-main mb-3">
-        <div class="row g-2">
-          <div class="col-4">
-            <img src="./Assets/interior plant website/indoor -image section 1.png" class="thumbnail-img" alt="Thumb1">
-          </div>
-          <div class="col-4">
-            <img src="./Assets/interior plant website/indoor -image section 2.png" class="thumbnail-img" alt="Thumb2">
-          </div>
-          <div class="col-4">
-            <img src="./Assets/interior plant website/indoor -image section 3.png" class="thumbnail-img" alt="Thumb3">
-          </div>
-        </div>
-      </div>
+  <div class="container content-section">
+        <h1 class="main-title">THE ULTIMATE GUIDE TO INDOOR PLANTS</h1>
+        <p>
+            Indoor plants should be an essential component of every interior design. Greenery brightens up indoor spaces and is known to have mood-boosting qualities. Indoor plants are popular because they are relatively easy to take care of, provide health benefits and can be used in a variety of indoor décor themes. Indoor plants are a great option for those who have little yard space for an outdoor garden or for those who live in climates with severely cold winters.
+        </p>
+        <p>
+            So, if you’re caring for indoor plants for the first time, our ultimate guide will provide you with the necessary information to allow your green friends to thrive. To provide you with expert insight, we asked our Senior Horticulturist at Ambius, Matt Kostelnick, to answer the most frequently asked questions about indoor plants.
+        </p>
+        <br>
 
-      <!-- Right Column: Info -->
-      <div class="col-md-6 fw-bold" style="line-height: 2.5rem;">
-        <h2>Calatheas</h2>
-        <p class="text-muted">Each of our products are hand-selected for its unique aesthetic appearance and ability to enhance your home....</p>
-        <h4>₹ 800</h4>
-        <p class="fw-bold">TAX INCLUDED | SHIPPING CALCULATED AT CHECKOUT</p>
+        <!-- Placeholder for the image -->
+        <div class="placeholder-img"><img src="./Assets/interior plant website/blog read more 1.png"></div>
+        <br>
 
-        <!-- Quantity Selector -->
-        <div class="quantity-box d-flex align-items-center my-3">
-          <button id="decrease">-</button>
-          <span id="quantity">1</span>
-          <button id="increase">+</button>
-        </div>
+        <h2 class="section-title">WHAT ARE INDOOR PLANTS?</h2>
+        <p>
+            Indoor plants are plants that grow indoors. There are a variety of tropical plants, like palms, that thrive in indoor environments.
+        </p>
 
-        <!-- Sizes -->
-        <p class="fw-bold mb-1">Sizes: <span class="fw-normal">S</span></p>
-        <div class="mb-3">
-          <label class="me-3"><input type="checkbox" /> S</label>
-          <label class="me-3"><input type="checkbox" /> M</label>
-          <label><input type="checkbox" /> L</label>
-        </div>
-
-        <!-- Add to Cart Button -->
-        <button class=" w-50 mb-4 add-btn">Add to Cart</button>
-
-        <!-- Delivery Info -->
-        <div class="shipping-info">
-          <p><i class="bi bi-truck"></i> Free shipping on all orders over 450 rupees</p>
-          <p><i class="bi bi-clock"></i> Delivery in 3–4 working days shipping & return</p>
-          <p><a href="#" class="info-link">Free delivery and return policies</a></p>
-        </div>
-      </div>
+        <h3 class="sub-section-title">HOW DO YOU PLANT INDOOR PLANTS?</h3>
+        <p>
+            Most of the time, indoor plants are already in containers, so there is no need to plant them. There are typically only two reasons you need to plant an indoor plant.
+        </p>
+        <p>
+            1. If your plant is getting too big, then you will need to replant.<br>
+            2. If you wanted to grow bulbs indoors, then you will need to plant the bulbs yourself.
+        </p>
     </div>
-  </div>
-  <div class="container description">
-    <h1>Description</h1>
-    <p>
-        Plants that require a low amount of light and water to thrive are typically known as indoor plants. Good indoor plants will tolerate lower light and humidity. Also, they will be less likely to deal with pests. Plus, they usually do not grow too much (you wouldn’t want an indoor plant to grow at a rapid rate). The best indoor plants include the following. All plants can act as air purifiers but these plants are more beneficial than others. Succulents and cacti need continuous, daily sunlight. Plants with foliage need roughly 8 hours of light per day. The amount of light depends on the plants you are growing, so we suggest doing research on the specific plants you are growing.
-    </p>
-    <ul>
-        <li>Red-Edged Dracaena</li>
-        <li>Weeping Fig</li>
-        <li>Bamboo Palm</li>
-    </ul>
-    <p class="bold">
-        More information on plants that improve air quality
-    </p>
-    <ol>
-        <li>
-            <span class="bold">A good root system</span> – This is incredibly important when choosing a plant. It’s not practical to pull a plant out of its pot to check its roots but if it is a small plants this can be done. Healthy roots are thick and light in color.
-        </li>
-        <li>
-            <span class="bold">Foliage</span> – Here’s a good rule of thumb when it comes to plant foliage: if you can’t see through it, the foliage is thick enough.
-        </li>
-        <li>
-            <span class="bold">Check for disease</span> – Some signs of a plant with pests or disease are: white dots, sticky residue on the leaves and a bad odor.
-        </li>
-    </ol>
-</div>
-  <div class="container py-5">
-    <div class="row justify-content-center g-4">
-      <!-- Card 1 -->
-      <div class="col-6 col-md-3">
-        <div class="plant-card">
-          <img src="./Assets/interior plant website/home all plants 1.png" alt="Commodo Dolor" />
-          <h6>Commodo Dolor</h6>
-          <p>₹ 300</p>
+     <div class="container content-section">
+        <!-- Image Row -->
+        <div class="row image-row">
+            <div class="col-md-6 mb-3">
+                <div class="placeholder-img"><img src="./Assets/interior plant website/blog read more 2.png"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="placeholder-img"><img src="./Assets/interior plant website/blog read more 3.png"></div>
+            </div>
         </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="col-6 col-md-3">
-        <div class="plant-card">
-          <img src="./Assets/interior plant website/home all plants 2.png" alt="Sansevieria" />
-          <h6>Sansevieria</h6>
-          <p>₹ 270</p>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="col-6 col-md-3">
-        <div class="plant-card">
-          <img src="./Assets/interior plant website/home all plants 3.png" alt="Epipremnum Aureum" />
-          <h6>Epipremnum Aureum</h6>
-          <p>₹ 350</p>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="col-6 col-md-3">
-        <div class="plant-card">
-          <img src="./Assets/interior plant website/home all plants 4.png" alt="Ficus Lyrata" />
-          <h6>Ficus Lyrata</h6>
-          <p>₹ 140</p>
-        </div>
-      </div>
+
+        <h2 class="section-title">HOW MUCH LIGHT DO INDOOR PLANTS NEED?</h2>
+        <p>
+            Succulents and cacti need continuous, daily sunlight. Plants with foliage need roughly 8 hours of light per day. The amount of light depends on the plants you are growing, so we suggest doing research on the specific plants you are growing.
+        </p>
+
+        <h3 class="sub-section-title">WHAT QUALITIES MAKE FOR A GOOD INDOOR PLANT?</h3>
+        <p>
+            There are several qualities to look for when selecting an indoor plant.
+        </p>
+        <p>
+            1. A good root system – This is incredibly important when choosing a plant. It’s not practical to pull a plant out of its pot to check its roots but if it is a small plant, this can be done. Healthy roots are thick and light in color.
+        </p>
+        <p>
+            2. Foliage – Here’s a good rule of thumb when it comes to plant foliage: if you can’t see through it, the foliage is thick enough.
+        </p>
+        <p>
+            3. Check for disease – Some signs of a plant with pests or disease are: white dots, sticky residue on the leaves and a bad odor.
+        </p>
+
+        <h2 class="section-title">WHICH INDOOR PLANTS REQUIRE LOW LIGHT?</h2>
+        <p>
+            Indoor plants that need little light could be good fits for locations where light is dimmer. Some plants that require low light are:
+        </p>
+        <ul>
+            <li><strong>Philodendron</strong> – A very common indoor plant that rarely attracts pests. It’s a hearty plant that is adaptable to various environments.</li>
+            <li><strong>Pothos or Devil’s Ivy</strong> – A plant with colorful and vibrant leaves. This plant does great in a variety of environments, thriving in low light or in bright, indirect light.</li>
+            <li><strong>Dracaeno</strong> – This is another popular indoor plant with long green leaves. This is one indoor plant you will want to prune if its foliage gets too long.</li>
+            <li><strong>Peace Lily</strong> – This plant thrives best when the soil is moist, but not over watered. If you want flowers to appear on your peace lily plant, move your plant to a darker room.</li>
+        </ul>
     </div>
-  </div>
+     <!-- Main Content Section -->
+    <div class="container content-section">
+        <!-- Placeholder for the image -->
+        <div class="placeholder-img"><img src="./Assets/interior plant website/blog read more  4.png"></div>
+
+        <h2 class="section-title">WHICH INDOOR PLANTS ARE THE EASIEST TO TAKE CARE OF?</h2>
+        <p>Below is a list of indoor plants that are easy to take care of.</p>
+        <ul>
+            <li>Sansevieria</li>
+            <li>Philodendron</li>
+            <li>Most succulents</li>
+            <li>Pothos</li>
+            <li>ZZ plant</li>
+        </ul>
+
+        <h2 class="section-title">WHICH PLANTS ARE CONSIDERED INDOOR PLANTS?</h2>
+        <p>
+            Plants that require a low amount of light and water to thrive are typically known as indoor plants. Ambius considers these plants as examples of common indoor plants:
+        </p>
+        <ul>
+            <li>Dracaena</li>
+            <li>Hedera Helix</li>
+            <li>Sansevieria Zeylanica Superba</li>
+            <li>Scindapsus</li>
+        </ul>
+
+        <p>
+            You likely learned about a process called photosynthesis in grade school science class. During photosynthesis, plants capture sunlight and convert it into energy. In order to survive and maintain strength, plants will strive to get as much sunlight as they can. In darker environments, plants sometimes stretch to receive as much light as possible – possibly from a nearby window or another light source. This stretching is called etiolation. You likely learned about a process called photosynthesis in grade school science class. During photosynthesis, plants capture sunlight and convert it into energy. You likely learned about a process called photosynthesis in grade school science class. During photosynthesis, plants capture sunlight and convert it into energy.
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+   <br>
+  <br>
+  <br>
   <div class="container">
     <div class="row text-center service-box">
       
@@ -824,10 +764,12 @@ html, body {
         <div class="service-title">Secure Payment</div>
         <div class="service-text">Confidence on all<br>your devices</div>
       </div>
+  
     </div>
-    </div>
-     <!-- Footer Section -->
-<footer class="footer text-center text-md-start">
+  </div>
+
+ <!-- Footer Section -->
+ <footer class="footer text-center text-md-start">
     <div class="container">
       <div class="row text-center text-md-start">
         
@@ -870,13 +812,7 @@ html, body {
       </div>
     </div>
   </footer>
-  
-  
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="./Assets/js/productpage.js">
-   
-  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Assets/js/wishlist.js"></script>
 </body>
 </html>

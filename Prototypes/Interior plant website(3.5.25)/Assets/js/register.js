@@ -26,4 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'Loginpage.html';
   });
 });
+ 
+  function updateWishlistCount() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    document.getElementById('wishlist-count').textContent = wishlist.length;
+       }
+  
+  document.addEventListener("DOMContentLoaded", updateWishlistCount);
+  
+function addToWishlist(product) {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  
+  
+  const exists = wishlist.find(item => item.id === product.id);
+  if (!exists) {
+    wishlist.push(product);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  }
+
+
+  updateWishlistCount();
+}
+
+
 
