@@ -8,20 +8,18 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
   <style>
     * {
       box-sizing: border-box;
     }
-
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Quicksand', sans-serif;
       background-color: #fff;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
-
     .sidebar {
       background-color: #455A64;
       height: 100vh;
@@ -32,8 +30,9 @@
       left: 0;
       width: 200px;
       z-index: 1000;
+      overflow-x: hidden;
+      transition: transform 0.3s ease; /* Smooth toggle animation */
     }
-
     .sidebar a {
       color: white;
       text-decoration: none;
@@ -41,71 +40,64 @@
       padding: 10px 20px;
       font-weight: 500;
     }
-
     .sidebar a.active,
     .sidebar a:hover {
       color: #F8CC14;
     }
-
     .sidebar i {
       margin-right: 10px;
     }
-
     .main-content {
       margin-left: 200px;
       padding: 30px;
+      width: calc(100% - 200px); /* Adjust content width */
+      box-sizing: border-box;
     }
-
     .payslip-box {
       background-color: #FFEEC7;
       border-radius: 10px;
       padding: 30px;
+      width: 100%;
+      box-sizing: border-box;
     }
-
     .payslip-header {
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 25px;
     }
-
     .info-group {
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
+      flex-wrap: wrap; /* Allow info to stack */
     }
-
     .info-group .left,
     .info-group .right {
       flex: 1;
+      min-width: 200px; /* Ensure readability on smaller screens */
     }
-
     .info-label {
       font-weight: bold;
       font-size: 18px;
     }
-
     .info-value {
       font-size: 17px;
       margin-bottom: 10px;
     }
-
     .salary-table th {
       background-color: #F8CC14;
       text-align: center;
     }
-
     .salary-table td {
       background-color: #FEEBA8;
       text-align: center;
     }
-
     .total-earnings {
       text-align: right;
       font-weight: bold;
       font-size: 18px;
       margin-top: 20px;
     }
-
     .btn-yellow {
       background-color: #F8CC14;
       font-weight: 600;
@@ -113,7 +105,6 @@
       border: none;
       padding: 8px 20px;
     }
-
     .btn-dark-custom {
       background-color: #455A64;
       font-weight: 600;
@@ -121,28 +112,151 @@
       border: none;
       padding: 8px 20px;
     }
-
     .btn-group-custom {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-top: 25px;
+      flex-wrap: wrap; /* Allow buttons to wrap */
     }
-
+    .sidebar-toggle {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      background-color: #F8CC14;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px;
+      cursor: pointer;
+    }
     @media print {
       .no-print {
         display: none !important;
+      }
+      .sidebar, .sidebar-toggle {
+        display: none !important; /* Hide sidebar and toggle during print */
+      }
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+      }
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .sidebar {
+        width: 60px;
+        padding-top: 10px;
+      }
+      .sidebar a {
+        padding: 10px;
+        text-align: center;
+      }
+      .sidebar a i {
+        margin-right: 0;
+      }
+      .sidebar a span {
+        display: none; /* Hide text, show icons */
+      }
+      .main-content {
+        margin-left: 60px;
+        width: calc(100% - 60px);
+        padding: 20px;
+      }
+      .payslip-box {
+        padding: 20px;
+      }
+      .info-label, .info-value {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 768px) {
+      .sidebar-toggle {
+        display: block; /* Show toggle button */
+      }
+      .sidebar {
+        width: 200px;
+        transform: translateX(-100%); /* Hide sidebar by default */
+      }
+      .sidebar.active {
+        transform: translateX(0); /* Show sidebar when toggled */
+      }
+      .sidebar a span {
+        display: inline; /* Show text when sidebar is active */
+      }
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+      }
+      .payslip-box {
+        padding: 15px;
+      }
+      .info-group .left,
+      .info-group .right {
+        flex: 100%;
+        text-align: left; /* Align left for stacked layout */
+        margin-bottom: 10px;
+      }
+      .total-earnings {
+        text-align: center; /* Center total earnings */
+      }
+      .table-responsive {
+        overflow-x: auto; /* Allow table to scroll if necessary */
+      }
+      .salary-table {
+        font-size: 14px;
+      }
+      .salary-table th, .salary-table td {
+        padding: 5px;
+      }
+    }
+    @media (max-width: 576px) {
+      .sidebar {
+        width: 180px; /* Narrower sidebar for small screens */
+      }
+      .sidebar a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+      }
+      .main-content {
+        padding: 10px;
+      }
+      .payslip-box {
+        padding: 10px;
+      }
+      .payslip-header {
+        font-size: 18px;
+      }
+      .info-label, .info-value {
+        font-size: 14px;
+      }
+      .total-earnings {
+        font-size: 16px;
+      }
+      .salary-table {
+        font-size: 12px;
+      }
+      .salary-table th, .salary-table td {
+        padding: 3px;
+      }
+      .btn-yellow, .btn-dark-custom {
+        padding: 6px 12px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-
+  <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
   <!-- Sidebar -->
   <div class="sidebar d-flex flex-column">
-    <a href="./Overview page.html"><i class="fas fa-chart-pie"></i> Overview</a>
-    <a href="./Payroll page.html" ><i class="fas fa-money-check-alt"></i> Payroll</a>
-    <a href="./Payslip page.html"class="active"><i class="fas fa-receipt"></i> Payslip</a>
+    <a href="./Overview page.html"><i class="fas fa-chart-pie"></i> <span>Overview</span></a>
+    <a href="./Payroll page.html"><i class="fas fa-money-check-alt"></i> <span>Payroll</span></a>
+    <a href="./Payslip page.html" class="active"><i class="fas fa-receipt"></i> <span>Payslip</span></a>
   </div>
 
   <!-- Main Content -->
@@ -201,10 +315,13 @@
         <button id="saveBtn" class="btn btn-success">Save</button>
         <button class="btn btn-warning text-dark" onclick="downloadPayslip()">Download</button>
       </div>
-
     </div>
   </div>
 
-  <script src="./Assets/JS/Payslip.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./Assets/JS/Payslip.js">
+   
+    
+  </script>
 </body>
 </html>

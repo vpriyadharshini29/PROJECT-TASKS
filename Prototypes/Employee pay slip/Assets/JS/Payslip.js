@@ -106,3 +106,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    });

@@ -46,4 +46,6 @@ document.getElementById("payrollForm").addEventListener("submit", function (e) {
   // Navigate to payslip page
   window.location.href = "Payslip page.html";
 });
-
+ document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('active');
+    });

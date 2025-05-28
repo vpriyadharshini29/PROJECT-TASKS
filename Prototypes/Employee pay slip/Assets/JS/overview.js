@@ -135,3 +135,6 @@ document.querySelectorAll(".delete-btn").forEach(btn => {
     this.closest(".meeting-card").remove();
   });
 });
+ document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('active');
+  });
