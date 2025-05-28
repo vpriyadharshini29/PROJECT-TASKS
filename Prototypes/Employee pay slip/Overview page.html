@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OverviewPage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+  font-family: 'Quicksand', sans-serif;
+}
+.sidebar {
+  background-color: #455A64;
+  min-height: 100vh;
+  width: 220px; /* Adjust this value as needed */
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  color: #F8CC14;
+}
+
+.sidebar i {
+  margin-right: 10px;
+}
+
+.main-content {
+  margin-left: 220px; /* Match this with the sidebar width */
+  padding: 30px;
+}
+
+
+.bg-sidebar {
+  background-color: #455A64;
+}
+
+.bg-yellow {
+  background-color: #F8CC14 !important;
+  color: #fff;
+}
+
+.bg-light-yellow {
+  background-color: #FFEEC7;
+}
+
+.bg-light-orange {
+  background-color: #FEEBA8;
+}
+
+.search-box {
+  position: relative;
+}
+.search-box input {
+  border-radius: 10px;
+  padding-right: 30px;
+}
+.search-box input {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding-right: 30px;
+  background-color: #FFEEC7; 
+  color: #000; 
+
+}
+.search-box .fa-search {
+  color: #000;            
+}
+.active{
+  color: #F8CC14;
+}
+.search-icon {
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: #FF8016;
+  position: absolute;
+}
+
+.circle-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #F8CC14;
+  color: white;
+  border-radius: 50%;
+  border: none;
+}
+
+.highlight-day {
+  background-color: #F8CC14;
+  padding: 5px 10px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+}
+
+.meeting-card {
+  background-color: #FEEBA8;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+.clickable-date:hover {
+  background-color: #ffeec7;
+  border-radius: 50%;
+  color: #000;
+}
+
+  </style>
+</head>
+<body>
+<div class="d-flex">
+  <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column">
+    <a href="./Overview page.html"class="active"><i class="fas fa-chart-pie"></i> Overview</a>
+    <a href="./Payroll page.html" ><i class="fas fa-money-check-alt"></i> Payroll</a>
+    <a href="./Payslip page.html"><i class="fas fa-receipt"></i> Payslip</a>
+  </div>
+
+
+  <!-- Main content -->
+  <div class="container-fluid p-4 main-content" style="background-color: #ffffff;">
+    <div class="bg-light-yellow p-3 rounded">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="fw-bold mb-0">Good Morning !!!</h5>
+        <div class="d-flex align-items-center">
+          <div class="search-box position-relative me-3 bg-light-yellow ">
+            <input type="text" class="form-control" placeholder="Search">
+            <i class="fas fa-search position-absolute search-icon"></i>
+          </div>
+          <i class="fas fa-bell me-3"></i>
+          <img src="./Assets/Payslip Images/Profile.png" alt="user" class="rounded-circle" width="40">
+        </div>
+      </div>
+    </div>
+
+   <div class="row mt-4 g-3">
+  <div class="col-md-3 col-sm-6">
+    <div class="card text-center bg-yellow p-3 text-white">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="rounded-circle  d-flex align-items-center justify-content-center me-3" style="background-color:#455A64;width: 50px; height: 50px;">
+          <i class="fas fa-users fa-lg"></i>
+        </div>
+        <h6 class="mb-0 text-start">Total<br>Employees</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="card text-center bg-yellow p-3 text-white">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="rounded-circle  d-flex align-items-center justify-content-center me-3" style="background-color:#455A64;width: 50px; height: 50px;">
+          <i class="fas fa-calendar-minus fa-lg"></i>
+        </div>
+        <h6 class="mb-0 text-start">Number Of<br>leave</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="card text-center bg-yellow p-3 text-white">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="rounded-circle  d-flex align-items-center justify-content-center me-3" style="background-color:#455A64 ; width: 50px; height: 50px;">
+          <i class="fas fa-user-plus fa-lg"></i>
+        </div>
+        <h6 class="mb-0 text-start">New<br>Employee’s</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="card text-center bg-yellow p-3 text-white">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="rounded-circle  d-flex align-items-center justify-content-center me-3" style="background-color:#455A64;width: 50px; height: 50px;">
+          <i class="fas fa-plane-departure fa-lg"></i>
+        </div>
+        <h6 class="mb-0 text-start">Holiday of<br>this Year</h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="row mt-4 g-4">
+      <!-- Calendar -->
+      <div class="col-md-6">
+        <div class="p-3 rounded bg-light-yellow">
+          <h6>Calendar</h6>
+          <div class="calendar p-3 bg-light-orange rounded">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <strong>May 2025</strong>
+              <div>
+                <button class="btn circle-btn me-1"><i class="fas fa-chevron-left"></i></button>
+                <button class="btn circle-btn"><i class="fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <table class="table text-center table-borderless m-0">
+              <thead>
+                <tr>
+                  <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td>14</td><td>15</td><td>16</td><td><span class="highlight-day">17</span></td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming Meetings -->
+      <div class="col-md-6">
+        <div class="p-3 rounded bg-light-yellow">
+          <div class="d-flex justify-content-between align-items-center">
+            <h6>Upcoming Meetings</h6>
+            <a href="#" class="text-danger small fw-semibold">View All</a>
+          </div>
+          <div class="mt-3" style="overflow-y: hidden;">
+            <div class="meeting-card mb-3 d-flex justify-content-between align-items-center">
+              <span>Client Meeting - 10.00 AM</span>
+              <div class="text-end">
+                <strong>Wed</strong><br><small>June 4</small>
+                <br><button class="btn btn-sm btn-danger mt-1 delete-btn">Delete</button>
+              </div>
+            </div>
+            <div class="meeting-card mb-3 d-flex justify-content-between align-items-center">
+              <span>Team Meeting - 11.00 AM</span>
+              <div class="text-end">
+                <strong>Tue</strong><br><small>June 7</small>
+                <br><button class="btn btn-sm btn-danger mt-1 delete-btn">Delete</button>
+              </div>
+            </div>
+            <div class="meeting-card mb-3 d-flex justify-content-between align-items-center">
+              <span>HR Interview - 2.00 PM</span>
+              <div class="text-end">
+                <strong>Mon</strong><br><small>June 17</small>
+                <br><button class="btn btn-sm btn-danger mt-1 delete-btn">Delete</button>
+              </div>
+            </div>
+            <div class="meeting-card d-flex justify-content-between align-items-center">
+              <span>Client Meeting - 4.00 PM</span>
+              <div class="text-end">
+                <strong>Mon</strong><br><small>June 20</small>
+                <br><button class="btn btn-sm btn-danger mt-1 delete-btn">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Assets/JS/overview.js"></script>
+</body>
+</html>
