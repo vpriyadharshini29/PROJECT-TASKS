@@ -1,0 +1,149 @@
+  .top-bar {
+      background-color: #4CAF1C;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      color: #4CAF1C;
+    }
+
+    .logo-block img {
+      width: 100px;
+    }
+
+
+    .search-box input {
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      padding: 8px 15px;
+      width: 250px;
+    }
+
+    .search-box button {
+      border-radius: 0 5px 5px 0;
+      background-color: #ff7700;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .nav-link.active {
+      color: #4CAF1C !important;
+    }
+
+    .cart-icon {
+      border: 1px solid #4CAF1C;
+      padding: 6px 8px;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+    .account-btn {
+      background-color: #4CAF1C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .middle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .middle-bar .center-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      width: 100%;
+    }
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Fresh & Organic produce form our farmers to your kitchen
+  </div>
+
+  <!-- Logo + Search -->
+  <div class="container middle-bar">
+    <!-- Logo Left -->
+    <div class="logo-block">
+    <a href="Homepage.html"> <img src="./grocerywebsite/logo.png" height="100px" width="180px" alt="Leaf" /></a> 
+      
+    </div>
+
+    <!-- Search Center -->
+    <div class="center-content">
+      <form class="search-box d-flex">
+        <input type="text" placeholder="Search for products">
+        <button type="submit"><img src="./grocerywebsite/search icon.png"> Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white border-top border-bottom">
+  <div class="container">
+    <!-- Toggler button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link " href="Homepage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CategoryPage.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BestSellingcarePage.html">Best Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BlogsPage.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a href="Cartpage.html" class="cart-icon">
+            <img src="./grocerywebsite/cart icon.png" alt="cart" width="20" />
+          </a>
+        </li>
+        <li class="nav-item">
+     <a href="Loginpage.html" class="account-btn">My Account</a>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+body {
+  font-family: 'Open Sans', sans-serif;
+}

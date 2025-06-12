@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Varnika Jewels</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+   <style>
+    body {
+ 
+   font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+  color: #8b004b;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+}
+.hot-selling h2 {
+  font-size: 28px;
+  color: #000;
+}
+
+.hot-selling .highlight {
+  color: #740938;
+}
+
+.category-label {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #ffffff;
+  color: #740938;
+  border: 2px solid #740938;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-label:hover {
+  background-color: #740938;
+  color: #fff;
+}
+
+.card img {
+  height: 370px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+   .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.collection-title {
+  color: #800040;
+}
+
+.view-all-btn {
+  font-size: 0.9rem;
+  padding: 5px 12px;
+  border-radius: 13px;
+  border-color: #800040;
+  color: #800040;
+}
+
+.view-all-btn:hover {
+  background-color: #800040;
+  color: #fff;
+}
+
+.item-caption {
+  font-weight: 500;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #111;
+}
+.image-right {
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+  .testimonial-card {
+      background-color: #a66c86;
+ 
+      border-radius: 10px;
+      padding: 15px;
+      height: 100%;
+    }
+    .feature-section {
+      background-color: #f79ac5;
+      padding: 40px 0;
+    }
+    .feature-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .about-section {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+    .about-image {
+      border-radius: 10px;
+      max-width: 100%;
+    }
+    .about-text h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      margin-bottom: 15px;
+    }
+       .footer {
+      background-color: #7d0d3a; /* Dark maroon */
+      color: white;
+      padding: 40px 20px;
+    }
+    .footer h6 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .footer p,
+    .footer a {
+      margin-bottom: 8px;
+      color: white;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer .contact-icons {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="container-fluid py-3 border-bottom">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="logo text-uppercase fw-bold text-danger fs-4">
+        <img src="./traditional jewellery website images/icons logo illustraion/Group 14.png">
+      </div>
+
+      <div class="input-group w-50 mx-3">
+        <input type="text" class="form-control rounded-start-pill" placeholder="search jewellery by name">
+        <button class="btn btn-outline-secondary rounded-end-pill"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="d-flex align-items-center gap-4 fs-6">
+        <span><i class="fas fa-lock me-1"></i>login</span>
+        <span><i class="fas fa-shopping-cart me-1"></i>cart</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white py-2 border-bottom">
+    <div class="container d-flex justify-content-center gap-4 fw-bold text-uppercase">
+      <a href="#" class="text-decoration-none text-danger">Collection</a>
+      <a href="#" class="text-decoration-none text-dark">Wholesale</a>
+      <a href="#" class="text-decoration-none text-dark">Craftmanship</a>
+      <a href="#" class="text-decoration-none text-dark">About</a>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div class="container-fluid p-0 position-relative">
+    <div id="jewelCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./traditional jewellery website images/home page/image1.png" class="d-block w-100" alt="Jewelry Slide">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#jewelCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#jewelCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hot Selling Categories -->
+   <section class="hot-selling py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">HOT SELLING <span class="highlight">CATEGORIES</span></h2>
+      <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image2.png" class="card-img-top rounded" alt="Antique Earrings">
+            <span class="category-label">Antique Earings</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image3.png" class="card-img-top rounded" alt="Antique Necklaces">
+            <span class="category-label">Antique Necklaces</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image4.png" class="card-img-top rounded" alt="Bangles">
+            <span class="category-label">Bangles</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image5.png" class="card-img-top rounded" alt="Handcrafted Jewel">
+            <span class="category-label">Handcrafted Jewel</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image6.png" class="card-img-top rounded" alt="CZ Necklaces">
+            <span class="category-label">CZ Necklaces</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 col-sm-6">
+          <div class="card border-0 position-relative">
+            <img src="./traditional jewellery website images/home page/image7.png" class="card-img-top rounded" alt="CZ Earrings">
+            <span class="category-label">CZ Earings</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <div class="container py-4">
+    
+    <!-- WESTERN COLLECTIONS -->
+    <div class="position-relative text-center mb-4">
+      <h3 class="section-title">WESTERN <span class="collection-title">COLLECTIONS</span></h3>
+      <button class="btn btn-outline-primary view-all-btn position-absolute  top-0 me-4"style="right: 180px;">View All</button>
+    </div>
+    <div class="d-flex justify-content-end">
+       <div class="row text-center mb-5 ">
+      <div class="col-md-2 col-6 mb-3">
+        <img src="./traditional jewellery website images/home page/image8.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">WESTERN NECKLACE</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3">
+        <img src="./traditional jewellery website images/home page/image9.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">WESTERN BEADS</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3">
+        <img src="./traditional jewellery website images/home page/image10.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">GLASS BEADS METAL</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3">
+        <img src="./traditional jewellery website images/home page/image11.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">WESTERN GLASS PEARL</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3">
+        <img src="./traditional jewellery website images/home page/image12.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">WESTERN FACE GLASS</p>
+      </div>
+    </div>
+    </div>
+   
+
+    <!-- KADA COLLECTIONS -->
+    <div class="position-relative text-center mb-4">
+      <h3 class="section-title">KADA <span class="collection-title">COLLECTIONS</span></h3>
+      <button class="btn btn-outline-primary view-all-btn position-absolute  top-0 me-4"style="right: 180px;">View All</button>
+    </div>
+      <div class="d-flex justify-content-end">
+         <div class="row text-center mb-5">
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview13.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview14.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview15.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview16.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview17.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      
+     
+    </div>
+
+      </div>
+   
+    <!-- MEENAKARI COLLECTIONS -->
+    <div class="position-relative text-center mb-4">
+      <h3 class="section-title">MEENAKARI <span class="collection-title">COLLECTIONS</span></h3>
+      <button class="btn btn-outline-primary view-all-btn position-absolute  top-0 me-4"style="right: 180px;">View All</button>
+    </div>
+      <div class="d-flex justify-content-end">
+         <div class="row text-center mb-5">
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview18.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">KUNDAN MEENAKA</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview19.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview20.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview21.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+      <div class="col-md-2 col-6 mb-3" * 6>
+        <img src="./traditional jewellery website images/home page/image-removebg-preview22.png" class="img-fluid rounded shadow" alt="">
+        <p class="item-caption">CLASSIC KADA WITH</p>
+      </div>
+
+    </div>
+      </div>
+   
+  </div>
+
+
+   <!-- Testimonials -->
+  <div class="container my-4">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>High quality jewelry. Been working with them for over two years and no complaints. Jewelry is top notch. And also friendly customer service</p>
+          <p class="mb-0 fw-bold">- Zainab J</p>
+          <small>USA</small> | <small>15 Feb 2025</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>Great Quality with good price. Highly recommend</p>
+          <p class="mb-0 fw-bold">- Sakthi</p>
+          <small>Chennai</small> | <small>21 Mar 2025</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <p>This is my third time ordering from Kanhai jewels and honestly I'm very amazed, the quality of the Kundan and different type of material is breath</p>
+          <p class="mb-0 fw-bold">- Ariz</p>
+          <small>Nagercoil</small> | <small>10 Apr 2025</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="feature-section text-center">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <div class="feature-icon">⚙️</div>
+          <h6>Great Value</h6>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon">🚚</div>
+          <h6>Worldwide Delivery</h6>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon">🛡️</div>
+          <h6>Pay with the world’s most<br/>popular and secure<br/>payment methods.</h6>
+        </div>
+        <div class="col-md-3">
+          <div class="feature-icon">🧑‍💼</div>
+          <h6><strong>Shop with Confidence</strong></h6>
+          <p style="font-size: 13px;">
+            Our quality customer support service assistance will help you from starting inquiry to order delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Us -->
+  <div class="about-section">
+    <div class="container">
+      <h3 class="text-center mb-4">ABOUT US</h3>
+      <div class="row align-items-center">
+        <div class="col-md-7 about-text">
+          <h5><strong>Welcome To Varnika Jewels — Crafted With Purity, Worn With Pride.</strong></h5>
+          <p>At Varnika Jewels, We Celebrate The Timeless Beauty Of Tradition With Every Piece We Create. “Varnika” — Meaning The Finest Essence — Reflects Our Commitment To Purity, Elegance, And Exceptional Craftsmanship.</p>
+          <p>Rooted In Rich Heritage And Inspired By The Artistry Of Generations Past, Varnika Jewels Offers You Handcrafted Masterpieces That Tell A Story Of Culture, Passion, And Sophistication. From Classic Temple Jewelry To Modern Heirloom Pieces, Our Collections Are Designed To Honor Life's Most Precious Moments.</p>
+          <p>We Believe Jewelry Is Not Just An Accessory — It Is A Legacy. Every Ornament From Varnika Jewels Is A Promise Of Quality, Authenticity, And Timeless Charm, Perfect To Be Treasured And Passed Down Through Generations.</p>
+          <p>Varnika Jewels — Where Every Jewel Carries The Glow Of Tradition And The Sparkle Of Your Story.</p>
+        </div>
+        <div class="col-md-5 text-center">
+          <img src="./traditional jewellery website images/home page/image23.png" alt="Namaste Character" class="about-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row text-start">
+      <div class="col-md-2 col-6 mb-4">
+        <h6>Information</h6>
+        <p>Home</p>
+        <p>About Us</p>
+      </div>
+
+      <div class="col-md-2 col-6 mb-4">
+        <h6>Help & Support</h6>
+        <p>FAQ</p>
+        <p>Privacy Policy</p>
+        <p>Refund policy</p>
+      </div>
+
+      <div class="col-md-2 col-6 mb-4">
+        <h6>Search</h6>
+        <p>Bangles</p>
+        <p>Earings</p>
+        <p>Necklace</p>
+      </div>
+
+      <div class="col-md-2 col-6 mb-4">
+        <h6>My Account</h6>
+        <p>My Orders</p>
+        <p>My Cart</p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h6>Contact Us</h6>
+        <p>VARNIKA JEWELS</p>
+        <p>123, HERITAGE PLAZA,<br>
+           MG ROAD, CHENNAI – 600034,<br>
+           TAMIL NADU, INDIA.</p>
+        <p class="contact-icons">📞 PHONE: +91 98765 43210</p>
+        <p class="contact-icons">📧 EMAIL: contact@varnikajewels.com</p>
+        <p class="contact-icons">🌐 WEBSITE: www.varnikajewels.com</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

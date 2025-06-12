@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Categories</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+       font-family: 'Open Sans', sans-serif;
+    }
+    html,body{
+      width: 100%;
+      overflow-x: hidden;
+    }
+    a{
+      text-decoration: none;
+      color: black;
+    }
+      .top-bar {
+      background-color: #4CAF1C;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      color: #4CAF1C;
+    }
+
+    .logo-block img {
+      width: 100px;
+    }
+
+    .search-box input {
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      padding: 8px 15px;
+      width: 250px;
+    }
+
+    .search-box button {
+      border-radius: 0 5px 5px 0;
+      background-color: #ff7700;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .nav-link.active {
+      color: #4CAF1C !important;
+    }
+
+    .cart-icon {
+      border: 1px solid #4CAF1C;
+      padding: 6px 8px;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+    .account-btn {
+      background-color: #4CAF1C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .middle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .middle-bar .center-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .category-grid {
+      padding: 40px 0;
+    }
+
+    .category-card {
+      text-align: center;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .category-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+     .footer-main {
+      background-color: #0c2340;
+      color: white;
+      padding: 60px 20px 30px 20px;
+    }
+
+    .footer-logo {
+      color: #20a020;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      margin-top: 15px;
+      max-width: 300px;
+    }
+
+    .footer-links, .footer-store {
+      margin-top: 30px;
+    }
+
+    .footer-links h5, .footer-store h5 {
+      font-weight: 700;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background-color: #0c2340;
+      padding: 20px 0;
+      color: white;
+      font-size: 14px;
+    }
+    
+       .info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: start;
+      background-color: #f8f9fa;
+      padding: 0;
+    }
+
+    .contact-banner {
+      background-color: #ff7c08;
+      color: white;
+      padding: 20px 30px;
+      font-weight: 700;
+      font-size: 22px;
+      flex-shrink: 0;
+      position: relative;
+      clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+      width: 360px;
+    }
+
+    .contact-banner span {
+      display: block;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .features-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      padding: 20px 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      max-width: 220px;
+    }
+
+    .icon-circle {
+      background-color: #d5e5cf;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .feature-text p {
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .feature-text p:first-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .feature-text p:last-child {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Fresh & Organic produce form our farmers to your kitchen
+  </div>
+
+  <!-- Logo + Search -->
+  <div class="container middle-bar">
+    <!-- Logo Left -->
+    <div class="logo-block">
+    <a href="Homepage.html"> <img src="./grocerywebsite/logo.png" height="100px" width="180px" alt="Leaf" /></a> 
+      
+    </div>
+
+    <!-- Search Center -->
+    <div class="center-content">
+      <form class="search-box d-flex">
+        <input type="text" placeholder="Search for products">
+        <button type="submit"><img src="./grocerywebsite/search icon.png"> Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white border-top border-bottom">
+  <div class="container">
+    <!-- Toggler button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link " href="Homepage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="CategoryPage.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BestSellingcarePage.html">Best Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BlogsPage.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a href="Cartpage.html" class="cart-icon">
+            <img src="./grocerywebsite/cart icon.png" alt="cart" width="20" />
+          </a>
+        </li>
+        <li class="nav-item">
+     <a href="Loginpage.html" class="account-btn">My Account</a>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container category-grid">
+    <div class="row">
+      <!-- Category Item -->
+      <div class="col-6 col-md-3">
+        <a href="BestSellingcarePage.html"><div class="category-card">
+          <img src="./grocerywebsite/fruits cate.png" class="category-img" alt="Fruits" />
+          <div class="category-title">Fruits</div>
+        </div></a>
+      </div>
+
+      <div class="col-6 col-md-3">
+      <a href="Vegetable catalogue.html" > <div class="category-card">
+          <img src="./grocerywebsite/vege cate.png" class="category-img" alt="Vegetables" />
+          <div class="category-title">Vegetables</div>
+        </div></a>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <a href="Diaryand EggsCatePage.html"><div class="category-card">
+          <img src="./grocerywebsite/dairy des 3.png" class="category-img" alt="Diary & Eggs" />
+          <div class="category-title">Diary & Eggs</div>
+        </div></a>
+      </div>
+
+      <div class="col-6 col-md-3">
+     <a href="Meatansseafoodcate.html">   <div class="category-card">
+          <img src="./grocerywebsite/meat & sea food cate.png" class="category-img" alt="Meat & Seafood" />
+          <div class="category-title">Meat & Seafood</div>
+        </div></a>
+      </div>
+
+      <!-- Second Row -->
+      <div class="col-6 col-md-3">
+       <a href="Bakerycate.html"><div class="category-card">
+          <img src="./grocerywebsite/bakery cate.png" class="category-img" alt="Bakery" />
+          <div class="category-title">Bakery</div>
+        </div></a> 
+      </div>
+
+      <div class="col-6 col-md-3">
+       <a href="Pantrycate.html"> <div class="category-card">
+          <img src="./grocerywebsite/pantry cate.png" class="category-img" alt="Pantry Staples" />
+          <div class="category-title">Pantry Staples</div>
+        </div></a>
+      </div>
+
+      <div class="col-6 col-md-3">
+      <a href="snacksandbeveragecatepage.html">  <div class="category-card">
+          <img src="./grocerywebsite/snack cate.png" class="category-img" alt="Snacks & Beverage" />
+          <div class="category-title">Snacks & Beverage</div>
+        </div></a>
+      </div>
+
+      <div class="col-6 col-md-3">
+     <a href="Frozenfoodcate.html">   <div class="category-card">
+          <img src="./grocerywebsite/frozen cate.png" class="category-img" alt="Frozen Food" />
+          <div class="category-title">Frozen Food</div>
+        </div></a>
+      </div>
+    </div>
+  </div>
+
+<div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Footer Section -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="row text-white">
+        <!-- Logo & About -->
+        <div class="col-md-4 text-center text-md-start">
+          <img src="https://img.icons8.com/ios-filled/40/4caf50/leaf.png" alt="Logo"/>
+          <div class="footer-logo">GROCERIES<br/>AT DOORSTEP</div>
+          <p class="footer-description">
+            Fresh groceries, particularly fruits, vegetables, whole grains, and lean proteins, play a crucial role in nourishing our bodies and promoting overall well-being.
+          </p>
+        </div>
+
+        <!-- Navigate -->
+        <div class="col-md-4 footer-links text-center text-md-start">
+          <h5>NAVIGATE</h5>
+          <ul>
+            <li><a href="Privacypolicy.html">Privacy Policy</a> </li>
+            <li><a href="Terms of services.html">Terms & Conditions</a> </li>
+            <li><a href="Terms of services.html">How to Order</a></li>
+            <li><a href="AboutPage.html">About Us</a> </li>
+          </ul>
+        </div>
+
+        <!-- Store Info -->
+        <div class="col-md-4 footer-store text-center text-md-start">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceriesatdoorstep@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    Copyrights 2022© Groceries At Doorstep Ltd
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

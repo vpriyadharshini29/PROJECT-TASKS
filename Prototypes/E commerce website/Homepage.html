@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groceries at Doorstep</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      
+      background-color: #f8f9fa;
+       font-family: 'Open Sans', sans-serif;
+    }
+body,html{
+  width: 100%;
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+   
+    .top-bar {
+      background-color: #4CAF1C;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      color: #4CAF1C;
+    }
+
+    .logo-block img {
+      width: 100px;
+    }
+
+    .search-box input {
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      padding: 8px 15px;
+      width: 250px;
+    }
+
+    .search-box button {
+      border-radius: 0 5px 5px 0;
+      background-color: #ff7700;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .nav-link.active {
+      color: #4CAF1C !important;
+    }
+
+    .cart-icon {
+      border: 1px solid #4CAF1C;
+      padding: 6px 8px;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+    .account-btn {
+      background-color: #4CAF1C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .middle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .middle-bar .center-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      width: 100%;
+    }
+
+  
+   .promo-section {
+      background-color: #f8f9fa;
+      padding: 30px;
+    }
+
+    .left-banner {
+         background: url('./grocerywebsite/headerimage1.png') no-repeat center center;
+      background-size: cover;
+  
+      border-radius: 15px;
+      padding: 0;
+      height: 500px;
+      display: flex;
+    }
+
+    .text-side {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image-side {
+      flex: 1;
+      background-image: url('https://cdn.pixabay.com/photo/2018/04/29/13/14/vegetables-3359755_960_720.jpg');
+      background-size: cover;
+      background-position: center;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .text-side h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .text-side .highlight {
+      color: green;
+      font-weight: bold;
+    }
+
+    .right-banner {
+      background: #1f1f1f;
+      color: white;
+      border-radius: 15px;
+      padding: 30px;
+      background-image: url('./grocerywebsite/headerimage2.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      height: 500px;
+    }
+
+    .discount-badge {
+      background-color: red;
+      color: white;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      padding: 5px 10px;
+      font-weight: bold;
+      border-radius: 0 10px 10px 0;
+    }
+
+    .btn-shop {
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .btn-shop:hover {
+      background-color: darkorange;
+    }
+
+    .category-card {
+  transition: transform 0.3s ease;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+}
+.promo-banner {
+  background-image: url('./grocerywebsite/posterimagehome.png');
+  background-size: cover;
+  background-position: right center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.banner-text {
+  color: white;
+  padding-left: 50px;
+  max-width: 50%;
+}
+.product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product-image {
+      width: 90%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    .product-price {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .stars {
+      color: #d4af0d;
+      margin-bottom: 15px;
+    }
+
+    .btn-cart {
+      background-color: #4EB528;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-cart:hover {
+      background-color: #45a049;
+    }
+.left-tab {
+  height: 650px;                /* Increase height downward */
+  padding: 4%;
+  background: white;
+  position: relative;
+  z-index: 2;                   /* Sit above deal-container */
+  margin-bottom: -100px;        /* Pull next section up underneath */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+   
+ .product-mini-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-mini-card img {
+      width: 90px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 15px;
+    }
+
+    .product-info {
+      flex-grow: 1;
+    }
+
+    .product-info h6 {
+      font-weight: bold;
+      margin: 0 0 5px 0;
+    }
+
+    .btn-cart {
+      background-color: #4EB528;
+      color: white;
+      font-size: 14px;
+      padding: 3px 10px;
+      font-weight: bold;
+    }
+
+    .btn-cart:hover {
+      background-color: #45a049;
+    }
+    .tab-content{
+      font-size: 20px;
+    }
+    .tab-link {
+      border: none;
+      background: none;
+      font-weight: 600;
+     font-size: 20px;
+      color: #000;
+      margin-right: 20px;
+    }
+
+    .tab-link.active {
+      color: #FF7A00;
+      border-bottom: 2px solid #FF7A00;
+    }
+
+    .highlight-text {
+      color: #FF7A00;
+    }
+
+    .user-stat-box {
+      background: #fff;
+      padding: 25px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .user-stat-box h4 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .user-stat-box p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 28px;
+    }
+    .deal-container{
+
+
+ background-image: url('./grocerywebsite/posterimage2.png');
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+
+   display: flex;              /* Enable flex */
+  align-items: flex-start;    /* Align items to top */
+  justify-content: flex-start; /* Align items to left */
+  padding: 0;                 /* Optional: remove if needed */
+  position: relative;
+  z-index: 1;
+  
+    }
+     .deal-section {
+      /* background: linear-gradient(to right, #000, #111); */
+      color: white;
+      border-radius: 20px;
+      padding: 50px 40px 100px 40px;
+      position: relative;
+      margin-bottom: 80px;
+      z-index: 2;
+    }
+
+    .deal-heading {
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    .deal-heading span {
+      color: orange;
+    }
+
+    .timer-box {
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-right: 15px;
+      text-align: center;
+      width: 90px;
+    }
+
+    .timer-box h4 {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    .timer-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .product-wrapper {
+      position: relative;
+      top: -60px;
+      z-index: 2;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      margin: 0 10px;
+      overflow: hidden;
+    }
+
+    .product-card img {
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .rating {
+      color: #ffc107;
+      font-size: 18px;
+    }
+
+    .btn-success {
+      background-color: #4EB528;
+      border: none;
+      font-weight: 600;
+    }
+    
+    .feedback-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .feedback-title {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .feedback-subtitle {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .map-container {
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .world-map {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .avatar {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Position avatars roughly over continents */
+    .avatar1 { top: 35%; left: 10%; }
+    .avatar2 { top: 25%; left: 25%; }
+    .avatar3 { top: 60%; left: 20%; }
+    .avatar4 { top: 25%; left: 50%; }
+    .avatar5 { top: 40%; left: 60%; }
+    .avatar6 { top: 55%; left: 45%; }
+    .avatar7 { top: 75%; left: 80%; }
+
+    .testimonial-card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .testimonial-card .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .testimonial-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-rating {
+      color: #f6c400;
+      font-size: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 16px;
+      color: #333;
+      margin-top: 15px;
+    }
+    .top-bar-1 {
+      background-color: #f5f6f8;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    
+
+
+    
+    .footer-main {
+      background-color: #0c2340;
+      color: white;
+      padding: 60px 20px 30px 20px;
+    }
+
+    .footer-logo {
+      color: #20a020;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      margin-top: 15px;
+      max-width: 300px;
+    }
+
+    .footer-links, .footer-store {
+      margin-top: 30px;
+    }
+
+    .footer-links h5, .footer-store h5 {
+      font-weight: 700;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background-color: #0c2340;
+      padding: 20px 0;
+      color: white;
+      font-size: 14px;
+    }
+    /* Media Queries for Responsiveness */
+    @media (max-width: 992px) {
+      .middle-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-box {
+        max-width: 100%;
+      }
+
+      .left-banner {
+        flex-direction: column;
+      }
+
+      .text-side {
+        border-radius: 15px;
+      }
+
+      .image-side {
+        display: none;
+      }
+
+      .right-banner {
+        min-height: 250px;
+      }
+
+      .category-card {
+        padding: 0.75rem;
+      }
+
+      .promo-banner {
+        min-height: 200px;
+      }
+
+      .banner-text {
+        padding-left: 1rem;
+        max-width: 100%;
+      }
+
+      .left-tab {
+        margin-bottom: 1rem;
+      }
+
+      .deal-container {
+        min-height: 200px;
+      }
+
+      .product-wrapper {
+        margin-top: 0;
+      }
+      .user-stat-box{
+        padding: 5%;
+      }
+      .timer-box{
+        padding: 5%;
+      }
+    }
+
+    @media (max-width: 768px) {
+       .timer-box{
+        padding: 5%;
+      }
+      .user-stat-box{
+        padding: 5%;
+      }
+      .text-side h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+
+      .banner-text h2 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+
+      .deal-heading {
+        font-size: clamp(20px, 4vw, 24px);
+      }
+
+      .timer-box {
+        width: clamp(50px, 12vw, 60px);
+      }
+
+      .timer-box h4 {
+        font-size: clamp(16px, 2.5vw, 18px);
+      }
+
+      .user-stat-box h4 {
+        font-size: clamp(20px, 3.5vw, 24px);
+      }
+
+      .user-stat-box p {
+        font-size: clamp(14px, 2vw, 16px);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .logo-block img {
+        width: clamp(60px, 12vw, 80px);
+      }
+
+      .search-box input,
+      .search-box button,
+      .nav-link,
+      .account-btn {
+        font-size: clamp(12px, 2vw, 14px);
+      }
+
+      .category-card img {
+        width: clamp(30px, 8vw, 40px);
+      }
+
+      .product-image {
+        max-height: 150px;
+      }
+
+      .product-title,
+      .product-price,
+      .btn-cart {
+        font-size: clamp(12px, 2vw, 14px);
+      }
+
+      .tab-link {
+        font-size: clamp(14px, 2vw, 16px);
+        margin-right: 0.5rem;
+      }
+
+      .footer-logo {
+        font-size: clamp(16px, 2.5vw, 18px);
+      }
+
+      .footer-description,
+      .footer-links ul li,
+      .footer-store p {
+        font-size: clamp(10px, 1.8vw, 12px);
+      }
+    }
+           .info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: start;
+      background-color: #f8f9fa;
+      padding: 0;
+    }
+
+    .contact-banner {
+      background-color: #ff7c08;
+      color: white;
+      padding: 20px 30px;
+      font-weight: 700;
+      font-size: 22px;
+      flex-shrink: 0;
+      position: relative;
+      clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+      width: 360px;
+    }
+
+    .contact-banner span {
+      display: block;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .features-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      padding: 20px 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      max-width: 220px;
+    }
+
+    .icon-circle {
+      background-color: #d5e5cf;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .feature-text p {
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .feature-text p:first-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .feature-text p:last-child {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+  <div class="top-bar">
+    Fresh & Organic produce form our farmers to your kitchen
+  </div>
+
+  <!-- Logo + Search -->
+  <div class="container middle-bar">
+    <!-- Logo Left -->
+    <div class="logo-block">
+    <a href="Homepage.html"> <img src="./grocerywebsite/logo.png" height="100px" width="180px" alt="Leaf" /></a> 
+      
+    </div>
+
+    <!-- Search Center -->
+    <div class="center-content">
+      <form class="search-box d-flex">
+        <input type="text" placeholder="Search for products">
+        <button type="submit"><img src="./grocerywebsite/search icon.png"> Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white border-top border-bottom">
+  <div class="container">
+    <!-- Toggler button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="Homepage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CategoryPage.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BestSellingcarePage.html">Best Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BlogsPage.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a href="Cartpage.html" class="cart-icon">
+            <img src="./grocerywebsite/cart icon.png" alt="cart" width="20" />
+          </a>
+        </li>
+        <li class="nav-item">
+     <a href="Loginpage.html" class="account-btn">My Account</a>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br>
+ <div class="container-fluid promo-section">
+  <div class="row g-4">
+    <!-- Left Banner (Split into text and image side) -->
+    <div class="col-lg-8">
+      <div class="left-banner">
+        <div class="text-side">
+          <p class="mb-1">Halal Products <span class="text-danger">Online Delivery Shop</span></p>
+          <h1>Make Healthy Life with <span class="highlight">Fresh</span> Grocery</h1>
+          <p class="my-3">
+            Fresh groceries, particularly fruits, vegetables, whole grains, and lean proteins,
+            play a crucial role in nourishing our bodies and promoting overall well-being
+          </p>
+          <button onclick="location.href='CategoryPage.html';" class="btn btn-shop w-50 mt-3 px-2 py-1">Shop Now</button>
+        </div>
+        <div class="image-side d-none d-md-block"></div>
+      </div>
+    </div>
+
+    <!-- Right Banner -->
+    <div class="col-lg-4">
+      <div class="right-banner">
+        <div class="discount-badge">-12% off</div>
+        <div class="right-banner-overlay mt-5">
+          <p class="text-danger mb-2">Black Friday Sale</p>
+          <h2>Organic Food Up To 50% Off</h2>
+          <button onclick="location.href='CategoryPage.html';"class="btn btn-shop w-auto mt-3 px-4 py-2">Shop Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <!-- Categories Section -->
+  <section class="py-5 text-center bg-light">
+    <h2 class="fw-bold">Browse All Categories</h2>
+    <p class="text-muted">Explore a diverse range of categories to find exactly what you need!</p>
+
+    <div class="container mt-4">
+      <div class="row g-4 justify-content-center">
+        <!-- Category Cards -->
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/vegetable icon.png" class="img-fluid mb-2" width="50" alt="Vegetable">
+            <div class="fw-bold">Vegetable</div>
+            <small class="text-muted">20 Items</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/fresh fruits icon.png" class="img-fluid mb-2" width="50" alt="Fruits">
+            <div class="fw-bold">Fresh Fruits</div>
+            <small class="text-muted">12 Items</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/meat icon.png" class="img-fluid mb-2" width="50" alt="Meat">
+            <div class="fw-bold">Meat</div>
+            <small class="text-muted">7 Items</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/seafood icon.png" class="img-fluid mb-2" width="50" alt="Sea Food">
+            <div class="fw-bold">Sea Food</div>
+            <small class="text-muted">12 Items</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/milk & diary icon.png" class="img-fluid mb-2" width="50" alt="Milk">
+            <div class="fw-bold">Milk & diary</div>
+            <small class="text-muted">8 Items</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2">
+          <div class="category-card text-center p-3 rounded bg-white shadow-sm">
+            <img src="./grocerywebsite/fresh bread icon.png" class="img-fluid mb-2" width="50" alt="Bread">
+            <div class="fw-bold">Fresh Bread</div>
+            <small class="text-muted">24 Items</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="promo-banner mt-5 mx-auto rounded" style="max-width: 90%;">
+    <div class="banner-text p-5 text-white">
+      <p>Enjoy upto 20% off on your first order</p>
+      <h2 class="fw-bold">Fresh Produce, From Farm <br> Products At A Reasonable Price!</h2>
+      <a href="#" class="btn btn-warning mt-3 fw-bold">Shop Now</a>
+    </div>
+  </section>
+
+   <div class="container text-center py-5">
+    <h2 class="fw-bold">Featured Products</h2>
+    <p class="text-muted">
+      Each item is carefully selected for quality, freshness, and nutritional benefits.
+    </p>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4">
+      <!-- Product 1 -->
+      <div class="col">
+        <div class="product-card">
+          <img src="./grocerywebsite/featured pro home 1.png" alt="Tomatoes" class="product-image" />
+          <div class="product-title">Organic Tomatoes</div>
+          <div class="product-price">₹ 80</div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <button class="btn btn-cart px-4 add-to-cart-btn"
+    data-name="Organic Tomatoes"
+    data-price="₹ 80"
+    data-img="./grocerywebsite/featured pro home 1.png"
+ >Add to cart</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col">
+        <div class="product-card">
+          <img src="./grocerywebsite/featured pro home 2.png" alt="Meat" class="product-image" />
+          <div class="product-title">Fresh Meat</div>
+          <div class="product-price">₹ 420</div>
+          <div class="stars">★ ★ ★ ★ ☆</div>
+          <button class="btn btn-cart px-4 add-to-cart-btn"
+    data-name="Fresh Meat"
+    data-price="₹ 420"
+    data-img="./grocerywebsite/featured pro home 2.png">Add to cart</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col">
+        <div class="product-card">
+          <img src="./grocerywebsite/featured pro home 3.png" alt="Mangoes" class="product-image" />
+          <div class="product-title">Seasonal Mangoes</div>
+          <div class="product-price">₹ 120</div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <button class="btn btn-cart px-4 add-to-cart-btn"
+    data-name="Seasonal Mangoes"
+    data-price="₹ 120"
+    data-img="./grocerywebsite/featured pro home 3.png">Add to cart</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col">
+        <div class="product-card">
+          <img src="./grocerywebsite/featured pro home 4.png" alt="Onions" class="product-image" />
+          <div class="product-title">Green Onions</div>
+          <div class="product-price">₹ 100</div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+          <button class="btn btn-cart px-4 add-to-cart-btn"
+    data-name="Green Onions"
+    data-price="₹ 100"
+    data-img="./grocerywebsite/featured pro home 4.png">Add to cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container py-5 ">
+  <div class="row ">
+    <!-- Left Tabs and Products -->
+    <div class="col-md-6 bg-white left-tab">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs border-0 mb-3">
+        <li class="nav-item">
+          <button class="tab-link active" data-bs-toggle="tab" data-bs-target="#new">New Arrivals</button>
+        </li>
+        <li class="nav-item">
+          <button class="tab-link" data-bs-toggle="tab" data-bs-target="#trending">Trending Products</button>
+        </li>
+        <li class="nav-item">
+          <button class="tab-link" data-bs-toggle="tab" data-bs-target="#best">Best Sellings</button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+<div class="tab-content">
+  <!-- New Arrivals -->
+  <div class="tab-pane fade show active" id="new">
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/new arrivals 1.png" alt="Lemon" />
+      <div class="product-info">
+        <h6>European Zesty Lemon</h6>
+        <p>₹ 80</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="European Zesty Lemon"
+          data-price="₹ 80"
+          data-img="./grocerywebsite/new arrivals 1.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/new arrivals 2.png" alt="Apple" />
+      <div class="product-info">
+        <h6>Apple from Kashmir</h6>
+        <p>₹ 240</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Apple from Kashmir"
+          data-price="₹ 240"
+          data-img="./grocerywebsite/new arrivals 2.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/new arrivals 3.png" alt="Coconuts" />
+      <div class="product-info">
+        <h6>Coconuts</h6>
+        <p>₹ 320</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Coconuts"
+          data-price="₹ 320"
+          data-img="./grocerywebsite/new arrivals 3.png">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trending Products -->
+  <div class="tab-pane fade" id="trending">
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/trending 1.png" alt="Mangoes" />
+      <div class="product-info">
+        <h6>Trending Mangoes</h6>
+        <p>₹ 110</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Trending Mangoes"
+          data-price="₹ 110"
+          data-img="./grocerywebsite/trending 1.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/trending 2.png" alt="Onions" />
+      <div class="product-info">
+        <h6>Organic Onions</h6>
+        <p>₹ 90</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Organic Onions"
+          data-price="₹ 90"
+          data-img="./grocerywebsite/trending 2.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/trending 3.png" alt="Onions" />
+      <div class="product-info">
+        <h6>Organic Onions</h6>
+        <p>₹ 90</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Organic Onions"
+          data-price="₹ 90"
+          data-img="./grocerywebsite/trending 3.png">Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Best Sellings -->
+  <div class="tab-pane fade" id="best">
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/best selling home 1.png" alt="Tomatoes" />
+      <div class="product-info">
+        <h6>Best Organic Tomatoes</h6>
+        <p>₹ 80</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Best Organic Tomatoes"
+          data-price="₹ 80"
+          data-img="./grocerywebsite/best selling home 1.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/best selling home 2.png" alt="Meat" />
+      <div class="product-info">
+        <h6>Fresh Meat Cuts</h6>
+        <p>₹ 420</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Fresh Meat Cuts"
+          data-price="₹ 420"
+          data-img="./grocerywebsite/best selling home 2.png">Add to cart</button>
+      </div>
+    </div>
+
+    <div class="product-mini-card">
+      <img src="./grocerywebsite/best selling home 3.png" alt="Meat" />
+      <div class="product-info">
+        <h6>Fresh Meat Cuts</h6>
+        <p>₹ 420</p>
+        <button class="btn btn-cart px-4 add-to-cart-btn"
+          data-name="Fresh Meat Cuts"
+          data-price="₹ 420"
+          data-img="./grocerywebsite/best selling home 3.png">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+    <!-- Right Offer + Stats -->
+    <div class="col-md-6  right-tab"style="padding: 70px;">
+      <h3 class="fw-bold"style="font-size: 42px;">
+        Get <span class="highlight-text"style="font-size :42px;">20% Discount</span><br/>on Your First Sale
+      </h3>
+      <p class="text-muted mt-3">
+        To celebrate your first purchase with us,<br/>
+        enjoy a 20% discount on your first order.
+      </p>
+      <div class="row mt-4">
+        <div class="col-4">
+          <div class="user-stat-box">
+            <h4>45K+</h4>
+            <p>Active Users</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="user-stat-box">
+            <h4>45K+</h4>
+            <p>Active Users</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="user-stat-box">
+            <h4>45K+</h4>
+            <p>Active Users</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+   <div class="container ">
+    <!-- DEAL SECTION -->
+     <div class="deal-container">
+       <div class="deal-section">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="deal-heading">Best Deals <span>This Week</span></h2>
+          <p class="mt-3">Don't miss out on our incredible deals to help you<br>save while enjoying fresh, high-quality groceries!</p>
+          <div class="d-flex flex-wrap mt-4">
+            <div class="timer-box">
+              <h4>7</h4>
+              <p>Days</p>
+            </div>
+            <div class="timer-box">
+              <h4>168</h4>
+              <p>Hours</p>
+            </div>
+            <div class="timer-box">
+              <h4>1004</h4>
+              <p>Minutes</p>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+     </div>
+   
+
+    <!-- PRODUCTS OVERLAPPING -->
+   <!-- PRODUCTS OVERLAPPING -->
+<div class="row product-wrapper justify-content-center">
+  <div class="col-md-3 col-sm-6">
+    <div class="product-card">
+      <img src="./grocerywebsite/best deals 1.png" alt="Red Chillies" />
+      <h5 class="mt-3 fw-bold">Red Chillies</h5>
+      <p>₹ 80</p>
+      <div class="rating">★★★★★</div>
+      <button class="btn btn-cart px-4 add-to-cart-btn"
+        data-name="Red Chillies"
+        data-price="₹ 80"
+        data-img="./grocerywebsite/best deals 1.png">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="product-card">
+      <img src="./grocerywebsite/best deals 2.png" alt="Fresh Eggs" />
+      <h5 class="mt-3 fw-bold">Fresh Eggs</h5>
+      <p>₹ 120</p>
+      <div class="rating">★★★★☆</div>
+      <button class="btn btn-cart px-4 add-to-cart-btn"
+        data-name="Fresh Eggs"
+        data-price="₹ 120"
+        data-img="./grocerywebsite/best deals 2.png">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="product-card">
+      <img src="./grocerywebsite/best deals 3.png" alt="Soya Chunks" />
+      <h5 class="mt-3 fw-bold">Soya Chunks</h5>
+      <p>₹ 70</p>
+      <div class="rating">★★★★★</div>
+      <button class="btn btn-cart px-4 add-to-cart-btn"
+        data-name="Soya Chunks"
+        data-price="₹ 70"
+        data-img="./grocerywebsite/best deals 3.png">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6">
+    <div class="product-card">
+      <img src="./grocerywebsite/best deals 4.png" alt="Dry Beans" />
+      <h5 class="mt-3 fw-bold">Dry Beans</h5>
+      <p>₹ 135</p>
+      <div class="rating">★★★★★</div>
+      <button class="btn btn-cart px-4 add-to-cart-btn"
+        data-name="Dry Beans"
+        data-price="₹ 135"
+        data-img="./grocerywebsite/best deals 4.png">Add to cart</button>
+    </div>
+  </div>
+</div>
+   </div>
+   
+    <div class="container feedback-section">
+    <h2 class="feedback-title">Our Customer Feedback</h2>
+    <p class="feedback-subtitle">We value the opinions of our customers that brings improvement in our services</p>
+
+    <div class="row mt-5 justify-content-center">
+      <!-- Map with Avatars -->
+      <div class="col-lg-7 position-relative map-container">
+        <img src="./grocerywebsite/map home image.png" class="img-fluid world-map" alt="World Map"/>
+
+        <!-- Avatars on map -->
+        <div class="avatar avatar1"><img src="./grocerywebsite/image on map 1.png" alt="Avatar1"></div>
+        <div class="avatar avatar2"><img src="./grocerywebsite/image on map 2.png" alt="Avatar2"></div>
+        <div class="avatar avatar3"><img src="./grocerywebsite/image on map 3.png" alt="Avatar3"></div>
+        <div class="avatar avatar4"><img src="./grocerywebsite/image on map 4.png" alt="Avatar4"></div>
+        <div class="avatar avatar5"><img src="./grocerywebsite/image on map 5.png" alt="Avatar5"></div>
+        <div class="avatar avatar6"><img src="./grocerywebsite/image on map 6.png" alt="Avatar6"></div>
+        <div class="avatar avatar7"><img src="./grocerywebsite/image on map 7.png" alt="Avatar7"></div>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="testimonial-card d-flex flex-column flex-sm-row align-items-start">
+          <img src="./grocerywebsite/review image.png" class="profile-pic" alt="George Stephen"/>
+          <div>
+            <div class="testimonial-name">George Stephen</div>
+            <div class="testimonial-rating">★★★★★</div>
+            <p class="testimonial-text">
+              “I love the quality of the produce! Everything is always fresh and tastes amazing. The prices are competitive, and the weekly deals are fantastic. I save so much on my grocery bills”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Footer Section -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="row text-white">
+        <!-- Logo & About -->
+        <div class="col-md-4 text-center text-md-start">
+          <img src="https://img.icons8.com/ios-filled/40/4caf50/leaf.png" alt="Logo"/>
+          <div class="footer-logo">GROCERIES<br/>AT DOORSTEP</div>
+          <p class="footer-description">
+            Fresh groceries, particularly fruits, vegetables, whole grains, and lean proteins, play a crucial role in nourishing our bodies and promoting overall well-being.
+          </p>
+        </div>
+
+        <!-- Navigate -->
+        <div class="col-md-4 footer-links text-center text-md-start">
+          <h5>NAVIGATE</h5>
+          <ul>
+            <li><a href="Privacypolicy.html">Privacy Policy</a> </li>
+            <li><a href="Terms of services.html">Terms & Conditions</a> </li>
+            <li><a href="Terms of services.html">How to Order</a></li>
+            <li><a href="AboutPage.html">About Us</a> </li>
+          </ul>
+        </div>
+
+        <!-- Store Info -->
+        <div class="col-md-4 footer-store text-center text-md-start">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceriesatdoorstep@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    Copyrights 2022© Groceries At Doorstep Ltd
+  </div>
+
+<script src="./Assets/JS/home.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

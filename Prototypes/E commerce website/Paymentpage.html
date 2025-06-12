@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaymentPage</title>
+       
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <style>
+      html,body{
+        width: 100%;
+        overflow-x: hidden;
+         font-family: 'Open Sans', sans-serif;
+      }
+        .top-bar {
+      background-color: #4CAF1C;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+a{
+  text-decoration: none;
+  color: white;
+}
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      color: #4CAF1C;
+    }
+
+    .logo-block img {
+      width: 100px;
+    }
+
+    .search-box input {
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 5px 0 0 5px;
+      padding: 8px 15px;
+      width: 250px;
+    }
+
+    .search-box button {
+      border-radius: 0 5px 5px 0;
+      background-color: #ff7700;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    .nav-link.active {
+      color: #4CAF1C !important;
+    }
+
+    .cart-icon {
+      border: 1px solid #4CAF1C;
+      padding: 6px 8px;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+    .account-btn {
+      background-color: #4CAF1C;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .middle-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .middle-bar .center-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      justify-content: center;
+      width: 100%;
+    }
+         .cart-header {
+    
+      text-align: center;
+      padding: 30px 0 15px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .cart-steps {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .cart-steps span {
+      margin: 0 8px;
+      font-weight: 600;
+    }
+
+    .cart-steps .active {
+      color: #4EB528;
+    }
+
+    .cart-container {
+      padding: 0 5%;
+    }
+ input{
+    background-color: #e6fff7;
+ }
+    .payment-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card-form, .summary-box {
+      background-color: #e6fff7;
+      padding: 30px;
+      border-radius: 20px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .card-form h5 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card-form p {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-label {
+      font-weight: 700;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      border-radius: 12px;
+      border: 2px solid #4EB528;
+      font-size: 16px;
+      padding: 12px;
+    }
+
+    .icon-img {
+      height: 30px;
+      margin-left: 8px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .form-row .form-control {
+      flex: 1;
+    }
+
+    .summary-box h6 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .summary-box .d-flex {
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .total-line {
+      border-top: 1px solid #4EB528;
+      margin: 15px 0;
+    }
+
+    .btn-pay {
+      background-color: #4EB528;
+      color: #fff;
+      font-weight: 700;
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .btn-pay:hover {
+      background-color: #4EB528;
+    }
+
+    .secure-pay {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #333;
+    }
+
+    .secure-pay i {
+      font-size: 18px;
+    }
+     .footer-main {
+      background-color: #0c2340;
+      color: white;
+      padding: 60px 20px 30px 20px;
+    }
+
+    .footer-logo {
+      color: #20a020;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      margin-top: 15px;
+      max-width: 300px;
+    }
+
+    .footer-links, .footer-store {
+      margin-top: 30px;
+    }
+
+    .footer-links h5, .footer-store h5 {
+      font-weight: 700;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      background-color: #0c2340;
+      padding: 20px 0;
+      color: white;
+      font-size: 14px;
+    }
+      .info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: start;
+      background-color: #f8f9fa;
+      padding: 0;
+    }
+
+    .contact-banner {
+      background-color: #ff7c08;
+      color: white;
+      padding: 20px 30px;
+      font-weight: 700;
+      font-size: 22px;
+      flex-shrink: 0;
+      position: relative;
+      clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+      width: 360px;
+    }
+
+    .contact-banner span {
+      display: block;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .features-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      padding: 20px 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      max-width: 220px;
+    }
+
+    .icon-circle {
+      background-color: #d5e5cf;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .feature-text p {
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    .feature-text p:first-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .feature-text p:last-child {
+      font-size: 14px;
+      color: #555;
+    }
+
+    </style>
+</head>
+<body>
+   <!-- Top Bar -->
+  <div class="top-bar">
+    Fresh & Organic produce form our farmers to your kitchen
+  </div>
+
+  <!-- Logo + Search -->
+  <div class="container middle-bar">
+    <!-- Logo Left -->
+    <div class="logo-block">
+    <a href="Homepage.html"> <img src="./grocerywebsite/logo.png" height="100px" width="180px" alt="Leaf" /></a> 
+      
+    </div>
+
+    <!-- Search Center -->
+    <div class="center-content">
+      <form class="search-box d-flex">
+        <input type="text" placeholder="Search for products">
+        <button type="submit"><img src="./grocerywebsite/search icon.png"> Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white border-top border-bottom">
+  <div class="container">
+    <!-- Toggler button for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link " href="Homepage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CategoryPage.html">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BestSellingcarePage.html">Best Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="BlogsPage.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a href="Cartpage.html" class="cart-icon">
+            <img src="./grocerywebsite/cart icon.png" alt="cart" width="20" />
+          </a>
+        </li>
+        <li class="nav-item">
+     <a href="Loginpage.html" class="account-btn">My Account</a>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Header -->
+  <div class="cart-header">Cart</div>
+  <div class="cart-steps">
+    <span class="active">BAG</span> &gt;
+    <span  class="active">ADDRESS</span> &gt;
+    <span  class="active">PAYMENT</span>
+  </div>
+
+   <div class="payment-container">
+    <!-- Card Form -->
+    <div class="card-form">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <div class="d-flex align-items-center">
+          <input type="radio" checked class="me-2">
+          <h5 class="mb-0">Credit Card</h5>
+        </div>
+        <div>
+          <img src="./grocerywebsite/master card logo - payment.png" class="icon-img" alt="Mastercard">
+          <img src="./grocerywebsite/visa logo - payment.png" class="icon-img" alt="Visa">
+        </div>
+      </div>
+
+      <p>Save money transfer using bank account<br>Visa, Mastero</p>
+
+      <label class="form-label">CREDIT CARD NUMBER</label>
+      <input type="text" class="form-control" placeholder="Enter your card number">
+
+      <div class="form-row">
+        <div>
+          <label class="form-label">CVV CODE</label>
+          <div class="input-group">
+            <input type="password" class="form-control" placeholder="***">
+            <span class="input-group-text bg-white border-0"><i class="fas fa-credit-card"></i></span>
+          </div>
+        </div>
+        <div>
+          <label class="form-label">EXPIRY DATE</label>
+          <input type="text" class="form-control" placeholder="MM/YY">
+        </div>
+      </div>
+
+      <label class="form-label">NAME ON CARD</label>
+      <input type="text" class="form-control" placeholder="Enter your name on the card">
+    </div>
+
+    <!-- Summary Box -->
+    <div class="summary-box">
+      <h6>Subtotal</h6>
+      <div class="d-flex"><span>Subtotal</span><span>₹ 4580</span></div>
+      <div class="d-flex"><span>Delivery Charges</span><span>₹ 0</span></div>
+      <div class="d-flex"><span>Discount</span><span>- ₹ 220</span></div>
+      <div class="total-line"></div>
+      <div class="d-flex fw-bold"><span>TOTAL</span><span>₹ 4360</span></div>
+
+    <a href="paymentsuccessfulpage.html">  <button class="btn-pay mt-4">PROCEED TO PAY</button></a>
+
+      <div class="secure-pay">
+        <i class="fas fa-lock"></i>
+        <span>100% Secure Payments</span>
+      </div>
+    </div>
+  </div>
+
+<div class="info-strip">
+    <!-- Left Orange Contact Banner -->
+    <div class="contact-banner">
+      Get in Touch with us
+      <span>+91 91010 90000</span>
+    </div>
+
+    <!-- Right Features Section -->
+    <div class="features-container">
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/free shipping icon.png" alt="Free Shipping">
+        </div>
+        <div class="feature-text">
+          <p>Free Shipping</p>
+          <p>For Orders Above 500</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/fresh produce icon.png" alt="Fresh Produce">
+        </div>
+        <div class="feature-text">
+          <p>Fresh Produce</p>
+          <p>Guaranteed Product Warranty</p>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="icon-circle">
+          <img src="./grocerywebsite/safety icon.png" alt="Safety">
+        </div>
+        <div class="feature-text">
+          <p>100% Safety & Security</p>
+          <p>Your Data is Highly Secured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Footer Section -->
+  <div class="footer-main">
+    <div class="container">
+      <div class="row text-white">
+        <!-- Logo & About -->
+        <div class="col-md-4 text-center text-md-start">
+          <img src="https://img.icons8.com/ios-filled/40/4caf50/leaf.png" alt="Logo"/>
+          <div class="footer-logo">GROCERIES<br/>AT DOORSTEP</div>
+          <p class="footer-description">
+            Fresh groceries, particularly fruits, vegetables, whole grains, and lean proteins, play a crucial role in nourishing our bodies and promoting overall well-being.
+          </p>
+        </div>
+
+        <!-- Navigate -->
+        <div class="col-md-4 footer-links text-center text-md-start">
+          <h5>NAVIGATE</h5>
+          <ul>
+           
+            <li><a href="Privacypolicy.html">Privacy Policy</a> </li>
+            <li><a href="Terms of services.html">Terms & Conditions</a> </li>
+            <li><a href="Terms of services.html">How to Order</a></li>
+            <li><a href="AboutPage.html">About Us</a> </li>
+          </ul>
+        </div>
+
+        <!-- Store Info -->
+        <div class="col-md-4 footer-store text-center text-md-start">
+          <h5>G-STORE</h5>
+          <p>Reg: T21542GST548</p>
+          <p>TIN: 14578452884</p>
+          <p>Email: groceriesatdoorstep@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    Copyrights 2022© Groceries At Doorstep Ltd
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+ 
+</body>
+</html>
